@@ -1,0 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+  opacity: 75%;
+  /*background-image:url('Logo/Background.png');*/
+  background-size: cover;
+  opacity: 100%;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: bold;
+}
