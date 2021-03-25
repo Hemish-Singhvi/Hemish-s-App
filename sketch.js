@@ -1,7 +1,7 @@
 var FORM, logoImg, logo, RSImg, RS, bgImg, TIMER;
 
 function preload(){
-  logoImg = loadImage('LogoShaded.png');
+  //logoImg = loadImage('LogoShaded.png');
   RSImg = loadImage('Images/Rotate Screen.png');
   bgImg = loadImage('Images/Background.png')
 }
