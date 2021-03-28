@@ -1,4 +1,5 @@
 var FORM, logo, RSImg, RS, bgImg, TIMER;
+var tasks = [];
 
 function preload(){
   RSImg = loadImage('Images/Rotate Screen.png');
