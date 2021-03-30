@@ -4,9 +4,9 @@ class TaskForm {
         this.taskDuration = createInput('', 'Number');
         this.taskDeadline = createInput('', 'Date'); 
         this.submitB = createButton('Submit');
-        this.taskTitleVal;
-        this.taskDurationVal;
-        this.taskDeadlineVal;
+        this.taskTitleVal = [];
+        this.taskDurationVal = [];
+        this.taskDeadlineVal = [];
     }
     display(){
         this.taskTitle.position(windowWidth*3.75/8, windowHeight/4);
@@ -20,18 +20,21 @@ class TaskForm {
         text('Enter task deadline:', windowWidth*3.75/8 - 200, windowHeight*3/4 + 20);
         this.submitB.mousePressed(()=>{
             this.getValue();
+            this.logValue();
             //this.validate();
         })
         
     }
     getValue(){
         console.log(this.taskTitle.value()+", "+ this.taskDuration.value()+" minutes, "+this.taskDeadline.value());
-        this.taskTitleVal = this.taskTitle.value();
-        this.taskDurationVal = this.taskDuration.value();
-        this.taskDeadlineVal = this.taskDeadline.value();
-        tasks.push([this.taskTitleVal, this.taskDurationVal, this.taskDeadlineVal]);
-        console.log(tasks[0]);
+        this.taskTitleVal.push(this.taskTitle.value());
+        this.taskDurationVal.push(this.taskDuration.value())
+        this.taskDeadlineVal.push(this.taskDeadline.value())
     }
+    /*logValue(){
+        tasks.push([this.taskTitleVal, this.taskDurationVal, this.taskDeadlineVal]);
+        console.log(tasks);
+    }*/
     /*Marked For Debugging
     validate(){
         if (this.taskTitle.value() = ""){
