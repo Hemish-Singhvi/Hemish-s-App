@@ -26,6 +26,11 @@ class TaskForm {
     }
     getValue(){
         console.log(this.taskTitle.value()+", "+ this.taskDuration.value()+" minutes, "+this.taskDeadline.value());
+        this.taskTitleVal = this.taskTitle.value();
+        this.taskDurationVal = this.taskDuration.value();
+        this.taskDeadlineVal = this.taskDeadline.value();
+        tasks.push([this.taskTitleVal, this.taskDurationVal, this.taskDeadlineVal]);
+        console.log(tasks[0]);
     }
     /*Marked For Debugging
     validate(){
