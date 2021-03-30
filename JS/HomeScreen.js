@@ -29,7 +29,6 @@ class homeScreen {
             this.parentB.hide();
             this.parentForm = new ParentSigninForm;
             this.parentForm.display();
-            
         })
     }
 }
