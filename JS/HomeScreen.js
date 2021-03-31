@@ -21,7 +21,8 @@ class homeScreen {
             this.studentPage = new StudentScreen;
             this.studentPage.display();
         })
-        
+        this.studentB.style('backgroundColor', '#aa00ff');
+        this.parentB.style('backgroundColor', '#ff0000')
         //generation of parent Sign in form when parent button is pressed.
         //this form is yet to be worked on.
         this.parentB.mousePressed(()=>{
