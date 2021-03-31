@@ -28,8 +28,9 @@ class TaskForm {
     getValue(){
         console.log(this.taskTitle.value()+", "+ this.taskDuration.value()+" minutes, "+this.taskDeadline.value());
         this.taskTitleVal.push(this.taskTitle.value());
-        this.taskDurationVal.push(this.taskDuration.value())
-        this.taskDeadlineVal.push(this.taskDeadline.value())
+        this.taskDurationVal.push(this.taskDuration.value());
+        this.taskDeadlineVal.push(this.taskDeadline.value());
+        new Task(this.taskTitleVal, this.taskDurationVal, this.taskDeadlineVal);
     }
     /*logValue(){
         tasks.push([this.taskTitleVal, this.taskDurationVal, this.taskDeadlineVal]);
