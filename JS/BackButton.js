@@ -1,8 +1,8 @@
 class BackButton {
     constructor(){
-        backButton = createButton('<=');
+        this.backButton = createButton('<=');
     }
-    display(){
-        this.backButton.position(windowWidth/8, windowHeight/8);
+    position(){
+        this.backButton.position(windowWidth/32, windowHeight/16);
     }
 }

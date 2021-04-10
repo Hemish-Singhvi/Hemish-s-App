@@ -24,8 +24,8 @@ class homeScreen {
             this.studentPage = new StudentScreen;
             this.studentPage.display();
         })
-        //this.BB  = new BackButton();
-        //this.BB.display();Marked for debugging @sudhavar
+        this.BB  = new BackButton();
+        this.BB.position();
         this.studentB.style('backgroundColor', '#aa00ff');
         this.parentB.style('backgroundColor', '#ff0000')
         //generation of parent Sign in form when parent button is pressed.
