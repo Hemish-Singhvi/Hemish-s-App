@@ -2,13 +2,16 @@ class homeScreen {
     constructor(){
         this.studentB = createButton('Student');
         this.parentB = createButton('Parent');
+        this.greeting = createSprite(windowWidth/2, windowHeight/4, windowWidth/4, windowHeight/4);
     }
-    //Function to hide buttons when clicked
+    //Function to hide buttons and greeting when any button clicked
     hide(){
         this.parentB.hide();
         this.studentB.hide();
     }
     display() {
+        this.greeting.addAnimation('Greet', Hello);
+        //Creating a greeting
         //Setting the positions of the primary buttons
         this.studentB.position(windowWidth*3.75/8, windowHeight/3, 100, 50);
         this.parentB.position(windowWidth*3.75/8, windowHeight*2/3);
@@ -21,6 +24,8 @@ class homeScreen {
             this.studentPage = new StudentScreen;
             this.studentPage.display();
         })
+        //this.BB  = new BackButton();
+        //this.BB.display();Marked for debugging @sudhavar
         this.studentB.style('backgroundColor', '#aa00ff');
         this.parentB.style('backgroundColor', '#ff0000')
         //generation of parent Sign in form when parent button is pressed.

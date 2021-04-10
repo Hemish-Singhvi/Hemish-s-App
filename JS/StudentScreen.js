@@ -15,6 +15,11 @@ class StudentScreen {
             this.scheduleTask.hide();
             this.allTasks.hide();
         });
-        
+        this.allTasks.mousePressed(()=>{
+            this.tasks = new allTasks;
+            this.tasks.displayEveryTask();
+            this.scheduleTask.hide();
+            this.allTasks.hide();
+        })
     }
 }

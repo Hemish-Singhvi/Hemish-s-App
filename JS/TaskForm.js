@@ -4,9 +4,9 @@ class TaskForm {
         this.taskDuration = createInput('', 'Number');
         this.taskDeadline = createInput('', 'Date'); 
         this.submitB = createButton('Submit');
-        this.taskTitleVal = [];
-        this.taskDurationVal = [];
-        this.taskDeadlineVal = [];
+        this.taskTitleVal;
+        this.taskDurationVal;
+        this.taskDeadlineVal;
     }
     display(){
         this.taskTitle.position(windowWidth*3.75/8, windowHeight/4);
@@ -21,26 +21,25 @@ class TaskForm {
         this.submitB.style('backgroundColor', '#019320')
         this.submitB.mousePressed(()=>{
             this.getValue();
+            this.isVisible = false;
             //this.logValue();
             //this.validate();
-        })
-        
+        });      
     }
     getValue(){
         console.log(this.taskTitle.value()+", "+ this.taskDuration.value()+" minutes, "+this.taskDeadline.value());
-        this.taskTitleVal.push(this.taskTitle.value());
-        this.taskDurationVal.push(this.taskDuration.value());
-        this.taskDeadlineVal.push(this.taskDeadline.value());
-        new Task(this.taskTitleVal, this.taskDurationVal, this.taskDeadlineVal);
+        taskTitleVal = this.taskTitle.value();
+        taskDurationVal = this.taskDuration.value();
+        taskDurationVal = this.taskDuration.value();
+        new Task(taskTitleVal, taskDurationVal, taskDeadlineVal);
     }
     /*logValue(){
         tasks.push([this.taskTitleVal, this.taskDurationVal, this.taskDeadlineVal]);
         console.log(tasks);
     }*/
-    /*Marked For Debugging
     validate(){
-        if (this.taskTitle.value() = ""){
-            text("Please input an appropriate task title.");
+        if (this.taskTitle.value() === ""){
+            window.alert("Please input an appropriate task title.");
         }
-    }*/
+    }
 }
