@@ -3,6 +3,8 @@ class allTasks {
         this.title;
         this.submitB = createButton('Submit');
         this.submitB.hide();
+        this.backButton = new BackButton();
+        backButton.position();
     }
     displayEveryTask(){
         fill('black')
@@ -10,7 +12,6 @@ class allTasks {
         this.title = text('All Tasks', windowWidth*7/16, windowHeight/8);
         //this.title.bold();
         this.viewTasks();
-        backButton.show();
     }
    
     displayIndividualTasks(TaskIndex){
@@ -64,5 +65,11 @@ class allTasks {
             fill('red');
             text('Tasks are piling up! Please complete some tasks and then schedule more.')
         }
+    }
+
+    goBack(){
+        this.backButton.mousePressed(()=>{
+            this.backButton.forAllTasks();
+        })
     }
 }
