@@ -5,6 +5,7 @@ var Hello, Hello1, Hello2;
 var taskTitleVal;
 var taskDurationVal;
 var taskDeadlineVal;
+var taskForm, tasks, studentPage, parentForm;
 
 function preload(){
   RSImg = loadImage('Images/Rotate Screen.png');

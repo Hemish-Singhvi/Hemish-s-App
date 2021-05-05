@@ -4,6 +4,7 @@ class TaskForm {
         this.taskDuration = createInput('', 'Number');
         this.taskDeadline = createInput('', 'Date'); 
         this.submitB = createButton('Submit');
+        this.backButton = new BackButton();
         this.taskTitleVal;
         this.taskDurationVal;
         this.taskDeadlineVal;
@@ -18,7 +19,8 @@ class TaskForm {
         text("Enter task Title:", windowWidth*3.75/8 - 170, windowHeight/4 + 20);
         text('Enter task duration in minutes:', windowWidth*3.75/8 - 310, windowHeight/2 + 20);
         text('Enter task deadline:', windowWidth*3.75/8 - 200, windowHeight*3/4 + 20);
-        this.submitB.style('backgroundColor', '#019320')
+        this.submitB.style('backgroundColor', '#019320');
+        this.backButton.forTaskForm();
         this.submitB.mousePressed(()=>{
             this.getValue();
             this.isVisible = false;

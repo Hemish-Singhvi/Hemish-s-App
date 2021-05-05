@@ -21,8 +21,8 @@ class homeScreen {
         this.studentB.mousePressed(()=>{
             this.studentB.hide();
             this.parentB.hide();
-            this.studentPage = new StudentScreen;
-            this.studentPage.display();
+            studentPage = new StudentScreen;
+            studentPage.display();
         })
         this.studentB.style('backgroundColor', '#aa00ff');
         this.parentB.style('backgroundColor', '#ff0000')
@@ -31,8 +31,8 @@ class homeScreen {
         this.parentB.mousePressed(()=>{
             this.studentB.hide();
             this.parentB.hide();
-            this.parentForm = new ParentSigninForm;
-            this.parentForm.display();
+            parentForm = new ParentSigninForm;
+            parentForm.display();
         })
     }
 }

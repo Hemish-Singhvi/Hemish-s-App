@@ -6,15 +6,31 @@ class BackButton {
         this.backButton.position(windowWidth/32, windowHeight/16);
     }
     forStudentScreen(){
-        this.SS = new homeScreen();
+        this.backButton.mousePressed(()=>{
+            this.SS = new homeScreen();
+            this.SS.display();
+            studentPage.hide();
+        })
     }
     forParentForm(){
-        this.PF = new homeScreen();
+        this.backButton.mousePressed(()=>{
+            this.PF = new homeScreen();
+            this.PF.display();
+            parentForm.hide();
+        })
     }
     forTaskForm(){
-        this.TF = new StudentScreen();
+        this.backButton.mousePressed(()=>{
+            this.TF = new StudentScreen();
+            this.TF.display();
+            taskForm.hide();
+        })
     }
     forAllTasks(){
-        this.AT = new StudentScreen();
+        this.backButton.mousePressed(()=>{
+            this.AT = new StudentScreen();
+            this.AT.display();
+            tasks.hide();
+        })
     }
 }
