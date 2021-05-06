@@ -14,6 +14,7 @@ class TaskForm {
         this.taskDuration.position(windowWidth*3.75/8, windowHeight/2);
         this.taskDeadline.position(windowWidth*3.75/8, windowHeight*3/4);
         this.submitB.position(windowWidth*3.75/8, windowHeight*13/16);
+        this.backButton.position();
         fill("Black");
         textSize(20);
         text("Enter task Title:", windowWidth*3.75/8 - 170, windowHeight/4 + 20);

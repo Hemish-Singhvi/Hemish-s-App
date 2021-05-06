@@ -10,9 +10,9 @@ class StudentScreen {
         this.backButton.position();
         //generating a form for creation of a task scheduling form when scheduletask is pressed
         this.scheduleTask.style('backgroundColor', '#00aaff');
-        this.allTasks.style('backgroundColor', '#00ccee');
+        this.ALLTasks.style('', '#00ccee');
         this.scheduleTask.mousePressed(()=>{
-            taskForm = new TaskForm;
+            taskForm = new TaskForm();
             taskForm.display();
             this.scheduleTask.hide();
             this.ALLTasks.hide();
