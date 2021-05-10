@@ -18,21 +18,27 @@ class homeScreen {
         //The callback function when the student Button is pressed
         //document.getElementById('this.studentB').style.backgroundColor = "red";
         //console.log(this.studentB);
-        this.studentB.mousePressed(()=>{
-            this.studentB.hide();
-            this.parentB.hide();
-            studentPage = new StudentScreen;
-            studentPage.display();
-        })
         this.studentB.style('backgroundColor', '#aa00ff');
         this.parentB.style('backgroundColor', '#ff0000')
-        //generation of parent Sign in form when parent button is pressed.
-        //this form is yet to be worked on.
-        this.parentB.mousePressed(()=>{
-            this.studentB.hide();
-            this.parentB.hide();
-            parentForm = new ParentSigninForm;
-            parentForm.display();
-        })
+        if (appState === 1) {
+            this.studentB.mousePressed(()=>{
+                appState = 1.1;
+                this.studentB.hide();
+                this.parentB.hide();
+                studentPage = new StudentScreen;
+                studentPage.display();
+            })
+            
+            //generation of parent Sign in form when parent button is pressed.
+            //this form is yet to be worked on.
+            this.parentB.mousePressed(()=>{
+                appState = 1.2;
+                this.studentB.hide();
+                this.parentB.hide();
+                parentForm = new ParentSigninForm;
+                parentForm.display();
+            })
+        }
+        
     }
 }

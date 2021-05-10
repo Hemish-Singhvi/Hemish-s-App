@@ -9,28 +9,36 @@ class BackButton {
         this.backButton.mousePressed(()=>{
             this.SS = new homeScreen();
             this.SS.display();
-            studentPage.hide();
+            image(bgImg, windowWidth, windowHeight, windowWidth/2, windowHeight/2)
+            appState = 1;
+            //studentPage.hide();
         })
     }
     forParentForm(){
         this.backButton.mousePressed(()=>{
             this.PF = new homeScreen();
             this.PF.display();
-            parentForm.hide();
+            image(bgImg, windowWidth, windowHeight, windowWidth/2, windowHeight/2)
+            appState = 1;
+            //parentForm.hide();
         })
     }
     forTaskForm(){
         this.backButton.mousePressed(()=>{
             this.TF = new StudentScreen();
             this.TF.display();
-            taskForm.hide();
+            image(bgImg, windowWidth, windowHeight, windowWidth/2, windowHeight/2)
+            appState = 1.1;
+            //taskForm.hide();
         })
     }
     forAllTasks(){
         this.backButton.mousePressed(()=>{
             this.AT = new StudentScreen();
             this.AT.display();
-            tasks.hide();
+            image(bgImg, windowWidth, windowHeight, windowWidth/2, windowHeight/2)
+            appState = 1.1;
+            //tasks.hide();
         })
     }
 }

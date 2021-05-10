@@ -6,6 +6,7 @@ var taskTitleVal;
 var taskDurationVal;
 var taskDeadlineVal;
 var taskForm, tasks, studentPage, parentForm;
+var appState = 1;
 
 function preload(){
   RSImg = loadImage('Images/Rotate Screen.png');
@@ -16,7 +17,10 @@ function preload(){
 function setup(){
   canvas = createCanvas(windowWidth, windowHeight);
   background(bgImg);
-  FORM = new homeScreen;
+  if (appState === 1) {
+    FORM = new homeScreen;
+  }
+  
   if (windowWidth < windowHeight){
     RS = createSprite(windowWidth/2, windowHeight/2, 300, 300);
     RS.addImage(RSImg);
