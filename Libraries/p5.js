@@ -981,7 +981,7 @@ module.exports={
             "module": "DOM",
             "file": "src/core/p5.Element.js",
             "line": 11,
-            "description": "<p>Base class for all elements added to a sketch, including canvas,\ngraphics buffers, and other HTML elements. Methods in blue are\nincluded in the core functionality, methods in brown are added\nwith the <a href=\"http://p5js.org/reference/#/libraries/p5.dom\">p5.dom\nlibrary</a>.\nIt is not called directly, but <a href=\"#/p5.Element\">p5.Element</a>\nobjects are created by calling <a href=\"#/p5/createCanvas\">createCanvas</a>, <a href=\"#/p5/createGraphics\">createGraphics</a>,\nor in the p5.dom library, <a href=\"#/p5/createDiv\">createDiv</a>, <a href=\"#/p5/createImg\">createImg</a>, <a href=\"#/p5/createInput\">createInput</a>, etc.</p>\n"
+            "description": "<p>Base class for all elements added to a sketch, including canvas,\ngraphics buffers, and other HTML elements. Methods in blue are\nincluded in the core functionality, methods in brown are added\nwith the <a href=\"http://p5js.org/reference/#/libraries/p5.dom\">p5.dom\nlibrary</a>.\nIt is not called directly, but <a href=\"#/p5.Element\">p5.Element</a>\nobjects are created by calling <a href=\"#/p5/\"></a>, <a href=\"#/p5/createGraphics\">createGraphics</a>,\nor in the p5.dom library, <a href=\"#/p5/createDiv\">createDiv</a>, <a href=\"#/p5/createImg\">createImg</a>, <a href=\"#/p5/createInput\">createInput</a>, etc.</p>\n"
         },
         "Rendering": {
             "name": "Rendering",
@@ -1828,7 +1828,7 @@ module.exports={
             "namespace": "",
             "file": "src/core/p5.Element.js",
             "line": 11,
-            "description": "<p>Base class for all elements added to a sketch, including canvas,\ngraphics buffers, and other HTML elements. Methods in blue are\nincluded in the core functionality, methods in brown are added\nwith the <a href=\"http://p5js.org/reference/#/libraries/p5.dom\">p5.dom\nlibrary</a>.\nIt is not called directly, but <a href=\"#/p5.Element\">p5.Element</a>\nobjects are created by calling <a href=\"#/p5/createCanvas\">createCanvas</a>, <a href=\"#/p5/createGraphics\">createGraphics</a>,\nor in the p5.dom library, <a href=\"#/p5/createDiv\">createDiv</a>, <a href=\"#/p5/createImg\">createImg</a>, <a href=\"#/p5/createInput\">createInput</a>, etc.</p>\n",
+            "description": "<p>Base class for all elements added to a sketch, including canvas,\ngraphics buffers, and other HTML elements. Methods in blue are\nincluded in the core functionality, methods in brown are added\nwith the <a href=\"http://p5js.org/reference/#/libraries/p5.dom\">p5.dom\nlibrary</a>.\nIt is not called directly, but <a href=\"#/p5.Element\">p5.Element</a>\nobjects are created by calling <a href=\"#/p5/\"></a>, <a href=\"#/p5/createGraphics\">createGraphics</a>,\nor in the p5.dom library, <a href=\"#/p5/createDiv\">createDiv</a>, <a href=\"#/p5/createImg\">createImg</a>, <a href=\"#/p5/createInput\">createInput</a>, etc.</p>\n",
             "params": [
                 {
                     "name": "elt",
@@ -1980,7 +1980,7 @@ module.exports={
             "line": 23,
             "description": "<p>Creates a new <a href=\"#/p5.Image\">p5.Image</a>. A <a href=\"#/p5.Image\">p5.Image</a> is a canvas backed representation of an\nimage.\n<br><br>\np5 can display .gif, .jpg and .png images. Images may be displayed\nin 2D and 3D space. Before an image is used, it must be loaded with the\n<a href=\"#/p5/loadImage\">loadImage()</a> function. The <a href=\"#/p5.Image\">p5.Image</a> class contains fields for the width and\nheight of the image, as well as an array called <a href=\"#/p5.Image/pixels\">pixels[]</a> that contains the\nvalues for every pixel in the image.\n<br><br>\nThe methods described below allow easy access to the image&#39;s pixels and\nalpha channel and simplify the process of compositing.\n<br><br>\nBefore using the <a href=\"#/p5.Image/pixels\">pixels[]</a> array, be sure to use the <a href=\"#/p5.Image/loadPixels\">loadPixels()</a> method on\nthe image to make sure that the pixel data is properly loaded.</p>\n",
             "example": [
-                "\n<div><code>\nfunction setup() {\n  let img = createImage(100, 100); // same as new p5.Image(100, 100);\n  img.loadPixels();\n  createCanvas(100, 100);\n  background(0);\n\n  // helper for writing color to array\n  function writeColor(image, x, y, red, green, blue, alpha) {\n    let index = (x + y * width) * 4;\n    image.pixels[index] = red;\n    image.pixels[index + 1] = green;\n    image.pixels[index + 2] = blue;\n    image.pixels[index + 3] = alpha;\n  }\n\n  let x, y;\n  // fill with random colors\n  for (y = 0; y < img.height; y++) {\n    for (x = 0; x < img.width; x++) {\n      let red = random(255);\n      let green = random(255);\n      let blue = random(255);\n      let alpha = 255;\n      writeColor(img, x, y, red, green, blue, alpha);\n    }\n  }\n\n  // draw a red line\n  y = 0;\n  for (x = 0; x < img.width; x++) {\n    writeColor(img, x, y, 255, 0, 0, 255);\n  }\n\n  // draw a green line\n  y = img.height - 1;\n  for (x = 0; x < img.width; x++) {\n    writeColor(img, x, y, 0, 255, 0, 255);\n  }\n\n  img.updatePixels();\n  image(img, 0, 0);\n}\n</code></div>"
+                "\n<div><code>\nfunction setup() {\n  let img = createImage(100, 100); // same as new p5.Image(100, 100);\n  img.loadPixels();\n  (100, 100);\n  background(0);\n\n  // helper for writing color to array\n  function writeColor(image, x, y, red, green, blue, alpha) {\n    let index = (x + y * width) * 4;\n    image.pixels[index] = red;\n    image.pixels[index + 1] = green;\n    image.pixels[index + 2] = blue;\n    image.pixels[index + 3] = alpha;\n  }\n\n  let x, y;\n  // fill with random colors\n  for (y = 0; y < img.height; y++) {\n    for (x = 0; x < img.width; x++) {\n      let red = random(255);\n      let green = random(255);\n      let blue = random(255);\n      let alpha = 255;\n      writeColor(img, x, y, red, green, blue, alpha);\n    }\n  }\n\n  // draw a red line\n  y = 0;\n  for (x = 0; x < img.width; x++) {\n    writeColor(img, x, y, 255, 0, 0, 255);\n  }\n\n  // draw a green line\n  y = img.height - 1;\n  for (x = 0; x < img.width; x++) {\n    writeColor(img, x, y, 0, 255, 0, 255);\n  }\n\n  img.updatePixels();\n  image(img, 0, 0);\n}\n</code></div>"
             ],
             "params": [
                 {
@@ -2180,7 +2180,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div>\n<code>\nlet cam;\nlet delta = 0.01;\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n  // set initial pan angle\n  cam.pan(-0.8);\n}\n\nfunction draw() {\n  background(200);\n\n  // pan camera according to angle 'delta'\n  cam.pan(delta);\n\n  // every 160 frames, switch direction\n  if (frameCount % 160 === 0) {\n    delta *= -1;\n  }\n\n  rotateX(frameCount * 0.01);\n  translate(-100, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet cam;\nlet delta = 0.01;\n\nfunction setup() {\n  (100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n  // set initial pan angle\n  cam.pan(-0.8);\n}\n\nfunction draw() {\n  background(200);\n\n  // pan camera according to angle 'delta'\n  cam.pan(delta);\n\n  // every 160 frames, switch direction\n  if (frameCount % 160 === 0) {\n    delta *= -1;\n  }\n\n  rotateX(frameCount * 0.01);\n  translate(-100, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n}\n</code>\n</div>"
             ],
             "alt": "camera view pans left and right across a series of rotating 3D boxes."
         },
@@ -2377,7 +2377,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nvar sound, amplitude, cnv;\n\nfunction preload(){\n  sound = loadSound('assets/beat.mp3');\n}\nfunction setup() {\n  cnv = createCanvas(100,100);\n  amplitude = new p5.Amplitude();\n\n  // start / stop the sound when canvas is clicked\n  cnv.mouseClicked(function() {\n    if (sound.isPlaying() ){\n      sound.stop();\n    } else {\n      sound.play();\n    }\n  });\n}\nfunction draw() {\n  background(0);\n  fill(255);\n  var level = amplitude.getLevel();\n  var size = map(level, 0, 1, 0, 200);\n  ellipse(width/2, height/2, size, size);\n}\n\n</code></div>"
+                "\n<div><code>\nvar sound, amplitude, cnv;\n\nfunction preload(){\n  sound = loadSound('assets/beat.mp3');\n}\nfunction setup() {\n  cnv = (100,100);\n  amplitude = new p5.Amplitude();\n\n  // start / stop the sound when canvas is clicked\n  cnv.mouseClicked(function() {\n    if (sound.isPlaying() ){\n      sound.stop();\n    } else {\n      sound.play();\n    }\n  });\n}\nfunction draw() {\n  background(0);\n  fill(255);\n  var level = amplitude.getLevel();\n  var size = map(level, 0, 1, 0, 200);\n  ellipse(width/2, height/2, size, size);\n}\n\n</code></div>"
             ]
         },
         "p5.FFT": {
@@ -2410,7 +2410,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nfunction preload(){\n  sound = loadSound('assets/Damscray_DancingTiger.mp3');\n}\n\nfunction setup(){\n  var cnv = createCanvas(100,100);\n  cnv.mouseClicked(togglePlay);\n  fft = new p5.FFT();\n  sound.amp(0.2);\n}\n\nfunction draw(){\n  background(0);\n\n  var spectrum = fft.analyze();\n  noStroke();\n  fill(0,255,0); // spectrum is green\n  for (var i = 0; i< spectrum.length; i++){\n    var x = map(i, 0, spectrum.length, 0, width);\n    var h = -height + map(spectrum[i], 0, 255, height, 0);\n    rect(x, height, width / spectrum.length, h )\n  }\n\n  var waveform = fft.waveform();\n  noFill();\n  beginShape();\n  stroke(255,0,0); // waveform is red\n  strokeWeight(1);\n  for (var i = 0; i< waveform.length; i++){\n    var x = map(i, 0, waveform.length, 0, width);\n    var y = map( waveform[i], -1, 1, 0, height);\n    vertex(x,y);\n  }\n  endShape();\n\n  text('click to play/pause', 4, 10);\n}\n\n// fade sound if mouse is over canvas\nfunction togglePlay() {\n  if (sound.isPlaying()) {\n    sound.pause();\n  } else {\n    sound.loop();\n  }\n}\n</code></div>"
+                "\n<div><code>\nfunction preload(){\n  sound = loadSound('assets/Damscray_DancingTiger.mp3');\n}\n\nfunction setup(){\n  var cnv = (100,100);\n  cnv.mouseClicked(togglePlay);\n  fft = new p5.FFT();\n  sound.amp(0.2);\n}\n\nfunction draw(){\n  background(0);\n\n  var spectrum = fft.analyze();\n  noStroke();\n  fill(0,255,0); // spectrum is green\n  for (var i = 0; i< spectrum.length; i++){\n    var x = map(i, 0, spectrum.length, 0, width);\n    var h = -height + map(spectrum[i], 0, 255, height, 0);\n    rect(x, height, width / spectrum.length, h )\n  }\n\n  var waveform = fft.waveform();\n  noFill();\n  beginShape();\n  stroke(255,0,0); // waveform is red\n  strokeWeight(1);\n  for (var i = 0; i< waveform.length; i++){\n    var x = map(i, 0, waveform.length, 0, width);\n    var y = map( waveform[i], -1, 1, 0, height);\n    vertex(x,y);\n  }\n  endShape();\n\n  text('click to play/pause', 4, 10);\n}\n\n// fade sound if mouse is over canvas\nfunction togglePlay() {\n  if (sound.isPlaying()) {\n    sound.pause();\n  } else {\n    sound.loop();\n  }\n}\n</code></div>"
             ]
         },
         "p5.Signal": {
@@ -2585,7 +2585,7 @@ module.exports={
             "description": "<p>Envelopes are pre-defined amplitude distribution over time.\nTypically, envelopes are used to control the output volume\nof an object, a series of fades referred to as Attack, Decay,\nSustain and Release (\n<a href=\"https://upload.wikimedia.org/wikipedia/commons/e/ea/ADSR_parameter.svg\">ADSR</a>\n). Envelopes can also control other Web Audio Parameters—for example, a p5.Envelope can\ncontrol an Oscillator&#39;s frequency like this: <code>osc.freq(env)</code>.</p>\n<p>Use <code><a href=\"#/p5.Envelope/setRange\">setRange</a></code> to change the attack/release level.\nUse <code><a href=\"#/p5.Envelope/setADSR\">setADSR</a></code> to change attackTime, decayTime, sustainPercent and releaseTime.</p>\n<p>Use the <code><a href=\"#/p5.Envelope/play\">play</a></code> method to play the entire envelope,\nthe <code><a href=\"#/p5.Envelope/ramp\">ramp</a></code> method for a pingable trigger,\nor <code><a href=\"#/p5.Envelope/triggerAttack\">triggerAttack</a></code>/\n<code><a href=\"#/p5.Envelope/triggerRelease\">triggerRelease</a></code> to trigger noteOn/noteOff.</p>",
             "is_constructor": 1,
             "example": [
-                "\n<div><code>\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.2;\nvar susPercent = 0.2;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = createCanvas(100, 100);\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(playEnv);\n}\n\nfunction playEnv()  {\n  env.play();\n}\n</code></div>"
+                "\n<div><code>\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.2;\nvar susPercent = 0.2;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = (100, 100);\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(playEnv);\n}\n\nfunction playEnv()  {\n  env.play();\n}\n</code></div>"
             ]
         },
         "p5.Pulse": {
@@ -3150,7 +3150,7 @@ module.exports={
             "description": "<p>A gain node is usefull to set the relative volume of sound.\nIt&#39;s typically used to build mixers.</p>\n",
             "is_constructor": 1,
             "example": [
-                "\n<div><code>\n\n // load two soundfile and crossfade beetween them\n var sound1,sound2;\n var gain1, gain2, gain3;\n\n function preload(){\n soundFormats('ogg', 'mp3');\n sound1 = loadSound('assets/Damscray_-_Dancing_Tiger_01');\n sound2 = loadSound('assets/beat.mp3');\n }\n\n function setup() {\n createCanvas(400,200);\n\n // create a 'master' gain to which we will connect both soundfiles\n gain3 = new p5.Gain();\n gain3.connect();\n\n // setup first sound for playing\n sound1.rate(1);\n sound1.loop();\n sound1.disconnect(); // diconnect from p5 output\n\n gain1 = new p5.Gain(); // setup a gain node\n gain1.setInput(sound1); // connect the first sound to its input\n gain1.connect(gain3); // connect its output to the 'master'\n\n sound2.rate(1);\n sound2.disconnect();\n sound2.loop();\n\n gain2 = new p5.Gain();\n gain2.setInput(sound2);\n gain2.connect(gain3);\n\n }\n\n function draw(){\n background(180);\n\n // calculate the horizontal distance beetween the mouse and the right of the screen\n var d = dist(mouseX,0,width,0);\n\n // map the horizontal position of the mouse to values useable for volume control of sound1\n var vol1 = map(mouseX,0,width,0,1);\n var vol2 = 1-vol1; // when sound1 is loud, sound2 is quiet and vice versa\n\n gain1.amp(vol1,0.5,0);\n gain2.amp(vol2,0.5,0);\n\n // map the vertical position of the mouse to values useable for 'master volume control'\n var vol3 = map(mouseY,0,height,0,1);\n gain3.amp(vol3,0.5,0);\n }\n</code></div>\n"
+                "\n<div><code>\n\n // load two soundfile and crossfade beetween them\n var sound1,sound2;\n var gain1, gain2, gain3;\n\n function preload(){\n soundFormats('ogg', 'mp3');\n sound1 = loadSound('assets/Damscray_-_Dancing_Tiger_01');\n sound2 = loadSound('assets/beat.mp3');\n }\n\n function setup() {\n (400,200);\n\n // create a 'master' gain to which we will connect both soundfiles\n gain3 = new p5.Gain();\n gain3.connect();\n\n // setup first sound for playing\n sound1.rate(1);\n sound1.loop();\n sound1.disconnect(); // diconnect from p5 output\n\n gain1 = new p5.Gain(); // setup a gain node\n gain1.setInput(sound1); // connect the first sound to its input\n gain1.connect(gain3); // connect its output to the 'master'\n\n sound2.rate(1);\n sound2.disconnect();\n sound2.loop();\n\n gain2 = new p5.Gain();\n gain2.setInput(sound2);\n gain2.connect(gain3);\n\n }\n\n function draw(){\n background(180);\n\n // calculate the horizontal distance beetween the mouse and the right of the screen\n var d = dist(mouseX,0,width,0);\n\n // map the horizontal position of the mouse to values useable for volume control of sound1\n var vol1 = map(mouseX,0,width,0,1);\n var vol2 = 1-vol1; // when sound1 is loud, sound2 is quiet and vice versa\n\n gain1.amp(vol1,0.5,0);\n gain2.amp(vol2,0.5,0);\n\n // map the vertical position of the mouse to values useable for 'master volume control'\n var vol3 = map(mouseY,0,height,0,1);\n gain3.amp(vol3,0.5,0);\n }\n</code></div>\n"
             ]
         },
         "p5.AudioVoice": {
@@ -3185,7 +3185,7 @@ module.exports={
             "description": "<p>A MonoSynth is used as a single voice for sound synthesis.\nThis is a class to be used in conjunction with the PolySynth\nclass. Custom synthetisers should be built inheriting from\nthis class.</p>\n",
             "is_constructor": 1,
             "example": [
-                "\n<div><code>\nvar monoSynth;\n\nfunction setup() {\n  var cnv = createCanvas(100, 100);\n  cnv.mousePressed(playSynth);\n\n  monoSynth = new p5.MonoSynth();\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n}\n\nfunction playSynth() {\n  // time from now (in seconds)\n  var time = 0;\n  // note duration (in seconds)\n  var dur = 0.25;\n  // velocity (volume, from 0 to 1)\n  var v = 0.2;\n\n  monoSynth.play(\"G3\", v, time, dur);\n  monoSynth.play(\"C4\", v, time += dur, dur);\n\n  background(random(255), random(255), 255);\n  text('click to play', width/2, height/2);\n}\n</code></div>"
+                "\n<div><code>\nvar monoSynth;\n\nfunction setup() {\n  var cnv = (100, 100);\n  cnv.mousePressed(playSynth);\n\n  monoSynth = new p5.MonoSynth();\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n}\n\nfunction playSynth() {\n  // time from now (in seconds)\n  var time = 0;\n  // note duration (in seconds)\n  var dur = 0.25;\n  // velocity (volume, from 0 to 1)\n  var v = 0.2;\n\n  monoSynth.play(\"G3\", v, time, dur);\n  monoSynth.play(\"C4\", v, time += dur, dur);\n\n  background(random(255), random(255), 255);\n  text('click to play', width/2, height/2);\n}\n</code></div>"
             ]
         },
         "p5.PolySynth": {
@@ -3218,7 +3218,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nvar polySynth;\n\nfunction setup() {\n  var cnv = createCanvas(100, 100);\n  cnv.mousePressed(playSynth);\n\n  polySynth = new p5.PolySynth();\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n}\n\nfunction playSynth() {\n  // note duration (in seconds)\n  var dur = 1.5;\n\n  // time from now (in seconds)\n  var time = 0;\n\n  // velocity (volume, from 0 to 1)\n  var vel = 0.1;\n\n  // notes can overlap with each other\n  polySynth.play(\"G2\", vel, 0, dur);\n  polySynth.play(\"C3\", vel, time += 1/3, dur);\n  polySynth.play(\"G3\", vel, time += 1/3, dur);\n\n  background(random(255), random(255), 255);\n  text('click to play', width/2, height/2);\n}\n</code></div>"
+                "\n<div><code>\nvar polySynth;\n\nfunction setup() {\n  var cnv = (100, 100);\n  cnv.mousePressed(playSynth);\n\n  polySynth = new p5.PolySynth();\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n}\n\nfunction playSynth() {\n  // note duration (in seconds)\n  var dur = 1.5;\n\n  // time from now (in seconds)\n  var time = 0;\n\n  // velocity (volume, from 0 to 1)\n  var vel = 0.1;\n\n  // notes can overlap with each other\n  polySynth.play(\"G2\", vel, 0, dur);\n  polySynth.play(\"C3\", vel, time += 1/3, dur);\n  polySynth.play(\"G3\", vel, time += 1/3, dur);\n\n  background(random(255), random(255), 255);\n  text('click to play', width/2, height/2);\n}\n</code></div>"
             ]
         },
         "p5.Distortion": {
@@ -3679,7 +3679,7 @@ module.exports={
                 "type": "String"
             },
             "example": [
-                "\n<div>\n<code>\nlet myColor;\nfunction setup() {\n  createCanvas(200, 200);\n  stroke(255);\n  myColor = color(100, 100, 250);\n  fill(myColor);\n}\n\nfunction draw() {\n  rotate(HALF_PI);\n  text(myColor.toString(), 0, -5);\n  text(myColor.toString('#rrggbb'), 0, -30);\n  text(myColor.toString('rgba%'), 0, -55);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet myColor;\nfunction setup() {\n  (200, 200);\n  stroke(255);\n  myColor = color(100, 100, 250);\n  fill(myColor);\n}\n\nfunction draw() {\n  rotate(HALF_PI);\n  text(myColor.toString(), 0, -5);\n  text(myColor.toString('#rrggbb'), 0, -30);\n  text(myColor.toString('rgba%'), 0, -55);\n}\n</code>\n</div>"
             ],
             "alt": "canvas with text representation of color",
             "class": "p5.Color",
@@ -3939,7 +3939,7 @@ module.exports={
             "name": "clear",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// Clear the screen on mouse press.\nfunction setup() {\n  createCanvas(100, 100);\n}\n\nfunction draw() {\n  ellipse(mouseX, mouseY, 20, 20);\n}\n\nfunction mousePressed() {\n  clear();\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n// Clear the screen on mouse press.\nfunction setup() {\n  (100, 100);\n}\n\nfunction draw() {\n  ellipse(mouseX, mouseY, 20, 20);\n}\n\nfunction mousePressed() {\n  clear();\n}\n</code>\n</div>"
             ],
             "alt": "20x20 white ellipses are continually drawn at mouse x and y coordinates.",
             "class": "p5",
@@ -4114,7 +4114,7 @@ module.exports={
             "name": "noFill",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nrect(15, 10, 55, 55);\nnoFill();\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  noFill();\n  stroke(100, 100, 240);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(45, 45, 45);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nrect(15, 10, 55, 55);\nnoFill();\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  noFill();\n  stroke(100, 100, 240);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(45, 45, 45);\n}\n</code>\n</div>"
             ],
             "alt": "white rect top middle and noFill rect center. Both 60x60 with black outlines.\nblack canvas with purple cube wireframe spinning",
             "class": "p5",
@@ -4129,7 +4129,7 @@ module.exports={
             "name": "noStroke",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nnoStroke();\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  noStroke();\n  fill(240, 150, 150);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(45, 45, 45);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nnoStroke();\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  noStroke();\n  fill(240, 150, 150);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(45, 45, 45);\n}\n</code>\n</div>"
             ],
             "alt": "60x60 white rect at center. no outline.\nblack canvas with pink cube spinning",
             "class": "p5",
@@ -5136,7 +5136,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  noFill();\n\n  bezierDetail(5);\n}\n\nfunction draw() {\n  background(200);\n\n  bezier(-40, -40, 0,\n          90, -40, 0,\n         -90,  40, 0,\n          40,  40, 0);\n}\n</code>\n</div>"
+                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n  noFill();\n\n  bezierDetail(5);\n}\n\nfunction draw() {\n  background(200);\n\n  bezier(-40, -40, 0,\n          90, -40, 0,\n         -90,  40, 0,\n          40,  40, 0);\n}\n</code>\n</div>"
             ],
             "alt": "stretched black s-shape with a low level of bezier detail",
             "class": "p5",
@@ -5377,7 +5377,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n\n  curveDetail(5);\n}\nfunction draw() {\n  background(200);\n\n  curve(250, 600, 0, -30, 40, 0, 30, 30, 0, -250, 600, 0);\n}\n</code>\n</div>"
+                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n\n  curveDetail(5);\n}\nfunction draw() {\n  background(200);\n\n  curve(250, 600, 0, -30, 40, 0, 30, 30, 0, -250, 600, 0);\n}\n</code>\n</div>"
             ],
             "alt": "white arch shape with a low level of curve detail.",
             "class": "p5",
@@ -5399,7 +5399,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// Move the mouse left and right to see the curve change\n\nfunction setup() {\n  createCanvas(100, 100);\n  noFill();\n}\n\nfunction draw() {\n  background(204);\n  let t = map(mouseX, 0, width, -5, 5);\n  curveTightness(t);\n  beginShape();\n  curveVertex(10, 26);\n  curveVertex(10, 26);\n  curveVertex(83, 24);\n  curveVertex(83, 61);\n  curveVertex(25, 65);\n  curveVertex(25, 65);\n  endShape();\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n// Move the mouse left and right to see the curve change\n\nfunction setup() {\n  (100, 100);\n  noFill();\n}\n\nfunction draw() {\n  background(204);\n  let t = map(mouseX, 0, width, -5, 5);\n  curveTightness(t);\n  beginShape();\n  curveVertex(10, 26);\n  curveVertex(10, 26);\n  curveVertex(83, 24);\n  curveVertex(83, 61);\n  curveVertex(25, 65);\n  curveVertex(25, 65);\n  endShape();\n}\n</code>\n</div>"
             ],
             "alt": "Line shaped like right-facing arrow,points move with mouse-x and warp shape.",
             "class": "p5",
@@ -5543,7 +5543,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nnoFill();\nbeginShape();\nvertex(30, 20);\nbezierVertex(80, 0, 80, 75, 30, 75);\nendShape();\n</code>\n</div>",
                 "\n<div>\n<code>\nbeginShape();\nvertex(30, 20);\nbezierVertex(80, 0, 80, 75, 30, 75);\nbezierVertex(50, 80, 60, 25, 30, 20);\nendShape();\n</code>\n</div>",
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  setAttributes('antialias', true);\n}\nfunction draw() {\n  orbitControl();\n  background(50);\n  strokeWeight(4);\n  stroke(255);\n  point(-25, 30);\n  point(25, 30);\n  point(25, -30);\n  point(-25, -30);\n\n  strokeWeight(1);\n  noFill();\n\n  beginShape();\n  vertex(-25, 30);\n  bezierVertex(25, 30, 25, -30, -25, -30);\n  endShape();\n\n  beginShape();\n  vertex(-25, 30, 20);\n  bezierVertex(25, 30, 20, 25, -30, 20, -25, -30, 20);\n  endShape();\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n  setAttributes('antialias', true);\n}\nfunction draw() {\n  orbitControl();\n  background(50);\n  strokeWeight(4);\n  stroke(255);\n  point(-25, 30);\n  point(25, 30);\n  point(25, -30);\n  point(-25, -30);\n\n  strokeWeight(1);\n  noFill();\n\n  beginShape();\n  vertex(-25, 30);\n  bezierVertex(25, 30, 25, -30, -25, -30);\n  endShape();\n\n  beginShape();\n  vertex(-25, 30, 20);\n  bezierVertex(25, 30, 20, 25, -30, 20, -25, -30, 20);\n  endShape();\n}\n</code>\n</div>"
             ],
             "alt": "crescent shape in middle of canvas with another crescent shape on positive z-axis.",
             "class": "p5",
@@ -6931,7 +6931,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div class=\"norender\"><code>\ncreateCanvas(displayWidth, displayHeight);\n</code></div>"
+                "\n<div class=\"norender\"><code>\n(displayWidth, displayHeight);\n</code></div>"
             ],
             "alt": "cursor becomes 10x 10 white ellipse the moves with mouse x and y.",
             "class": "p5",
@@ -6947,7 +6947,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div class=\"norender\"><code>\ncreateCanvas(displayWidth, displayHeight);\n</code></div>"
+                "\n<div class=\"norender\"><code>\n(displayWidth, displayHeight);\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5",
@@ -6963,7 +6963,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div class=\"norender\"><code>\ncreateCanvas(windowWidth, windowHeight);\n</code></div>"
+                "\n<div class=\"norender\"><code>\n(windowWidth, windowHeight);\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5",
@@ -6979,7 +6979,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div class=\"norender\"><code>\ncreateCanvas(windowWidth, windowHeight);\n</code></div>"
+                "\n<div class=\"norender\"><code>\n(windowWidth, windowHeight);\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5",
@@ -6993,7 +6993,7 @@ module.exports={
             "itemtype": "method",
             "name": "windowResized",
             "example": [
-                "\n<div class=\"norender\"><code>\nfunction setup() {\n  createCanvas(windowWidth, windowHeight);\n}\n\nfunction draw() {\n  background(0, 100, 200);\n}\n\nfunction windowResized() {\n  resizeCanvas(windowWidth, windowHeight);\n}\n</code></div>"
+                "\n<div class=\"norender\"><code>\nfunction setup() {\n  (windowWidth, windowHeight);\n}\n\nfunction draw() {\n  background(0, 100, 200);\n}\n\nfunction windowResized() {\n  resizeCanvas(windowWidth, windowHeight);\n}\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5",
@@ -7003,7 +7003,7 @@ module.exports={
         {
             "file": "src/core/environment.js",
             "line": 430,
-            "description": "<p>System variable that stores the width of the drawing canvas. This value\nis set by the first parameter of the <a href=\"#/p5/createCanvas\">createCanvas()</a> function.\nFor example, the function call createCanvas(320, 240) sets the width\nvariable to the value 320. The value of width defaults to 100 if\n<a href=\"#/p5/createCanvas\">createCanvas()</a> is not used in a program.</p>\n",
+            "description": "<p>System variable that stores the width of the drawing canvas. This value\nis set by the first parameter of the <a href=\"#/p5/\">()</a> function.\nFor example, the function call (320, 240) sets the width\nvariable to the value 320. The value of width defaults to 100 if\n<a href=\"#/p5/\">()</a> is not used in a program.</p>\n",
             "itemtype": "property",
             "name": "width",
             "type": "Number",
@@ -7015,7 +7015,7 @@ module.exports={
         {
             "file": "src/core/environment.js",
             "line": 442,
-            "description": "<p>System variable that stores the height of the drawing canvas. This value\nis set by the second parameter of the <a href=\"#/p5/createCanvas\">createCanvas()</a> function. For\nexample, the function call createCanvas(320, 240) sets the height\nvariable to the value 240. The value of height defaults to 100 if\n<a href=\"#/p5/createCanvas\">createCanvas()</a> is not used in a program.</p>\n",
+            "description": "<p>System variable that stores the height of the drawing canvas. This value\nis set by the second parameter of the <a href=\"#/p5/\">()</a> function. For\nexample, the function call (320, 240) sets the height\nvariable to the value 240. The value of height defaults to 100 if\n<a href=\"#/p5/\">()</a> is not used in a program.</p>\n",
             "itemtype": "property",
             "name": "height",
             "type": "Number",
@@ -7058,7 +7058,7 @@ module.exports={
             "name": "pixelDensity",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  pixelDensity(1);\n  createCanvas(100, 100);\n  background(200);\n  ellipse(width / 2, height / 2, 50, 50);\n}\n</code>\n</div>\n<div>\n<code>\nfunction setup() {\n  pixelDensity(3.0);\n  createCanvas(100, 100);\n  background(200);\n  ellipse(width / 2, height / 2, 50, 50);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  pixelDensity(1);\n  (100, 100);\n  background(200);\n  ellipse(width / 2, height / 2, 50, 50);\n}\n</code>\n</div>\n<div>\n<code>\nfunction setup() {\n  pixelDensity(3.0);\n  (100, 100);\n  background(200);\n  ellipse(width / 2, height / 2, 50, 50);\n}\n</code>\n</div>"
             ],
             "alt": "fuzzy 50x50 white ellipse with black outline in center of canvas.\nsharp 50x50 white ellipse with black outline in center of canvas.",
             "class": "p5",
@@ -7097,7 +7097,7 @@ module.exports={
                 "type": "Number"
             },
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  let density = displayDensity();\n  pixelDensity(density);\n  createCanvas(100, 100);\n  background(200);\n  ellipse(width / 2, height / 2, 50, 50);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  let density = displayDensity();\n  pixelDensity(density);\n  (100, 100);\n  background(200);\n  ellipse(width / 2, height / 2, 50, 50);\n}\n</code>\n</div>"
             ],
             "alt": "50x50 white ellipse with black outline in center of canvas.",
             "class": "p5",
@@ -7265,7 +7265,7 @@ module.exports={
             "name": "disableFriendlyErrors",
             "type": "Boolean",
             "example": [
-                "\n<div class=\"norender notest\"><code>\np5.disableFriendlyErrors = true;\n\nfunction setup() {\n  createCanvas(100, 50);\n}\n</code></div>"
+                "\n<div class=\"norender notest\"><code>\np5.disableFriendlyErrors = true;\n\nfunction setup() {\n  (100, 50);\n}\n</code></div>"
             ],
             "class": "p5",
             "module": "Structure",
@@ -7276,7 +7276,7 @@ module.exports={
             "line": 26,
             "description": "<p>Underlying HTML element. All normal HTML methods can be called on this.</p>\n",
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  let c = createCanvas(50, 50);\n  c.elt.style.border = '5px solid red';\n}\n\nfunction draw() {\n  background(220);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  let c = (50, 50);\n  c.elt.style.border = '5px solid red';\n}\n\nfunction draw() {\n  background(220);\n}\n</code>\n</div>"
             ],
             "itemtype": "property",
             "name": "elt",
@@ -7293,7 +7293,7 @@ module.exports={
             "name": "parent",
             "chainable": 1,
             "example": [
-                "\n <div class=\"norender notest\"><code>\n // in the html file:\n // &lt;div id=\"myContainer\">&lt;/div>\n// in the js file:\n let cnv = createCanvas(100, 100);\n cnv.parent('myContainer');\n </code></div>\n <div class='norender'><code>\n let div0 = createDiv('this is the parent');\n let div1 = createDiv('this is the child');\n div1.parent(div0); // use p5.Element\n </code></div>\n <div class='norender'><code>\n let div0 = createDiv('this is the parent');\n div0.id('apples');\n let div1 = createDiv('this is the child');\n div1.parent('apples'); // use id\n </code></div>\n <div class='norender notest'><code>\n let elt = document.getElementById('myParentDiv');\n let div1 = createDiv('this is the child');\n div1.parent(elt); // use element from page\n </code></div>"
+                "\n <div class=\"norender notest\"><code>\n // in the html file:\n // &lt;div id=\"myContainer\">&lt;/div>\n// in the js file:\n let cnv = (100, 100);\n cnv.parent('myContainer');\n </code></div>\n <div class='norender'><code>\n let div0 = createDiv('this is the parent');\n let div1 = createDiv('this is the child');\n div1.parent(div0); // use p5.Element\n </code></div>\n <div class='norender'><code>\n let div0 = createDiv('this is the parent');\n div0.id('apples');\n let div1 = createDiv('this is the child');\n div1.parent('apples'); // use id\n </code></div>\n <div class='norender notest'><code>\n let elt = document.getElementById('myParentDiv');\n let div1 = createDiv('this is the child');\n div1.parent(elt); // use element from page\n </code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7329,7 +7329,7 @@ module.exports={
             "name": "id",
             "chainable": 1,
             "example": [
-                "\n <div class='norender'><code>\n function setup() {\n   let cnv = createCanvas(100, 100);\n   // Assigns a CSS selector ID to\n   // the canvas element.\n   cnv.id('mycanvas');\n }\n </code></div>"
+                "\n <div class='norender'><code>\n function setup() {\n   let cnv = (100, 100);\n   // Assigns a CSS selector ID to\n   // the canvas element.\n   cnv.id('mycanvas');\n }\n </code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7365,7 +7365,7 @@ module.exports={
             "name": "class",
             "chainable": 1,
             "example": [
-                "\n <div class='norender'><code>\n function setup() {\n   let cnv = createCanvas(100, 100);\n   // Assigns a CSS selector class 'small'\n   // to the canvas element.\n   cnv.class('small');\n }\n </code></div>"
+                "\n <div class='norender'><code>\n function setup() {\n   let cnv = (100, 100);\n   // Assigns a CSS selector class 'small'\n   // to the canvas element.\n   cnv.class('small');\n }\n </code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7408,7 +7408,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  cnv.mousePressed(changeGray); // attach listener for\n  // canvas click only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires with any click anywhere\nfunction mousePressed() {\n  d = d + 10;\n}\n\n// this function fires only when cnv is clicked\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
+                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = (100, 100);\n  cnv.mousePressed(changeGray); // attach listener for\n  // canvas click only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires with any click anywhere\nfunction mousePressed() {\n  d = d + 10;\n}\n\n// this function fires only when cnv is clicked\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7433,7 +7433,7 @@ module.exports={
                 "type": "p5.Element"
             },
             "example": [
-                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  cnv.doubleClicked(changeGray); // attach listener for\n  // canvas double click only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires with any double click anywhere\nfunction doubleClicked() {\n  d = d + 10;\n}\n\n// this function fires only when cnv is double clicked\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
+                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = (100, 100);\n  cnv.doubleClicked(changeGray); // attach listener for\n  // canvas double click only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires with any double click anywhere\nfunction doubleClicked() {\n  d = d + 10;\n}\n\n// this function fires only when cnv is double clicked\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7455,7 +7455,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  cnv.mouseWheel(changeSize); // attach listener for\n  // activity on canvas only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires with mousewheel movement\n// anywhere on screen\nfunction mouseWheel() {\n  g = g + 10;\n}\n\n// this function fires with mousewheel movement\n// over canvas only\nfunction changeSize(event) {\n  if (event.deltaY > 0) {\n    d = d + 10;\n  } else {\n    d = d - 10;\n  }\n}\n</code></div>"
+                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = (100, 100);\n  cnv.mouseWheel(changeSize); // attach listener for\n  // activity on canvas only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires with mousewheel movement\n// anywhere on screen\nfunction mouseWheel() {\n  g = g + 10;\n}\n\n// this function fires with mousewheel movement\n// over canvas only\nfunction changeSize(event) {\n  if (event.deltaY > 0) {\n    d = d + 10;\n  } else {\n    d = d - 10;\n  }\n}\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7477,7 +7477,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  cnv.mouseReleased(changeGray); // attach listener for\n  // activity on canvas only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires after the mouse has been\n// released\nfunction mouseReleased() {\n  d = d + 10;\n}\n\n// this function fires after the mouse has been\n// released while on canvas\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
+                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = (100, 100);\n  cnv.mouseReleased(changeGray); // attach listener for\n  // activity on canvas only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires after the mouse has been\n// released\nfunction mouseReleased() {\n  d = d + 10;\n}\n\n// this function fires after the mouse has been\n// released while on canvas\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7499,7 +7499,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class=\"norender\">\n<code>\nlet cnv;\nlet d;\nlet g;\n\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  cnv.mouseClicked(changeGray); // attach listener for\n  // activity on canvas only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires after the mouse has been\n// clicked anywhere\nfunction mouseClicked() {\n  d = d + 10;\n}\n\n// this function fires after the mouse has been\n// clicked on canvas\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nlet cnv;\nlet d;\nlet g;\n\nfunction setup() {\n  cnv = (100, 100);\n  cnv.mouseClicked(changeGray); // attach listener for\n  // activity on canvas only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires after the mouse has been\n// clicked anywhere\nfunction mouseClicked() {\n  d = d + 10;\n}\n\n// this function fires after the mouse has been\n// clicked on canvas\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code>\n</div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7521,7 +7521,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class='norender'><code>\nlet cnv;\nlet d = 30;\nlet g;\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  cnv.mouseMoved(changeSize); // attach listener for\n  // activity on canvas only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  fill(200);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires when mouse moves anywhere on\n// page\nfunction mouseMoved() {\n  g = g + 5;\n  if (g > 255) {\n    g = 0;\n  }\n}\n\n// this function fires when mouse moves over canvas\nfunction changeSize() {\n  d = d + 2;\n  if (d > 100) {\n    d = 0;\n  }\n}\n</code></div>"
+                "\n<div class='norender'><code>\nlet cnv;\nlet d = 30;\nlet g;\nfunction setup() {\n  cnv = (100, 100);\n  cnv.mouseMoved(changeSize); // attach listener for\n  // activity on canvas only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  fill(200);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires when mouse moves anywhere on\n// page\nfunction mouseMoved() {\n  g = g + 5;\n  if (g > 255) {\n    g = 0;\n  }\n}\n\n// this function fires when mouse moves over canvas\nfunction changeSize() {\n  d = d + 2;\n  if (d > 100) {\n    d = 0;\n  }\n}\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7543,7 +7543,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  cnv.mouseOver(changeGray);\n  d = 10;\n}\n\nfunction draw() {\n  ellipse(width / 2, height / 2, d, d);\n}\n\nfunction changeGray() {\n  d = d + 10;\n  if (d > 100) {\n    d = 0;\n  }\n}\n</code></div>"
+                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nfunction setup() {\n  cnv = (100, 100);\n  cnv.mouseOver(changeGray);\n  d = 10;\n}\n\nfunction draw() {\n  ellipse(width / 2, height / 2, d, d);\n}\n\nfunction changeGray() {\n  d = d + 10;\n  if (d > 100) {\n    d = 0;\n  }\n}\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7565,7 +7565,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  cnv.mouseOut(changeGray);\n  d = 10;\n}\n\nfunction draw() {\n  ellipse(width / 2, height / 2, d, d);\n}\n\nfunction changeGray() {\n  d = d + 10;\n  if (d > 100) {\n    d = 0;\n  }\n}\n</code></div>"
+                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nfunction setup() {\n  cnv = (100, 100);\n  cnv.mouseOut(changeGray);\n  d = 10;\n}\n\nfunction draw() {\n  ellipse(width / 2, height / 2, d, d);\n}\n\nfunction changeGray() {\n  d = d + 10;\n  if (d > 100) {\n    d = 0;\n  }\n}\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7587,7 +7587,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  cnv.touchStarted(changeGray); // attach listener for\n  // canvas click only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires with any touch anywhere\nfunction touchStarted() {\n  d = d + 10;\n}\n\n// this function fires only when cnv is clicked\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
+                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = (100, 100);\n  cnv.touchStarted(changeGray); // attach listener for\n  // canvas click only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires with any touch anywhere\nfunction touchStarted() {\n  d = d + 10;\n}\n\n// this function fires only when cnv is clicked\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7609,7 +7609,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class='norender'><code>\nlet cnv;\nlet g;\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  cnv.touchMoved(changeGray); // attach listener for\n  // canvas click only\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n}\n\n// this function fires only when cnv is clicked\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
+                "\n<div class='norender'><code>\nlet cnv;\nlet g;\nfunction setup() {\n  cnv = (100, 100);\n  cnv.touchMoved(changeGray); // attach listener for\n  // canvas click only\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n}\n\n// this function fires only when cnv is clicked\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7631,7 +7631,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  cnv.touchEnded(changeGray); // attach listener for\n  // canvas click only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires with any touch anywhere\nfunction touchEnded() {\n  d = d + 10;\n}\n\n// this function fires only when cnv is clicked\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
+                "\n<div class='norender'><code>\nlet cnv;\nlet d;\nlet g;\nfunction setup() {\n  cnv = (100, 100);\n  cnv.touchEnded(changeGray); // attach listener for\n  // canvas click only\n  d = 10;\n  g = 100;\n}\n\nfunction draw() {\n  background(g);\n  ellipse(width / 2, height / 2, d, d);\n}\n\n// this function fires with any touch anywhere\nfunction touchEnded() {\n  d = d + 10;\n}\n\n// this function fires only when cnv is clicked\nfunction changeGray() {\n  g = random(0, 255);\n}\n</code></div>"
             ],
             "alt": "no display.",
             "class": "p5.Element",
@@ -7653,7 +7653,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div><code>\n// To test this sketch, simply drag a\n// file over the canvas\nfunction setup() {\n  let c = createCanvas(100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('Drag file', width / 2, height / 2);\n  c.dragOver(dragOverCallback);\n}\n\n// This function will be called whenever\n// a file is dragged over the canvas\nfunction dragOverCallback() {\n  background(240);\n  text('Dragged over', width / 2, height / 2);\n}\n</code></div>"
+                "\n<div><code>\n// To test this sketch, simply drag a\n// file over the canvas\nfunction setup() {\n  let c = (100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('Drag file', width / 2, height / 2);\n  c.dragOver(dragOverCallback);\n}\n\n// This function will be called whenever\n// a file is dragged over the canvas\nfunction dragOverCallback() {\n  background(240);\n  text('Dragged over', width / 2, height / 2);\n}\n</code></div>"
             ],
             "alt": "nothing displayed",
             "class": "p5.Element",
@@ -7675,7 +7675,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div><code>\n// To test this sketch, simply drag a file\n// over and then out of the canvas area\nfunction setup() {\n  let c = createCanvas(100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('Drag file', width / 2, height / 2);\n  c.dragLeave(dragLeaveCallback);\n}\n\n// This function will be called whenever\n// a file is dragged out of the canvas\nfunction dragLeaveCallback() {\n  background(240);\n  text('Dragged off', width / 2, height / 2);\n}\n</code></div>"
+                "\n<div><code>\n// To test this sketch, simply drag a file\n// over and then out of the canvas area\nfunction setup() {\n  let c = (100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('Drag file', width / 2, height / 2);\n  c.dragLeave(dragLeaveCallback);\n}\n\n// This function will be called whenever\n// a file is dragged out of the canvas\nfunction dragLeaveCallback() {\n  background(240);\n  text('Dragged off', width / 2, height / 2);\n}\n</code></div>"
             ],
             "alt": "nothing displayed",
             "class": "p5.Element",
@@ -7697,7 +7697,7 @@ module.exports={
             "itemtype": "method",
             "name": "reset",
             "example": [
-                "\n\n<div><code>\nlet pg;\nfunction setup() {\n  createCanvas(100, 100);\n  background(0);\n  pg = createGraphics(50, 100);\n  pg.fill(0);\n  frameRate(5);\n}\nfunction draw() {\n  image(pg, width / 2, 0);\n  pg.background(255);\n  // p5.Graphics object behave a bit differently in some cases\n  // The normal canvas on the left resets the translate\n  // with every loop through draw()\n  // the graphics object on the right doesn't automatically reset\n  // so translate() is additive and it moves down the screen\n  rect(0, 0, width / 2, 5);\n  pg.rect(0, 0, width / 2, 5);\n  translate(0, 5, 0);\n  pg.translate(0, 5, 0);\n}\nfunction mouseClicked() {\n  // if you click you will see that\n  // reset() resets the translate back to the initial state\n  // of the Graphics object\n  pg.reset();\n}\n</code></div>"
+                "\n\n<div><code>\nlet pg;\nfunction setup() {\n  (100, 100);\n  background(0);\n  pg = createGraphics(50, 100);\n  pg.fill(0);\n  frameRate(5);\n}\nfunction draw() {\n  image(pg, width / 2, 0);\n  pg.background(255);\n  // p5.Graphics object behave a bit differently in some cases\n  // The normal canvas on the left resets the translate\n  // with every loop through draw()\n  // the graphics object on the right doesn't automatically reset\n  // so translate() is additive and it moves down the screen\n  rect(0, 0, width / 2, 5);\n  pg.rect(0, 0, width / 2, 5);\n  translate(0, 5, 0);\n  pg.translate(0, 5, 0);\n}\nfunction mouseClicked() {\n  // if you click you will see that\n  // reset() resets the translate back to the initial state\n  // of the Graphics object\n  pg.reset();\n}\n</code></div>"
             ],
             "alt": "A white line on a black background stays still on the top-left half.\nA black line animates from top to bottom on a white background on the right half.\nWhen clicked, the black line starts back over at the top.",
             "class": "p5.Graphics",
@@ -7711,7 +7711,7 @@ module.exports={
             "itemtype": "method",
             "name": "remove",
             "example": [
-                "\n<div class='norender'><code>\nlet bg;\nfunction setup() {\n  bg = createCanvas(100, 100);\n  bg.background(0);\n  image(bg, 0, 0);\n  bg.remove();\n}\n</code></div>\n\n<div><code>\nlet bg;\nfunction setup() {\n  pixelDensity(1);\n  createCanvas(100, 100);\n  stroke(255);\n  fill(0);\n\n  // create and draw the background image\n  bg = createGraphics(100, 100);\n  bg.background(200);\n  bg.ellipse(50, 50, 80, 80);\n}\nfunction draw() {\n  let t = millis() / 1000;\n  // draw the background\n  if (bg) {\n    image(bg, frameCount % 100, 0);\n    image(bg, frameCount % 100 - 100, 0);\n  }\n  // draw the foreground\n  let p = p5.Vector.fromAngle(t, 35).add(50, 50);\n  ellipse(p.x, p.y, 30);\n}\nfunction mouseClicked() {\n  // remove the background\n  if (bg) {\n    bg.remove();\n    bg = null;\n  }\n}\n</code></div>"
+                "\n<div class='norender'><code>\nlet bg;\nfunction setup() {\n  bg = (100, 100);\n  bg.background(0);\n  image(bg, 0, 0);\n  bg.remove();\n}\n</code></div>\n\n<div><code>\nlet bg;\nfunction setup() {\n  pixelDensity(1);\n  (100, 100);\n  stroke(255);\n  fill(0);\n\n  // create and draw the background image\n  bg = createGraphics(100, 100);\n  bg.background(200);\n  bg.ellipse(50, 50, 80, 80);\n}\nfunction draw() {\n  let t = millis() / 1000;\n  // draw the background\n  if (bg) {\n    image(bg, frameCount % 100, 0);\n    image(bg, frameCount % 100 - 100, 0);\n  }\n  // draw the foreground\n  let p = p5.Vector.fromAngle(t, 35).add(50, 50);\n  ellipse(p.x, p.y, 30);\n}\nfunction mouseClicked() {\n  // remove the background\n  if (bg) {\n    bg.remove();\n    bg = null;\n  }\n}\n</code></div>"
             ],
             "alt": "no image\na multi-colored circle moving back and forth over a scrolling background.",
             "class": "p5.Graphics",
@@ -7759,9 +7759,9 @@ module.exports={
         {
             "file": "src/core/rendering.js",
             "line": 17,
-            "description": "<p>Creates a canvas element in the document, and sets the dimensions of it\nin pixels. This method should be called only once at the start of setup.\nCalling <a href=\"#/p5/createCanvas\">createCanvas</a> more than once in a sketch will result in very\nunpredictable behavior. If you want more than one drawing canvas\nyou could use <a href=\"#/p5/createGraphics\">createGraphics</a> (hidden by default but it can be shown).\n<br><br>\nThe system variables width and height are set by the parameters passed\nto this function. If <a href=\"#/p5/createCanvas\">createCanvas()</a> is not used, the window will be\ngiven a default size of 100x100 pixels.\n<br><br>\nFor more ways to position the canvas, see the\n<a href='https://github.com/processing/p5.js/wiki/Positioning-your-canvas'>\npositioning the canvas</a> wiki page.</p>\n",
+            "description": "<p>Creates a canvas element in the document, and sets the dimensions of it\nin pixels. This method should be called only once at the start of setup.\nCalling <a href=\"#/p5/\"></a> more than once in a sketch will result in very\nunpredictable behavior. If you want more than one drawing canvas\nyou could use <a href=\"#/p5/createGraphics\">createGraphics</a> (hidden by default but it can be shown).\n<br><br>\nThe system variables width and height are set by the parameters passed\nto this function. If <a href=\"#/p5/\">()</a> is not used, the window will be\ngiven a default size of 100x100 pixels.\n<br><br>\nFor more ways to position the canvas, see the\n<a href='https://github.com/processing/p5.js/wiki/Positioning-your-canvas'>\npositioning the canvas</a> wiki page.</p>\n",
             "itemtype": "method",
-            "name": "createCanvas",
+            "name": "",
             "params": [
                 {
                     "name": "w",
@@ -7785,7 +7785,7 @@ module.exports={
                 "type": "p5.Renderer"
             },
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 50);\n  background(153);\n  line(0, 0, width, height);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 50);\n  background(153);\n  line(0, 0, width, height);\n}\n</code>\n</div>"
             ],
             "alt": "Black line extending from top-left of canvas to bottom right.",
             "class": "p5",
@@ -7817,7 +7817,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div class=\"norender\"><code>\nfunction setup() {\n  createCanvas(windowWidth, windowHeight);\n}\n\nfunction draw() {\n  background(0, 100, 200);\n}\n\nfunction windowResized() {\n  resizeCanvas(windowWidth, windowHeight);\n}\n</code></div>"
+                "\n<div class=\"norender\"><code>\nfunction setup() {\n  (windowWidth, windowHeight);\n}\n\nfunction draw() {\n  background(0, 100, 200);\n}\n\nfunction windowResized() {\n  resizeCanvas(windowWidth, windowHeight);\n}\n</code></div>"
             ],
             "alt": "No image displayed.",
             "class": "p5",
@@ -7867,7 +7867,7 @@ module.exports={
                 "type": "p5.Graphics"
             },
             "example": [
-                "\n<div>\n<code>\nlet pg;\nfunction setup() {\n  createCanvas(100, 100);\n  pg = createGraphics(100, 100);\n}\nfunction draw() {\n  background(200);\n  pg.background(100);\n  pg.noStroke();\n  pg.ellipse(pg.width / 2, pg.height / 2, 50, 50);\n  image(pg, 50, 50);\n  image(pg, 0, 0, 50, 50);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet pg;\nfunction setup() {\n  (100, 100);\n  pg = createGraphics(100, 100);\n}\nfunction draw() {\n  background(200);\n  pg.background(100);\n  pg.noStroke();\n  pg.ellipse(pg.width / 2, pg.height / 2, 50, 50);\n  image(pg, 50, 50);\n  image(pg, 0, 0, 50, 50);\n}\n</code>\n</div>"
             ],
             "alt": "4 grey squares alternating light and dark grey. White quarter circle mid-left.",
             "class": "p5",
@@ -7916,7 +7916,7 @@ module.exports={
             "itemtype": "method",
             "name": "noLoop",
             "example": [
-                "\n<div><code>\nfunction setup() {\n  createCanvas(100, 100);\n  background(200);\n  noLoop();\n}\n\nfunction draw() {\n  line(10, 10, 90, 90);\n}\n</code></div>\n\n<div><code>\nlet x = 0;\nfunction setup() {\n  createCanvas(100, 100);\n}\n\nfunction draw() {\n  background(204);\n  x = x + 0.1;\n  if (x > width) {\n    x = 0;\n  }\n  line(x, 0, x, height);\n}\n\nfunction mousePressed() {\n  noLoop();\n}\n\nfunction mouseReleased() {\n  loop();\n}\n</code></div>"
+                "\n<div><code>\nfunction setup() {\n  (100, 100);\n  background(200);\n  noLoop();\n}\n\nfunction draw() {\n  line(10, 10, 90, 90);\n}\n</code></div>\n\n<div><code>\nlet x = 0;\nfunction setup() {\n  (100, 100);\n}\n\nfunction draw() {\n  background(204);\n  x = x + 0.1;\n  if (x > width) {\n    x = 0;\n  }\n  line(x, 0, x, height);\n}\n\nfunction mousePressed() {\n  noLoop();\n}\n\nfunction mouseReleased() {\n  loop();\n}\n</code></div>"
             ],
             "alt": "113 pixel long line extending from top-left to bottom right of canvas.\nhorizontal line moves slowly from left. Loops but stops on mouse press.",
             "class": "p5",
@@ -7930,7 +7930,7 @@ module.exports={
             "itemtype": "method",
             "name": "loop",
             "example": [
-                "\n<div><code>\nlet x = 0;\nfunction setup() {\n  createCanvas(100, 100);\n  noLoop();\n}\n\nfunction draw() {\n  background(204);\n  x = x + 0.1;\n  if (x > width) {\n    x = 0;\n  }\n  line(x, 0, x, height);\n}\n\nfunction mousePressed() {\n  loop();\n}\n\nfunction mouseReleased() {\n  noLoop();\n}\n</code></div>"
+                "\n<div><code>\nlet x = 0;\nfunction setup() {\n  (100, 100);\n  noLoop();\n}\n\nfunction draw() {\n  background(204);\n  x = x + 0.1;\n  if (x > width) {\n    x = 0;\n  }\n  line(x, 0, x, height);\n}\n\nfunction mousePressed() {\n  loop();\n}\n\nfunction mouseReleased() {\n  noLoop();\n}\n</code></div>"
             ],
             "alt": "horizontal line moves slowly from left. Loops but stops on mouse press.",
             "class": "p5",
@@ -7980,7 +7980,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n <div><code>\n let x = 0;\nfunction setup() {\n   createCanvas(100, 100);\n   noLoop();\n }\nfunction draw() {\n   background(204);\n   line(x, 0, x, height);\n }\nfunction mousePressed() {\n   x += 1;\n   redraw();\n }\n </code></div>\n<div class='norender'><code>\n let x = 0;\nfunction setup() {\n   createCanvas(100, 100);\n   noLoop();\n }\nfunction draw() {\n   background(204);\n   x += 1;\n   line(x, 0, x, height);\n }\nfunction mousePressed() {\n   redraw(5);\n }\n </code></div>"
+                "\n <div><code>\n let x = 0;\nfunction setup() {\n   (100, 100);\n   noLoop();\n }\nfunction draw() {\n   background(204);\n   line(x, 0, x, height);\n }\nfunction mousePressed() {\n   x += 1;\n   redraw();\n }\n </code></div>\n<div class='norender'><code>\n let x = 0;\nfunction setup() {\n   (100, 100);\n   noLoop();\n }\nfunction draw() {\n   background(204);\n   x += 1;\n   line(x, 0, x, height);\n }\nfunction mousePressed() {\n   redraw(5);\n }\n </code></div>"
             ],
             "alt": "black line on far left of canvas\n black line on far left of canvas",
             "class": "p5",
@@ -8027,7 +8027,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  frameRate(10);\n  rectMode(CENTER);\n}\n\nfunction draw() {\n  var step = frameCount % 20;\n  background(200);\n  // Equivalent to translate(x, y);\n  applyMatrix(1, 0, 0, 1, 40 + step, 50);\n  rect(0, 0, 50, 50);\n}\n</code>\n</div>\n<div>\n<code>\nfunction setup() {\n  frameRate(10);\n  rectMode(CENTER);\n}\n\nfunction draw() {\n  var step = frameCount % 20;\n  background(200);\n  translate(50, 50);\n  // Equivalent to scale(x, y);\n  applyMatrix(1 / step, 0, 0, 1 / step, 0, 0);\n  rect(0, 0, 50, 50);\n}\n</code>\n</div>\n<div>\n<code>\nfunction setup() {\n  frameRate(10);\n  rectMode(CENTER);\n}\n\nfunction draw() {\n  var step = frameCount % 20;\n  var angle = map(step, 0, 20, 0, TWO_PI);\n  var cos_a = cos(angle);\n  var sin_a = sin(angle);\n  background(200);\n  translate(50, 50);\n  // Equivalent to rotate(angle);\n  applyMatrix(cos_a, sin_a, -sin_a, cos_a, 0, 0);\n  rect(0, 0, 50, 50);\n}\n</code>\n</div>\n<div>\n<code>\nfunction setup() {\n  frameRate(10);\n  rectMode(CENTER);\n}\n\nfunction draw() {\n  var step = frameCount % 20;\n  var angle = map(step, 0, 20, -PI / 4, PI / 4);\n  background(200);\n  translate(50, 50);\n  // equivalent to shearX(angle);\n  var shear_factor = 1 / tan(PI / 2 - angle);\n  applyMatrix(1, 0, shear_factor, 1, 0, 0);\n  rect(0, 0, 50, 50);\n}\n</code>\n</div>\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  noFill();\n}\n\nfunction draw() {\n  background(200);\n  rotateY(PI / 6);\n  stroke(153);\n  box(35);\n  var rad = millis() / 1000;\n  // Set rotation angles\n  var ct = cos(rad);\n  var st = sin(rad);\n  // Matrix for rotation around the Y axis\n  applyMatrix(  ct, 0.0,  st,  0.0,\n               0.0, 1.0, 0.0,  0.0,\n               -st, 0.0,  ct,  0.0,\n               0.0, 0.0, 0.0,  1.0);\n  stroke(255);\n  box(50);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  frameRate(10);\n  rectMode(CENTER);\n}\n\nfunction draw() {\n  var step = frameCount % 20;\n  background(200);\n  // Equivalent to translate(x, y);\n  applyMatrix(1, 0, 0, 1, 40 + step, 50);\n  rect(0, 0, 50, 50);\n}\n</code>\n</div>\n<div>\n<code>\nfunction setup() {\n  frameRate(10);\n  rectMode(CENTER);\n}\n\nfunction draw() {\n  var step = frameCount % 20;\n  background(200);\n  translate(50, 50);\n  // Equivalent to scale(x, y);\n  applyMatrix(1 / step, 0, 0, 1 / step, 0, 0);\n  rect(0, 0, 50, 50);\n}\n</code>\n</div>\n<div>\n<code>\nfunction setup() {\n  frameRate(10);\n  rectMode(CENTER);\n}\n\nfunction draw() {\n  var step = frameCount % 20;\n  var angle = map(step, 0, 20, 0, TWO_PI);\n  var cos_a = cos(angle);\n  var sin_a = sin(angle);\n  background(200);\n  translate(50, 50);\n  // Equivalent to rotate(angle);\n  applyMatrix(cos_a, sin_a, -sin_a, cos_a, 0, 0);\n  rect(0, 0, 50, 50);\n}\n</code>\n</div>\n<div>\n<code>\nfunction setup() {\n  frameRate(10);\n  rectMode(CENTER);\n}\n\nfunction draw() {\n  var step = frameCount % 20;\n  var angle = map(step, 0, 20, -PI / 4, PI / 4);\n  background(200);\n  translate(50, 50);\n  // equivalent to shearX(angle);\n  var shear_factor = 1 / tan(PI / 2 - angle);\n  applyMatrix(1, 0, shear_factor, 1, 0, 0);\n  rect(0, 0, 50, 50);\n}\n</code>\n</div>\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n  noFill();\n}\n\nfunction draw() {\n  background(200);\n  rotateY(PI / 6);\n  stroke(153);\n  box(35);\n  var rad = millis() / 1000;\n  // Set rotation angles\n  var ct = cos(rad);\n  var st = sin(rad);\n  // Matrix for rotation around the Y axis\n  applyMatrix(  ct, 0.0,  st,  0.0,\n               0.0, 1.0, 0.0,  0.0,\n               -st, 0.0,  ct,  0.0,\n               0.0, 0.0, 0.0,  1.0);\n  stroke(255);\n  box(50);\n}\n</code>\n</div>"
             ],
             "alt": "A rectangle translating to the right\nA rectangle shrinking to the center\nA rectangle rotating clockwise about the center\nA rectangle shearing",
             "class": "p5",
@@ -8092,7 +8092,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  background(255);\n  rotateX(millis() / 1000);\n  box();\n}\n</code>\n</div>"
+                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\nfunction draw() {\n  background(255);\n  rotateX(millis() / 1000);\n  box();\n}\n</code>\n</div>"
             ],
             "alt": "3d box rotating around the x axis.",
             "class": "p5",
@@ -8114,7 +8114,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  background(255);\n  rotateY(millis() / 1000);\n  box();\n}\n</code>\n</div>"
+                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\nfunction draw() {\n  background(255);\n  rotateY(millis() / 1000);\n  box();\n}\n</code>\n</div>"
             ],
             "alt": "3d box rotating around the y axis.",
             "class": "p5",
@@ -8136,7 +8136,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  background(255);\n  rotateZ(millis() / 1000);\n  box();\n}\n</code>\n</div>"
+                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\nfunction draw() {\n  background(255);\n  rotateZ(millis() / 1000);\n  box();\n}\n</code>\n</div>"
             ],
             "alt": "3d box rotating around the z axis.",
             "class": "p5",
@@ -8583,7 +8583,7 @@ module.exports={
             "itemtype": "method",
             "name": "saveTable",
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100);\n  background(200);\n  text('click here to save', 10, 10, 70, 80);\n}\n\nfunction mousePressed() {\n  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n    createStringDict({\n      john: 1940,\n      paul: 1942,\n      george: 1943,\n      ringo: 1940\n    }).saveTable('beatles');\n  }\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100);\n  background(200);\n  text('click here to save', 10, 10, 70, 80);\n}\n\nfunction mousePressed() {\n  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n    createStringDict({\n      john: 1940,\n      paul: 1942,\n      george: 1943,\n      ringo: 1940\n    }).saveTable('beatles');\n  }\n}\n</code>\n</div>"
             ],
             "class": "p5.TypedDict",
             "module": "Data",
@@ -8596,7 +8596,7 @@ module.exports={
             "itemtype": "method",
             "name": "saveJSON",
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100);\n  background(200);\n  text('click here to save', 10, 10, 70, 80);\n}\n\nfunction mousePressed() {\n  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n    createStringDict({\n      john: 1940,\n      paul: 1942,\n      george: 1943,\n      ringo: 1940\n    }).saveJSON('beatles');\n  }\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100);\n  background(200);\n  text('click here to save', 10, 10, 70, 80);\n}\n\nfunction mousePressed() {\n  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n    createStringDict({\n      john: 1940,\n      paul: 1942,\n      george: 1943,\n      ringo: 1940\n    }).saveJSON('beatles');\n  }\n}\n</code>\n</div>"
             ],
             "class": "p5.TypedDict",
             "module": "Data",
@@ -8907,7 +8907,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  //rotateZ(radians(rotationZ));\n  rotateX(radians(rotationX));\n  //rotateY(radians(rotationY));\n  box(200, 200, 200);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  //rotateZ(radians(rotationZ));\n  rotateX(radians(rotationX));\n  //rotateY(radians(rotationY));\n  box(200, 200, 200);\n}\n</code>\n</div>"
             ],
             "alt": "red horizontal line right, green vertical line bottom. black background.",
             "class": "p5",
@@ -8923,7 +8923,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  //rotateZ(radians(rotationZ));\n  //rotateX(radians(rotationX));\n  rotateY(radians(rotationY));\n  box(200, 200, 200);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  //rotateZ(radians(rotationZ));\n  //rotateX(radians(rotationX));\n  rotateY(radians(rotationY));\n  box(200, 200, 200);\n}\n</code>\n</div>"
             ],
             "alt": "red horizontal line right, green vertical line bottom. black background.",
             "class": "p5",
@@ -8935,7 +8935,7 @@ module.exports={
             "line": 197,
             "description": "<p>The system variable rotationZ always contains the rotation of the\ndevice along the z axis. Value is represented as 0 to 359 degrees.\n<br><br>\nUnlike rotationX and rotationY, this variable is available for devices\nwith a built-in compass only.\n<br><br>\nNote: The order the rotations are called is important, ie. if used\ntogether, it must be called in the order Z-X-Y or there might be\nunexpected behaviour.</p>\n",
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateZ(radians(rotationZ));\n  //rotateX(radians(rotationX));\n  //rotateY(radians(rotationY));\n  box(200, 200, 200);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateZ(radians(rotationZ));\n  //rotateX(radians(rotationX));\n  //rotateY(radians(rotationY));\n  box(200, 200, 200);\n}\n</code>\n</div>"
             ],
             "itemtype": "property",
             "name": "rotationZ",
@@ -9210,7 +9210,7 @@ module.exports={
                 "type": "Boolean"
             },
             "example": [
-                "\n<div><code>\nlet x = 100;\nlet y = 100;\n\nfunction setup() {\n  createCanvas(512, 512);\n  fill(255, 0, 0);\n}\n\nfunction draw() {\n  if (keyIsDown(LEFT_ARROW)) {\n    x -= 5;\n  }\n\n  if (keyIsDown(RIGHT_ARROW)) {\n    x += 5;\n  }\n\n  if (keyIsDown(UP_ARROW)) {\n    y -= 5;\n  }\n\n  if (keyIsDown(DOWN_ARROW)) {\n    y += 5;\n  }\n\n  clear();\n  ellipse(x, y, 50, 50);\n}\n</code></div>\n\n<div><code>\nlet diameter = 50;\n\nfunction setup() {\n  createCanvas(512, 512);\n}\n\nfunction draw() {\n  // 107 and 187 are keyCodes for \"+\"\n  if (keyIsDown(107) || keyIsDown(187)) {\n    diameter += 1;\n  }\n\n  // 109 and 189 are keyCodes for \"-\"\n  if (keyIsDown(109) || keyIsDown(189)) {\n    diameter -= 1;\n  }\n\n  clear();\n  fill(255, 0, 0);\n  ellipse(50, 50, diameter, diameter);\n}\n</code></div>"
+                "\n<div><code>\nlet x = 100;\nlet y = 100;\n\nfunction setup() {\n  (512, 512);\n  fill(255, 0, 0);\n}\n\nfunction draw() {\n  if (keyIsDown(LEFT_ARROW)) {\n    x -= 5;\n  }\n\n  if (keyIsDown(RIGHT_ARROW)) {\n    x += 5;\n  }\n\n  if (keyIsDown(UP_ARROW)) {\n    y -= 5;\n  }\n\n  if (keyIsDown(DOWN_ARROW)) {\n    y += 5;\n  }\n\n  clear();\n  ellipse(x, y, 50, 50);\n}\n</code></div>\n\n<div><code>\nlet diameter = 50;\n\nfunction setup() {\n  (512, 512);\n}\n\nfunction draw() {\n  // 107 and 187 are keyCodes for \"+\"\n  if (keyIsDown(107) || keyIsDown(187)) {\n    diameter += 1;\n  }\n\n  // 109 and 189 are keyCodes for \"-\"\n  if (keyIsDown(109) || keyIsDown(189)) {\n    diameter -= 1;\n  }\n\n  clear();\n  fill(255, 0, 0);\n  ellipse(50, 50, diameter, diameter);\n}\n</code></div>"
             ],
             "alt": "50x50 red ellipse moves left, right, up and down with arrow presses.\n50x50 red ellipse gets bigger or smaller when + or - are pressed.",
             "class": "p5",
@@ -9290,7 +9290,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div>\n<code>\nlet myCanvas;\n\nfunction setup() {\n  //use a variable to store a pointer to the canvas\n  myCanvas = createCanvas(100, 100);\n  const body = document.getElementsByTagName('body')[0];\n  myCanvas.parent(body);\n}\n\nfunction draw() {\n  background(237, 34, 93);\n  fill(0);\n\n  //move the canvas to the horizontal mouse position\n  //relative to the window\n  myCanvas.position(winMouseX + 1, windowHeight / 2);\n\n  //the y of the square is relative to the canvas\n  rect(20, mouseY, 60, 60);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet myCanvas;\n\nfunction setup() {\n  //use a variable to store a pointer to the canvas\n  myCanvas = (100, 100);\n  const body = document.getElementsByTagName('body')[0];\n  myCanvas.parent(body);\n}\n\nfunction draw() {\n  background(237, 34, 93);\n  fill(0);\n\n  //move the canvas to the horizontal mouse position\n  //relative to the window\n  myCanvas.position(winMouseX + 1, windowHeight / 2);\n\n  //the y of the square is relative to the canvas\n  rect(20, mouseY, 60, 60);\n}\n</code>\n</div>"
             ],
             "alt": "60x60 black rect y moves with mouse y and fuchsia canvas moves with mouse x",
             "class": "p5",
@@ -9306,7 +9306,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div>\n<code>\nlet myCanvas;\n\nfunction setup() {\n  //use a variable to store a pointer to the canvas\n  myCanvas = createCanvas(100, 100);\n  const body = document.getElementsByTagName('body')[0];\n  myCanvas.parent(body);\n}\n\nfunction draw() {\n  background(237, 34, 93);\n  fill(0);\n\n  //move the canvas to the vertical mouse position\n  //relative to the window\n  myCanvas.position(windowWidth / 2, winMouseY + 1);\n\n  //the x of the square is relative to the canvas\n  rect(mouseX, 20, 60, 60);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet myCanvas;\n\nfunction setup() {\n  //use a variable to store a pointer to the canvas\n  myCanvas = (100, 100);\n  const body = document.getElementsByTagName('body')[0];\n  myCanvas.parent(body);\n}\n\nfunction draw() {\n  background(237, 34, 93);\n  fill(0);\n\n  //move the canvas to the vertical mouse position\n  //relative to the window\n  myCanvas.position(windowWidth / 2, winMouseY + 1);\n\n  //the x of the square is relative to the canvas\n  rect(mouseX, 20, 60, 60);\n}\n</code>\n</div>"
             ],
             "alt": "60x60 black rect x moves with mouse x and fuchsia canvas y moves with mouse y",
             "class": "p5",
@@ -9322,7 +9322,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div>\n<code>\nlet myCanvas;\n\nfunction setup() {\n  //use a variable to store a pointer to the canvas\n  myCanvas = createCanvas(100, 100);\n  noStroke();\n  fill(237, 34, 93);\n}\n\nfunction draw() {\n  clear();\n  //the difference between previous and\n  //current x position is the horizontal mouse speed\n  let speed = abs(winMouseX - pwinMouseX);\n  //change the size of the circle\n  //according to the horizontal speed\n  ellipse(50, 50, 10 + speed * 5, 10 + speed * 5);\n  //move the canvas to the mouse position\n  myCanvas.position(winMouseX + 1, winMouseY + 1);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet myCanvas;\n\nfunction setup() {\n  //use a variable to store a pointer to the canvas\n  myCanvas = (100, 100);\n  noStroke();\n  fill(237, 34, 93);\n}\n\nfunction draw() {\n  clear();\n  //the difference between previous and\n  //current x position is the horizontal mouse speed\n  let speed = abs(winMouseX - pwinMouseX);\n  //change the size of the circle\n  //according to the horizontal speed\n  ellipse(50, 50, 10 + speed * 5, 10 + speed * 5);\n  //move the canvas to the mouse position\n  myCanvas.position(winMouseX + 1, winMouseY + 1);\n}\n</code>\n</div>"
             ],
             "alt": "fuchsia ellipse moves with mouse x and y. Grows and shrinks with mouse speed",
             "class": "p5",
@@ -9338,7 +9338,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div>\n<code>\nlet myCanvas;\n\nfunction setup() {\n  //use a variable to store a pointer to the canvas\n  myCanvas = createCanvas(100, 100);\n  noStroke();\n  fill(237, 34, 93);\n}\n\nfunction draw() {\n  clear();\n  //the difference between previous and\n  //current y position is the vertical mouse speed\n  let speed = abs(winMouseY - pwinMouseY);\n  //change the size of the circle\n  //according to the vertical speed\n  ellipse(50, 50, 10 + speed * 5, 10 + speed * 5);\n  //move the canvas to the mouse position\n  myCanvas.position(winMouseX + 1, winMouseY + 1);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet myCanvas;\n\nfunction setup() {\n  //use a variable to store a pointer to the canvas\n  myCanvas = (100, 100);\n  noStroke();\n  fill(237, 34, 93);\n}\n\nfunction draw() {\n  clear();\n  //the difference between previous and\n  //current y position is the vertical mouse speed\n  let speed = abs(winMouseY - pwinMouseY);\n  //change the size of the circle\n  //according to the vertical speed\n  ellipse(50, 50, 10 + speed * 5, 10 + speed * 5);\n  //move the canvas to the mouse position\n  myCanvas.position(winMouseX + 1, winMouseY + 1);\n}\n</code>\n</div>"
             ],
             "alt": "fuchsia ellipse moves with mouse x and y. Grows and shrinks with mouse speed",
             "class": "p5",
@@ -9665,7 +9665,7 @@ module.exports={
             "itemtype": "method",
             "name": "saveCanvas",
             "example": [
-                "\n <div class='norender notest'><code>\n function setup() {\n let c = createCanvas(100, 100);\n background(255, 0, 0);\n saveCanvas(c, 'myCanvas', 'jpg');\n }\n </code></div>\n <div class='norender notest'><code>\n // note that this example has the same result as above\n // if no canvas is specified, defaults to main canvas\n function setup() {\n let c = createCanvas(100, 100);\n background(255, 0, 0);\n saveCanvas('myCanvas', 'jpg');\n\n // all of the following are valid\n saveCanvas(c, 'myCanvas', 'jpg');\n saveCanvas(c, 'myCanvas.jpg');\n saveCanvas(c, 'myCanvas');\n saveCanvas(c);\n saveCanvas('myCanvas', 'png');\n saveCanvas('myCanvas');\n saveCanvas();\n }\n </code></div>"
+                "\n <div class='norender notest'><code>\n function setup() {\n let c = (100, 100);\n background(255, 0, 0);\n saveCanvas(c, 'myCanvas', 'jpg');\n }\n </code></div>\n <div class='norender notest'><code>\n // note that this example has the same result as above\n // if no canvas is specified, defaults to main canvas\n function setup() {\n let c = (100, 100);\n background(255, 0, 0);\n saveCanvas('myCanvas', 'jpg');\n\n // all of the following are valid\n saveCanvas(c, 'myCanvas', 'jpg');\n saveCanvas(c, 'myCanvas.jpg');\n saveCanvas(c, 'myCanvas');\n saveCanvas(c);\n saveCanvas('myCanvas', 'png');\n saveCanvas('myCanvas');\n saveCanvas();\n }\n </code></div>"
             ],
             "alt": "no image displayed\n no image displayed\n no image displayed",
             "class": "p5",
@@ -10032,7 +10032,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div><code>\nlet img;\nfunction preload() {\n  img = loadImage('assets/rockies.jpg');\n}\n\nfunction setup() {\n  createCanvas(100, 100);\n  image(img, 0, 0);\n  for (let i = 0; i < img.width; i++) {\n    let c = img.get(i, img.height / 2);\n    stroke(c);\n    line(i, height / 2, i, height);\n  }\n}\n</code></div>"
+                "\n<div><code>\nlet img;\nfunction preload() {\n  img = loadImage('assets/rockies.jpg');\n}\n\nfunction setup() {\n  (100, 100);\n  image(img, 0, 0);\n  for (let i = 0; i < img.width; i++) {\n    let c = img.get(i, img.height / 2);\n    stroke(c);\n    line(i, height / 2, i, height);\n  }\n}\n</code></div>"
             ],
             "alt": "rocky mountains in top and horizontal lines in corresponding colors in bottom.",
             "class": "p5.Image",
@@ -10048,7 +10048,7 @@ module.exports={
             "type": "Number",
             "readonly": "",
             "example": [
-                "\n<div><code>\nlet img;\nfunction preload() {\n  img = loadImage('assets/rockies.jpg');\n}\n\nfunction setup() {\n  createCanvas(100, 100);\n  image(img, 0, 0);\n  for (let i = 0; i < img.height; i++) {\n    let c = img.get(img.width / 2, i);\n    stroke(c);\n    line(0, i, width / 2, i);\n  }\n}\n</code></div>"
+                "\n<div><code>\nlet img;\nfunction preload() {\n  img = loadImage('assets/rockies.jpg');\n}\n\nfunction setup() {\n  (100, 100);\n  image(img, 0, 0);\n  for (let i = 0; i < img.height; i++) {\n    let c = img.get(img.width / 2, i);\n    stroke(c);\n    line(0, i, width / 2, i);\n  }\n}\n</code></div>"
             ],
             "alt": "rocky mountains on right and vertical lines in corresponding colors on left.",
             "class": "p5.Image",
@@ -10395,7 +10395,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nlet photo, maskImage;\nfunction preload() {\n  photo = loadImage('assets/rockies.jpg');\n  maskImage = loadImage('assets/mask2.png');\n}\n\nfunction setup() {\n  createCanvas(100, 100);\n  photo.mask(maskImage);\n  image(photo, 0, 0);\n}\n</code></div>"
+                "\n<div><code>\nlet photo, maskImage;\nfunction preload() {\n  photo = loadImage('assets/rockies.jpg');\n  maskImage = loadImage('assets/mask2.png');\n}\n\nfunction setup() {\n  (100, 100);\n  photo.mask(maskImage);\n  image(photo, 0, 0);\n}\n</code></div>"
             ],
             "alt": "image of rocky mountains with white at right\n\n\nhttp://blogs.adobe.com/webplatform/2013/01/28/blending-features-in-canvas/",
             "class": "p5.Image",
@@ -11437,7 +11437,7 @@ module.exports={
                 "type": "Promise"
             },
             "example": [
-                "\n<div>\n<code>\n// Examples use jsonplaceholder.typicode.com for a Mock Data API\n\nlet url = 'https://jsonplaceholder.typicode.com/posts';\nlet postData = { userId: 1, title: 'p5 Clicked!', body: 'p5.js is way cool.' };\n\nfunction setup() {\n  createCanvas(800, 800);\n}\n\nfunction mousePressed() {\n  // Pick new random color values\n  let r = random(255);\n  let g = random(255);\n  let b = random(255);\n\n  httpPost(url, 'json', postData, function(result) {\n    strokeWeight(2);\n    stroke(r, g, b);\n    fill(r, g, b, 127);\n    ellipse(mouseX, mouseY, 200, 200);\n    text(result.body, mouseX, mouseY);\n  });\n}\n</code>\n</div>\n\n\n<div><code>\nlet url = 'https://invalidURL'; // A bad URL that will cause errors\nlet postData = { title: 'p5 Clicked!', body: 'p5.js is way cool.' };\n\nfunction setup() {\n  createCanvas(800, 800);\n}\n\nfunction mousePressed() {\n  // Pick new random color values\n  let r = random(255);\n  let g = random(255);\n  let b = random(255);\n\n  httpPost(\n    url,\n    'json',\n    postData,\n    function(result) {\n      // ... won't be called\n    },\n    function(error) {\n      strokeWeight(2);\n      stroke(r, g, b);\n      fill(r, g, b, 127);\n      text(error.toString(), mouseX, mouseY);\n    }\n  );\n}\n</code></div>\n"
+                "\n<div>\n<code>\n// Examples use jsonplaceholder.typicode.com for a Mock Data API\n\nlet url = 'https://jsonplaceholder.typicode.com/posts';\nlet postData = { userId: 1, title: 'p5 Clicked!', body: 'p5.js is way cool.' };\n\nfunction setup() {\n  (800, 800);\n}\n\nfunction mousePressed() {\n  // Pick new random color values\n  let r = random(255);\n  let g = random(255);\n  let b = random(255);\n\n  httpPost(url, 'json', postData, function(result) {\n    strokeWeight(2);\n    stroke(r, g, b);\n    fill(r, g, b, 127);\n    ellipse(mouseX, mouseY, 200, 200);\n    text(result.body, mouseX, mouseY);\n  });\n}\n</code>\n</div>\n\n\n<div><code>\nlet url = 'https://invalidURL'; // A bad URL that will cause errors\nlet postData = { title: 'p5 Clicked!', body: 'p5.js is way cool.' };\n\nfunction setup() {\n  (800, 800);\n}\n\nfunction mousePressed() {\n  // Pick new random color values\n  let r = random(255);\n  let g = random(255);\n  let b = random(255);\n\n  httpPost(\n    url,\n    'json',\n    postData,\n    function(result) {\n      // ... won't be called\n    },\n    function(error) {\n      strokeWeight(2);\n      stroke(r, g, b);\n      fill(r, g, b, 127);\n      text(error.toString(), mouseX, mouseY);\n    }\n  );\n}\n</code></div>\n"
             ],
             "class": "p5",
             "module": "IO",
@@ -11656,7 +11656,7 @@ module.exports={
                 "type": "p5.PrintWriter"
             },
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100);\n  background(200);\n  text('click here to save', 10, 10, 70, 80);\n}\n\nfunction mousePressed() {\n  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n    var writer = createWriter('squares.txt');\n    for (let i = 0; i < 10; i++) {\n      writer.print(i * i);\n    }\n    writer.close();\n    writer.clear();\n  }\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100);\n  background(200);\n  text('click here to save', 10, 10, 70, 80);\n}\n\nfunction mousePressed() {\n  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n    var writer = createWriter('squares.txt');\n    for (let i = 0; i < 10; i++) {\n      writer.print(i * i);\n    }\n    writer.close();\n    writer.clear();\n  }\n}\n</code>\n</div>"
             ],
             "class": "p5",
             "module": "IO",
@@ -11696,7 +11696,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div class='norender notest'>\n<code>\n// creates a file called 'newFile.txt'\nlet writer = createWriter('newFile.txt');\n// creates a file containing\n//  My name is:\n//  Teddy\nwriter.print('My name is:');\nwriter.print('Teddy');\n// close the PrintWriter and save the file\nwriter.close();\n</code>\n</div>\n<div class='norender notest'>\n<code>\nlet writer;\n\nfunction setup() {\n  createCanvas(400, 400);\n  // create a PrintWriter\n  writer = createWriter('newFile.txt');\n}\n\nfunction draw() {\n  // print all mouseX and mouseY coordinates to the stream\n  writer.print([mouseX, mouseY]);\n}\n\nfunction mouseClicked() {\n  // close the PrintWriter and save the file\n  writer.close();\n}\n</code>\n</div>"
+                "\n<div class='norender notest'>\n<code>\n// creates a file called 'newFile.txt'\nlet writer = createWriter('newFile.txt');\n// creates a file containing\n//  My name is:\n//  Teddy\nwriter.print('My name is:');\nwriter.print('Teddy');\n// close the PrintWriter and save the file\nwriter.close();\n</code>\n</div>\n<div class='norender notest'>\n<code>\nlet writer;\n\nfunction setup() {\n  (400, 400);\n  // create a PrintWriter\n  writer = createWriter('newFile.txt');\n}\n\nfunction draw() {\n  // print all mouseX and mouseY coordinates to the stream\n  writer.print([mouseX, mouseY]);\n}\n\nfunction mouseClicked() {\n  // close the PrintWriter and save the file\n  writer.close();\n}\n</code>\n</div>"
             ],
             "class": "p5.PrintWriter",
             "module": "IO",
@@ -11731,7 +11731,7 @@ module.exports={
         {
             "file": "src/io/files.js",
             "line": 1391,
-            "description": "<p>Save an image, text, json, csv, wav, or html. Prompts download to\nthe client&#39;s computer. <b>Note that it is not recommended to call <a href=\"#/p5/save\">save()</a>\nwithin draw if it&#39;s looping, as the <a href=\"#/p5/save\">save()</a> function will open a new save\ndialog every frame.</b></p>\n<p>The default behavior is to save the canvas as an image. You can\noptionally specify a filename.\nFor example:</p>\n <pre class='language-javascript'><code>\n save();\n save(&#39;myCanvas.jpg&#39;); // save a specific canvas with a filename\n </code></pre>\n\n<p>Alternately, the first parameter can be a pointer to a canvas\n<a href=\"#/p5.Element\">p5.Element</a>, an Array of Strings,\nan Array of JSON, a JSON object, a <a href=\"#/p5.Table\">p5.Table</a>, a <a href=\"#/p5.Image\">p5.Image</a>, or a\np5.SoundFile (requires p5.sound). The second parameter is a filename\n(including extension). The third parameter is for options specific\nto this type of object. This method will save a file that fits the\ngiven parameters. For example:</p>\n\n <pre class='language-javascript'><code>\n // Saves canvas as an image\n save('myCanvas.jpg');\n\n // Saves pImage as a png image\n let img = createImage(10, 10);\n save(img, 'my.png');\n\n // Saves canvas as an image\n let cnv = createCanvas(100, 100);\n save(cnv, 'myCanvas.jpg');\n\n // Saves p5.Renderer object as an image\n let gb = createGraphics(100, 100);\n save(gb, 'myGraphics.jpg');\n\n let myTable = new p5.Table();\n\n // Saves table as html file\n save(myTable, 'myTable.html');\n\n // Comma Separated Values\n save(myTable, 'myTable.csv');\n\n // Tab Separated Values\n save(myTable, 'myTable.tsv');\n\n let myJSON = { a: 1, b: true };\n\n // Saves pretty JSON\n save(myJSON, 'my.json');\n\n // Optimizes JSON filesize\n save(myJSON, 'my.json', true);\n\n // Saves array of strings to a text file with line breaks after each item\n let arrayOfStrings = ['a', 'b'];\n save(arrayOfStrings, 'my.txt');\n </code></pre>",
+            "description": "<p>Save an image, text, json, csv, wav, or html. Prompts download to\nthe client&#39;s computer. <b>Note that it is not recommended to call <a href=\"#/p5/save\">save()</a>\nwithin draw if it&#39;s looping, as the <a href=\"#/p5/save\">save()</a> function will open a new save\ndialog every frame.</b></p>\n<p>The default behavior is to save the canvas as an image. You can\noptionally specify a filename.\nFor example:</p>\n <pre class='language-javascript'><code>\n save();\n save(&#39;myCanvas.jpg&#39;); // save a specific canvas with a filename\n </code></pre>\n\n<p>Alternately, the first parameter can be a pointer to a canvas\n<a href=\"#/p5.Element\">p5.Element</a>, an Array of Strings,\nan Array of JSON, a JSON object, a <a href=\"#/p5.Table\">p5.Table</a>, a <a href=\"#/p5.Image\">p5.Image</a>, or a\np5.SoundFile (requires p5.sound). The second parameter is a filename\n(including extension). The third parameter is for options specific\nto this type of object. This method will save a file that fits the\ngiven parameters. For example:</p>\n\n <pre class='language-javascript'><code>\n // Saves canvas as an image\n save('myCanvas.jpg');\n\n // Saves pImage as a png image\n let img = createImage(10, 10);\n save(img, 'my.png');\n\n // Saves canvas as an image\n let cnv = (100, 100);\n save(cnv, 'myCanvas.jpg');\n\n // Saves p5.Renderer object as an image\n let gb = createGraphics(100, 100);\n save(gb, 'myGraphics.jpg');\n\n let myTable = new p5.Table();\n\n // Saves table as html file\n save(myTable, 'myTable.html');\n\n // Comma Separated Values\n save(myTable, 'myTable.csv');\n\n // Tab Separated Values\n save(myTable, 'myTable.tsv');\n\n let myJSON = { a: 1, b: true };\n\n // Saves pretty JSON\n save(myJSON, 'my.json');\n\n // Optimizes JSON filesize\n save(myJSON, 'my.json', true);\n\n // Saves array of strings to a text file with line breaks after each item\n let arrayOfStrings = ['a', 'b'];\n save(arrayOfStrings, 'my.txt');\n </code></pre>",
             "itemtype": "method",
             "name": "save",
             "params": [
@@ -11783,7 +11783,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n <div><code>\n let json = {}; // new  JSON Object\n\n json.id = 0;\n json.species = 'Panthera leo';\n json.name = 'Lion';\n\n function setup() {\n createCanvas(100, 100);\n background(200);\n text('click here to save', 10, 10, 70, 80);\n }\n\n function mousePressed() {\n if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n   saveJSON(json, 'lion.json');\n }\n }\n\n // saves the following to a file called \"lion.json\":\n // {\n //   \"id\": 0,\n //   \"species\": \"Panthera leo\",\n //   \"name\": \"Lion\"\n // }\n </code></div>"
+                "\n <div><code>\n let json = {}; // new  JSON Object\n\n json.id = 0;\n json.species = 'Panthera leo';\n json.name = 'Lion';\n\n function setup() {\n (100, 100);\n background(200);\n text('click here to save', 10, 10, 70, 80);\n }\n\n function mousePressed() {\n if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n   saveJSON(json, 'lion.json');\n }\n }\n\n // saves the following to a file called \"lion.json\":\n // {\n //   \"id\": 0,\n //   \"species\": \"Panthera leo\",\n //   \"name\": \"Lion\"\n // }\n </code></div>"
             ],
             "alt": "no image displayed",
             "class": "p5",
@@ -11815,7 +11815,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n <div><code>\n let words = 'apple bear cat dog';\n\n // .split() outputs an Array\n let list = split(words, ' ');\n\n function setup() {\n createCanvas(100, 100);\n background(200);\n text('click here to save', 10, 10, 70, 80);\n }\n\n function mousePressed() {\n if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n   saveStrings(list, 'nouns.txt');\n }\n }\n\n // Saves the following to a file called 'nouns.txt':\n //\n // apple\n // bear\n // cat\n // dog\n </code></div>"
+                "\n <div><code>\n let words = 'apple bear cat dog';\n\n // .split() outputs an Array\n let list = split(words, ' ');\n\n function setup() {\n (100, 100);\n background(200);\n text('click here to save', 10, 10, 70, 80);\n }\n\n function mousePressed() {\n if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n   saveStrings(list, 'nouns.txt');\n }\n }\n\n // Saves the following to a file called 'nouns.txt':\n //\n // apple\n // bear\n // cat\n // dog\n </code></div>"
             ],
             "alt": "no image displayed",
             "class": "p5",
@@ -12163,7 +12163,7 @@ module.exports={
                 "type": "Integer"
             },
             "example": [
-                "\n <div>\n <code>\n // given the cvs file \"blobs.csv\" in /assets directory\n // ID, Name, Flavor, Shape, Color\n // Blob1, Blobby, Sweet, Blob, Pink\n // Blob2, Saddy, Savory, Blob, Blue\n\n let table;\n\n function preload() {\n table = loadTable('assets/blobs.csv');\n }\n\n function setup() {\n createCanvas(200, 100);\n textAlign(CENTER);\n background(255);\n }\n\n function draw() {\n let numOfColumn = table.getColumnCount();\n text('There are ' + numOfColumn + ' columns in the table.', 100, 50);\n }\n </code>\n </div>"
+                "\n <div>\n <code>\n // given the cvs file \"blobs.csv\" in /assets directory\n // ID, Name, Flavor, Shape, Color\n // Blob1, Blobby, Sweet, Blob, Pink\n // Blob2, Saddy, Savory, Blob, Blue\n\n let table;\n\n function preload() {\n table = loadTable('assets/blobs.csv');\n }\n\n function setup() {\n (200, 100);\n textAlign(CENTER);\n background(255);\n }\n\n function draw() {\n let numOfColumn = table.getColumnCount();\n text('There are ' + numOfColumn + ' columns in the table.', 100, 50);\n }\n </code>\n </div>"
             ],
             "class": "p5.Table",
             "module": "IO",
@@ -12180,7 +12180,7 @@ module.exports={
                 "type": "Integer"
             },
             "example": [
-                "\n <div>\n <code>\n // given the cvs file \"blobs.csv\" in /assets directory\n //\n // ID, Name, Flavor, Shape, Color\n // Blob1, Blobby, Sweet, Blob, Pink\n // Blob2, Saddy, Savory, Blob, Blue\n\n let table;\n\n function preload() {\n table = loadTable('assets/blobs.csv');\n }\n\n function setup() {\n createCanvas(200, 100);\n textAlign(CENTER);\n background(255);\n }\n\n function draw() {\n text('There are ' + table.getRowCount() + ' rows in the table.', 100, 50);\n }\n </code>\n </div>"
+                "\n <div>\n <code>\n // given the cvs file \"blobs.csv\" in /assets directory\n //\n // ID, Name, Flavor, Shape, Color\n // Blob1, Blobby, Sweet, Blob, Pink\n // Blob2, Saddy, Savory, Blob, Blue\n\n let table;\n\n function preload() {\n table = loadTable('assets/blobs.csv');\n }\n\n function setup() {\n (200, 100);\n textAlign(CENTER);\n background(255);\n }\n\n function draw() {\n text('There are ' + table.getRowCount() + ' rows in the table.', 100, 50);\n }\n </code>\n </div>"
             ],
             "class": "p5.Table",
             "module": "IO",
@@ -13657,7 +13657,7 @@ module.exports={
                 "type": "p5.Vector"
             },
             "example": [
-                "\n<div modernizr='webgl'><code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  noStroke();\n  fill(255, 102, 204);\n}\n\nfunction draw() {\n  background(255);\n  pointLight(color(255), createVector(sin(millis() / 1000) * 20, -40, -10));\n  scale(0.75);\n  sphere();\n}\n</code></div>"
+                "\n<div modernizr='webgl'><code>\nfunction setup() {\n  (100, 100, WEBGL);\n  noStroke();\n  fill(255, 102, 204);\n}\n\nfunction draw() {\n  background(255);\n  pointLight(color(255), createVector(sin(millis() / 1000) * 20, -40, -10));\n  scale(0.75);\n  sphere();\n}\n</code></div>"
             ],
             "alt": "a purple sphere lit by a point light oscillating horizontally",
             "class": "p5",
@@ -13720,7 +13720,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n <div>\n <code>\n let noiseVal;\n let noiseScale = 0.02;\nfunction setup() {\n   createCanvas(100, 100);\n }\nfunction draw() {\n   background(0);\n   for (let y = 0; y < height; y++) {\n     for (let x = 0; x < width / 2; x++) {\n       noiseDetail(2, 0.2);\n       noiseVal = noise((mouseX + x) * noiseScale, (mouseY + y) * noiseScale);\n       stroke(noiseVal * 255);\n       point(x, y);\n       noiseDetail(8, 0.65);\n       noiseVal = noise(\n         (mouseX + x + width / 2) * noiseScale,\n         (mouseY + y) * noiseScale\n       );\n       stroke(noiseVal * 255);\n       point(x + width / 2, y);\n     }\n   }\n }\n </code>\n </div>"
+                "\n <div>\n <code>\n let noiseVal;\n let noiseScale = 0.02;\nfunction setup() {\n   (100, 100);\n }\nfunction draw() {\n   background(0);\n   for (let y = 0; y < height; y++) {\n     for (let x = 0; x < width / 2; x++) {\n       noiseDetail(2, 0.2);\n       noiseVal = noise((mouseX + x) * noiseScale, (mouseY + y) * noiseScale);\n       stroke(noiseVal * 255);\n       point(x, y);\n       noiseDetail(8, 0.65);\n       noiseVal = noise(\n         (mouseX + x + width / 2) * noiseScale,\n         (mouseY + y) * noiseScale\n       );\n       stroke(noiseVal * 255);\n       point(x + width / 2, y);\n     }\n   }\n }\n </code>\n </div>"
             ],
             "alt": "2 vertical grey smokey patterns affected my mouse x-position and noise.",
             "class": "p5",
@@ -13806,7 +13806,7 @@ module.exports={
             "name": "set",
             "chainable": 1,
             "example": [
-                "\n<div class=\"norender\">\n<code>\nfunction setup() {\n  let v = createVector(1, 2, 3);\n  v.set(4, 5, 6); // Sets vector to [4, 5, 6]\n\n  let v1 = createVector(0, 0, 0);\n  let arr = [1, 2, 3];\n  v1.set(arr); // Sets vector to [1, 2, 3]\n}\n</code>\n</div>\n\n<div>\n<code>\nlet v0, v1;\nfunction setup() {\n  createCanvas(100, 100);\n\n  v0 = createVector(0, 0);\n  v1 = createVector(50, 50);\n}\n\nfunction draw() {\n  background(240);\n\n  drawArrow(v0, v1, 'black');\n  v1.set(v1.x + random(-1, 1), v1.y + random(-1, 1));\n\n  noStroke();\n  text('x: ' + round(v1.x) + ' y: ' + round(v1.y), 20, 90);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  let arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
+                "\n<div class=\"norender\">\n<code>\nfunction setup() {\n  let v = createVector(1, 2, 3);\n  v.set(4, 5, 6); // Sets vector to [4, 5, 6]\n\n  let v1 = createVector(0, 0, 0);\n  let arr = [1, 2, 3];\n  v1.set(arr); // Sets vector to [1, 2, 3]\n}\n</code>\n</div>\n\n<div>\n<code>\nlet v0, v1;\nfunction setup() {\n  (100, 100);\n\n  v0 = createVector(0, 0);\n  v1 = createVector(50, 50);\n}\n\nfunction draw() {\n  background(240);\n\n  drawArrow(v0, v1, 'black');\n  v1.set(v1.x + random(-1, 1), v1.y + random(-1, 1));\n\n  noStroke();\n  text('x: ' + round(v1.x) + ' y: ' + round(v1.y), 20, 90);\n}\n\n// draw an arrow for a vector at a given base position\nfunction drawArrow(base, vec, myColor) {\n  push();\n  stroke(myColor);\n  strokeWeight(3);\n  fill(myColor);\n  translate(base.x, base.y);\n  line(0, 0, vec.x, vec.y);\n  rotate(vec.heading());\n  let arrowSize = 7;\n  translate(vec.mag() - arrowSize, 0);\n  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);\n  pop();\n}\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
@@ -14796,7 +14796,7 @@ module.exports={
                 "type": "p5.Vector"
             },
             "example": [
-                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  fill(255);\n  noStroke();\n}\nfunction draw() {\n  background(255);\n\n  let t = millis() / 1000;\n\n  // add three point lights\n  pointLight(color('#f00'), p5.Vector.fromAngles(t * 1.0, t * 1.3, 100));\n  pointLight(color('#0f0'), p5.Vector.fromAngles(t * 1.1, t * 1.2, 100));\n  pointLight(color('#00f'), p5.Vector.fromAngles(t * 1.2, t * 1.1, 100));\n\n  sphere(35);\n}\n</code>\n</div>"
+                "\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n  fill(255);\n  noStroke();\n}\nfunction draw() {\n  background(255);\n\n  let t = millis() / 1000;\n\n  // add three point lights\n  pointLight(color('#f00'), p5.Vector.fromAngles(t * 1.0, t * 1.3, 100));\n  pointLight(color('#0f0'), p5.Vector.fromAngles(t * 1.1, t * 1.2, 100));\n  pointLight(color('#00f'), p5.Vector.fromAngles(t * 1.2, t * 1.1, 100));\n\n  sphere(35);\n}\n</code>\n</div>"
             ],
             "class": "p5.Vector",
             "module": "Math",
@@ -14985,7 +14985,7 @@ module.exports={
                 "type": "Number"
             },
             "example": [
-                "\n <div>\n <code>\n for (let y = 0; y < 100; y++) {\n   let x = randomGaussian(50, 15);\n   line(50, y, x, y);\n }\n </code>\n </div>\n <div>\n <code>\n let distribution = new Array(360);\nfunction setup() {\n   createCanvas(100, 100);\n   for (let i = 0; i < distribution.length; i++) {\n     distribution[i] = floor(randomGaussian(0, 15));\n   }\n }\nfunction draw() {\n   background(204);\n  translate(width / 2, width / 2);\n  for (let i = 0; i < distribution.length; i++) {\n     rotate(TWO_PI / distribution.length);\n     stroke(0);\n     let dist = abs(distribution[i]);\n     line(0, 0, dist, 0);\n   }\n }\n </code>\n </div>"
+                "\n <div>\n <code>\n for (let y = 0; y < 100; y++) {\n   let x = randomGaussian(50, 15);\n   line(50, y, x, y);\n }\n </code>\n </div>\n <div>\n <code>\n let distribution = new Array(360);\nfunction setup() {\n   (100, 100);\n   for (let i = 0; i < distribution.length; i++) {\n     distribution[i] = floor(randomGaussian(0, 15));\n   }\n }\nfunction draw() {\n   background(204);\n  translate(width / 2, width / 2);\n  for (let i = 0; i < distribution.length; i++) {\n     rotate(TWO_PI / distribution.length);\n     stroke(0);\n     let dist = abs(distribution[i]);\n     line(0, 0, dist, 0);\n   }\n }\n </code>\n </div>"
             ],
             "alt": "100 horizontal lines from center of canvas. height & side change each render\n black lines radiate from center of canvas. size determined each render",
             "class": "p5",
@@ -15529,7 +15529,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\ntextSize(32);\ntext('word', 10, 30);\nfill(0, 102, 153);\ntext('word', 10, 60);\nfill(0, 102, 153, 51);\ntext('word', 10, 90);\n</code>\n</div>\n<div>\n<code>\nlet s = 'The quick brown fox jumped over the lazy dog.';\nfill(50);\ntext(s, 10, 10, 70, 80); // Text wraps within text box\n</code>\n</div>\n\n<div modernizr='webgl'>\n<code>\nlet inconsolata;\nfunction preload() {\n  inconsolata = loadFont('assets/inconsolata.otf');\n}\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  textFont(inconsolata);\n  textSize(width / 3);\n  textAlign(CENTER, CENTER);\n}\nfunction draw() {\n  background(0);\n  let time = millis();\n  rotateX(time / 1000);\n  rotateZ(time / 1234);\n  text('p5.js', 0, 0);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\ntextSize(32);\ntext('word', 10, 30);\nfill(0, 102, 153);\ntext('word', 10, 60);\nfill(0, 102, 153, 51);\ntext('word', 10, 90);\n</code>\n</div>\n<div>\n<code>\nlet s = 'The quick brown fox jumped over the lazy dog.';\nfill(50);\ntext(s, 10, 10, 70, 80); // Text wraps within text box\n</code>\n</div>\n\n<div modernizr='webgl'>\n<code>\nlet inconsolata;\nfunction preload() {\n  inconsolata = loadFont('assets/inconsolata.otf');\n}\nfunction setup() {\n  (100, 100, WEBGL);\n  textFont(inconsolata);\n  textSize(width / 3);\n  textAlign(CENTER, CENTER);\n}\nfunction draw() {\n  background(0);\n  let time = millis();\n  rotateX(time / 1000);\n  rotateZ(time / 1234);\n  text('p5.js', 0, 0);\n}\n</code>\n</div>"
             ],
             "alt": "'word' displayed 3 times going from black, blue to translucent blue\nThe quick brown fox jumped over the lazy dog.\nthe text 'p5.js' spinning in 3d",
             "class": "p5",
@@ -15677,7 +15677,7 @@ module.exports={
                 "type": "Array"
             },
             "example": [
-                "\n<div>\n<code>\nlet font;\nfunction preload() {\n  font = loadFont('assets/inconsolata.otf');\n}\n\nlet points;\nlet bounds;\nfunction setup() {\n  createCanvas(100, 100);\n  stroke(0);\n  fill(255, 104, 204);\n\n  points = font.textToPoints('p5', 0, 0, 10, {\n    sampleFactor: 5,\n    simplifyThreshold: 0\n  });\n  bounds = font.textBounds(' p5 ', 0, 0, 10);\n}\n\nfunction draw() {\n  background(255);\n  beginShape();\n  translate(-bounds.x * width / bounds.w, -bounds.y * height / bounds.h);\n  for (let i = 0; i < points.length; i++) {\n    let p = points[i];\n    vertex(\n      p.x * width / bounds.w +\n        sin(20 * p.y / bounds.h + millis() / 1000) * width / 30,\n      p.y * height / bounds.h\n    );\n  }\n  endShape(CLOSE);\n}\n</code>\n</div>\n"
+                "\n<div>\n<code>\nlet font;\nfunction preload() {\n  font = loadFont('assets/inconsolata.otf');\n}\n\nlet points;\nlet bounds;\nfunction setup() {\n  (100, 100);\n  stroke(0);\n  fill(255, 104, 204);\n\n  points = font.textToPoints('p5', 0, 0, 10, {\n    sampleFactor: 5,\n    simplifyThreshold: 0\n  });\n  bounds = font.textBounds(' p5 ', 0, 0, 10);\n}\n\nfunction draw() {\n  background(255);\n  beginShape();\n  translate(-bounds.x * width / bounds.w, -bounds.y * height / bounds.h);\n  for (let i = 0; i < points.length; i++) {\n    let p = points[i];\n    vertex(\n      p.x * width / bounds.w +\n        sin(20 * p.y / bounds.h + millis() / 1000) * width / 30,\n      p.y * height / bounds.h\n    );\n  }\n  endShape(CLOSE);\n}\n</code>\n</div>\n"
             ],
             "class": "p5.Font",
             "module": "Typography",
@@ -17005,7 +17005,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// draw a plane\n// with width 50 and height 50\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  plane(50, 50);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n// draw a plane\n// with width 50 and height 50\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  plane(50, 50);\n}\n</code>\n</div>"
             ],
             "alt": "Nothing displayed on canvas\nRotating interior view of a box with sides that change color.\n3d red and green gradient.\nRotating interior view of a cylinder with sides that change color.\nRotating view of a cylinder with sides that change color.\n3d red and green gradient.\nrotating view of a multi-colored cylinder with concave sides.",
             "class": "p5",
@@ -17052,7 +17052,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// draw a spinning box\n// with width, height and depth of 50\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(50);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n// draw a spinning box\n// with width, height and depth of 50\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(50);\n}\n</code>\n</div>"
             ],
             "class": "p5",
             "module": "Shape",
@@ -17086,7 +17086,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// draw a sphere with radius 40\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  sphere(40);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n// draw a sphere with radius 40\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  sphere(40);\n}\n</code>\n</div>"
             ],
             "class": "p5",
             "module": "Shape",
@@ -17138,7 +17138,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// draw a spinning cylinder\n// with radius 20 and height 50\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateZ(frameCount * 0.01);\n  cylinder(20, 50);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n// draw a spinning cylinder\n// with radius 20 and height 50\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateZ(frameCount * 0.01);\n  cylinder(20, 50);\n}\n</code>\n</div>"
             ],
             "class": "p5",
             "module": "Shape",
@@ -17184,7 +17184,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// draw a spinning cone\n// with radius 40 and height 70\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateZ(frameCount * 0.01);\n  cone(40, 70);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n// draw a spinning cone\n// with radius 40 and height 70\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateZ(frameCount * 0.01);\n  cone(40, 70);\n}\n</code>\n</div>"
             ],
             "class": "p5",
             "module": "Shape",
@@ -17230,7 +17230,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// draw an ellipsoid\n// with radius 30, 40 and 40.\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  ellipsoid(30, 40, 40);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n// draw an ellipsoid\n// with radius 30, 40 and 40.\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  ellipsoid(30, 40, 40);\n}\n</code>\n</div>"
             ],
             "class": "p5",
             "module": "Shape",
@@ -17270,7 +17270,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// draw a spinning torus\n// with ring radius 30 and tube radius 15\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  torus(30, 15);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n// draw a spinning torus\n// with ring radius 30 and tube radius 15\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  torus(30, 15);\n}\n</code>\n</div>"
             ],
             "class": "p5",
             "module": "Shape",
@@ -17298,7 +17298,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  normalMaterial();\n}\nfunction draw() {\n  background(200);\n  orbitControl();\n  rotateY(0.5);\n  box(30, 50);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n  normalMaterial();\n}\nfunction draw() {\n  background(200);\n  orbitControl();\n  rotateY(0.5);\n  box(30, 50);\n}\n</code>\n</div>"
             ],
             "alt": "Camera orbits around a box when mouse is hold-clicked & then moved.",
             "class": "p5",
@@ -17312,11 +17312,11 @@ module.exports={
             "itemtype": "method",
             "name": "debugMode",
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode();\n}\n\nfunction draw() {\n  background(200);\n  orbitControl();\n  box(15, 30);\n  // Press the spacebar to turn debugMode off!\n  if (keyIsDown(32)) {\n    noDebugMode();\n  }\n}\n</code>\n</div>",
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode(GRID);\n}\n\nfunction draw() {\n  background(200);\n  orbitControl();\n  box(15, 30);\n}\n</code>\n</div>",
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode(AXES);\n}\n\nfunction draw() {\n  background(200);\n  orbitControl();\n  box(15, 30);\n}\n</code>\n</div>",
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode(GRID, 100, 10, 0, 0, 0);\n}\n\nfunction draw() {\n  background(200);\n  orbitControl();\n  box(15, 30);\n}\n</code>\n</div>",
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode(100, 10, 0, 0, 0, 20, 0, -40, 0);\n}\n\nfunction draw() {\n  noStroke();\n  background(200);\n  orbitControl();\n  box(15, 30);\n  // set the stroke color and weight for the grid!\n  stroke(255, 0, 150);\n  strokeWeight(0.8);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode();\n}\n\nfunction draw() {\n  background(200);\n  orbitControl();\n  box(15, 30);\n  // Press the spacebar to turn debugMode off!\n  if (keyIsDown(32)) {\n    noDebugMode();\n  }\n}\n</code>\n</div>",
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode(GRID);\n}\n\nfunction draw() {\n  background(200);\n  orbitControl();\n  box(15, 30);\n}\n</code>\n</div>",
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode(AXES);\n}\n\nfunction draw() {\n  background(200);\n  orbitControl();\n  box(15, 30);\n}\n</code>\n</div>",
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode(GRID, 100, 10, 0, 0, 0);\n}\n\nfunction draw() {\n  background(200);\n  orbitControl();\n  box(15, 30);\n}\n</code>\n</div>",
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode(100, 10, 0, 0, 0, 20, 0, -40, 0);\n}\n\nfunction draw() {\n  noStroke();\n  background(200);\n  orbitControl();\n  box(15, 30);\n  // set the stroke color and weight for the grid!\n  stroke(255, 0, 150);\n  strokeWeight(0.8);\n}\n</code>\n</div>"
             ],
             "alt": "a 3D box is centered on a grid in a 3D sketch. an icon\nindicates the direction of each axis: a red line points +X,\na green line +Y, and a blue line +Z.",
             "class": "p5",
@@ -17479,7 +17479,7 @@ module.exports={
             "itemtype": "method",
             "name": "noDebugMode",
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode();\n}\n\nfunction draw() {\n  background(200);\n  orbitControl();\n  box(15, 30);\n  // Press the spacebar to turn debugMode off!\n  if (keyIsDown(32)) {\n    noDebugMode();\n  }\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n  camera(0, -30, 100, 0, 0, 0, 0, 1, 0);\n  normalMaterial();\n  debugMode();\n}\n\nfunction draw() {\n  background(200);\n  orbitControl();\n  box(15, 30);\n  // Press the spacebar to turn debugMode off!\n  if (keyIsDown(32)) {\n    noDebugMode();\n  }\n}\n</code>\n</div>"
             ],
             "alt": "a 3D box is centered on a grid in a 3D sketch. an icon\nindicates the direction of each axis: a red line points +X,\na green line +Y, and a blue line +Z. the grid and icon disappear when the\nspacebar is pressed.",
             "class": "p5",
@@ -17494,7 +17494,7 @@ module.exports={
             "name": "ambientLight",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  ambientLight(150);\n  ambientMaterial(250);\n  noStroke();\n  sphere(40);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  ambientLight(150);\n  ambientMaterial(250);\n  noStroke();\n  sphere(40);\n}\n</code>\n</div>"
             ],
             "alt": "evenly distributed light across a sphere",
             "class": "p5",
@@ -17588,7 +17588,7 @@ module.exports={
             "name": "directionalLight",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  //move your mouse to change light direction\n  let dirX = (mouseX / width - 0.5) * 2;\n  let dirY = (mouseY / height - 0.5) * 2;\n  directionalLight(250, 250, 250, -dirX, -dirY, -1);\n  noStroke();\n  sphere(40);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  //move your mouse to change light direction\n  let dirX = (mouseX / width - 0.5) * 2;\n  let dirY = (mouseY / height - 0.5) * 2;\n  directionalLight(250, 250, 250, -dirX, -dirY, -1);\n  noStroke();\n  sphere(40);\n}\n</code>\n</div>"
             ],
             "alt": "light source on canvas changeable with mouse position",
             "class": "p5",
@@ -17709,7 +17709,7 @@ module.exports={
             "name": "pointLight",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  //move your mouse to change light position\n  let locX = mouseX - width / 2;\n  let locY = mouseY - height / 2;\n  // to set the light position,\n  // think of the world's coordinate as:\n  // -width/2,-height/2 -------- width/2,-height/2\n  //                |            |\n  //                |     0,0    |\n  //                |            |\n  // -width/2,height/2--------width/2,height/2\n  pointLight(250, 250, 250, locX, locY, 50);\n  noStroke();\n  sphere(40);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  //move your mouse to change light position\n  let locX = mouseX - width / 2;\n  let locY = mouseY - height / 2;\n  // to set the light position,\n  // think of the world's coordinate as:\n  // -width/2,-height/2 -------- width/2,-height/2\n  //                |            |\n  //                |     0,0    |\n  //                |            |\n  // -width/2,height/2--------width/2,height/2\n  pointLight(250, 250, 250, locX, locY, 50);\n  noStroke();\n  sphere(40);\n}\n</code>\n</div>"
             ],
             "alt": "spot light on canvas changes position with mouse",
             "class": "p5",
@@ -17830,7 +17830,7 @@ module.exports={
             "name": "lights",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  lights();\n  rotateX(millis() / 1000);\n  rotateY(millis() / 1000);\n  rotateZ(millis() / 1000);\n  box();\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  lights();\n  rotateX(millis() / 1000);\n  rotateY(millis() / 1000);\n  rotateZ(millis() / 1000);\n  box();\n}\n</code>\n</div>"
             ],
             "alt": "the light is partially ambient and partially directional",
             "class": "p5",
@@ -17848,8 +17848,8 @@ module.exports={
                 "type": "p5.Geometry"
             },
             "example": [
-                "\n<div>\n<code>\n//draw a spinning octahedron\nlet octahedron;\n\nfunction preload() {\n  octahedron = loadModel('assets/octahedron.obj');\n}\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  model(octahedron);\n}\n</code>\n</div>",
-                "\n<div>\n<code>\n//draw a spinning teapot\nlet teapot;\n\nfunction preload() {\n  // Load model with normalise parameter set to true\n  teapot = loadModel('assets/teapot.obj', true);\n}\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  scale(0.4); // Scaled to make model fit into canvas\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  normalMaterial(); // For effect\n  model(teapot);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n//draw a spinning octahedron\nlet octahedron;\n\nfunction preload() {\n  octahedron = loadModel('assets/octahedron.obj');\n}\n\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  model(octahedron);\n}\n</code>\n</div>",
+                "\n<div>\n<code>\n//draw a spinning teapot\nlet teapot;\n\nfunction preload() {\n  // Load model with normalise parameter set to true\n  teapot = loadModel('assets/teapot.obj', true);\n}\n\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  scale(0.4); // Scaled to make model fit into canvas\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  normalMaterial(); // For effect\n  model(teapot);\n}\n</code>\n</div>"
             ],
             "alt": "Vertically rotating 3-d teapot with red, green and blue gradient.",
             "class": "p5",
@@ -17937,7 +17937,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div>\n<code>\n//draw a spinning octahedron\nlet octahedron;\n\nfunction preload() {\n  octahedron = loadModel('assets/octahedron.obj');\n}\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  model(octahedron);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n//draw a spinning octahedron\nlet octahedron;\n\nfunction preload() {\n  octahedron = loadModel('assets/octahedron.obj');\n}\n\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  model(octahedron);\n}\n</code>\n</div>"
             ],
             "alt": "Vertically rotating 3-d octahedron.",
             "class": "p5",
@@ -17979,7 +17979,7 @@ module.exports={
                 "type": "p5.Shader"
             },
             "example": [
-                "\n<div modernizr='webgl'>\n<code>\nlet mandel;\nfunction preload() {\n  // load the shader definitions from files\n  mandel = loadShader('assets/shader.vert', 'assets/shader.frag');\n}\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  // use the shader\n  shader(mandel);\n  noStroke();\n  mandel.setUniform('p', [-0.74364388703, 0.13182590421]);\n}\n\nfunction draw() {\n  mandel.setUniform('r', 1.5 * exp(-6.5 * (1 + sin(millis() / 2000))));\n  quad(-1, -1, 1, -1, 1, 1, -1, 1);\n}\n</code>\n</div>"
+                "\n<div modernizr='webgl'>\n<code>\nlet mandel;\nfunction preload() {\n  // load the shader definitions from files\n  mandel = loadShader('assets/shader.vert', 'assets/shader.frag');\n}\nfunction setup() {\n  (100, 100, WEBGL);\n  // use the shader\n  shader(mandel);\n  noStroke();\n  mandel.setUniform('p', [-0.74364388703, 0.13182590421]);\n}\n\nfunction draw() {\n  mandel.setUniform('r', 1.5 * exp(-6.5 * (1 + sin(millis() / 2000))));\n  quad(-1, -1, 1, -1, 1, 1, -1, 1);\n}\n</code>\n</div>"
             ],
             "alt": "zooming Mandelbrot set. a colorful, infinitely detailed fractal.",
             "class": "p5",
@@ -18008,7 +18008,7 @@ module.exports={
                 "type": "p5.Shader"
             },
             "example": [
-                "\n<div modernizr='webgl'>\n<code>\n// the 'varying's are shared between both vertex & fragment shaders\nlet varying = 'precision highp float; varying vec2 vPos;';\n\n// the vertex shader is called for each vertex\nlet vs =\n  varying +\n  'attribute vec3 aPosition;' +\n  'void main() { vPos = (gl_Position = vec4(aPosition,1.0)).xy; }';\n\n// the fragment shader is called for each pixel\nlet fs =\n  varying +\n  'uniform vec2 p;' +\n  'uniform float r;' +\n  'const int I = 500;' +\n  'void main() {' +\n  '  vec2 c = p + vPos * r, z = c;' +\n  '  float n = 0.0;' +\n  '  for (int i = I; i > 0; i --) {' +\n  '    if(z.x*z.x+z.y*z.y > 4.0) {' +\n  '      n = float(i)/float(I);' +\n  '      break;' +\n  '    }' +\n  '    z = vec2(z.x*z.x-z.y*z.y, 2.0*z.x*z.y) + c;' +\n  '  }' +\n  '  gl_FragColor = vec4(0.5-cos(n*17.0)/2.0,0.5-cos(n*13.0)/2.0,0.5-cos(n*23.0)/2.0,1.0);' +\n  '}';\n\nlet mandel;\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n\n  // create and initialize the shader\n  mandel = createShader(vs, fs);\n  shader(mandel);\n  noStroke();\n\n  // 'p' is the center point of the Mandelbrot image\n  mandel.setUniform('p', [-0.74364388703, 0.13182590421]);\n}\n\nfunction draw() {\n  // 'r' is the size of the image in Mandelbrot-space\n  mandel.setUniform('r', 1.5 * exp(-6.5 * (1 + sin(millis() / 2000))));\n  quad(-1, -1, 1, -1, 1, 1, -1, 1);\n}\n</code>\n</div>"
+                "\n<div modernizr='webgl'>\n<code>\n// the 'varying's are shared between both vertex & fragment shaders\nlet varying = 'precision highp float; varying vec2 vPos;';\n\n// the vertex shader is called for each vertex\nlet vs =\n  varying +\n  'attribute vec3 aPosition;' +\n  'void main() { vPos = (gl_Position = vec4(aPosition,1.0)).xy; }';\n\n// the fragment shader is called for each pixel\nlet fs =\n  varying +\n  'uniform vec2 p;' +\n  'uniform float r;' +\n  'const int I = 500;' +\n  'void main() {' +\n  '  vec2 c = p + vPos * r, z = c;' +\n  '  float n = 0.0;' +\n  '  for (int i = I; i > 0; i --) {' +\n  '    if(z.x*z.x+z.y*z.y > 4.0) {' +\n  '      n = float(i)/float(I);' +\n  '      break;' +\n  '    }' +\n  '    z = vec2(z.x*z.x-z.y*z.y, 2.0*z.x*z.y) + c;' +\n  '  }' +\n  '  gl_FragColor = vec4(0.5-cos(n*17.0)/2.0,0.5-cos(n*13.0)/2.0,0.5-cos(n*23.0)/2.0,1.0);' +\n  '}';\n\nlet mandel;\nfunction setup() {\n  (100, 100, WEBGL);\n\n  // create and initialize the shader\n  mandel = createShader(vs, fs);\n  shader(mandel);\n  noStroke();\n\n  // 'p' is the center point of the Mandelbrot image\n  mandel.setUniform('p', [-0.74364388703, 0.13182590421]);\n}\n\nfunction draw() {\n  // 'r' is the size of the image in Mandelbrot-space\n  mandel.setUniform('r', 1.5 * exp(-6.5 * (1 + sin(millis() / 2000))));\n  quad(-1, -1, 1, -1, 1, 1, -1, 1);\n}\n</code>\n</div>"
             ],
             "alt": "zooming Mandelbrot set. a colorful, infinitely detailed fractal.",
             "class": "p5",
@@ -18053,7 +18053,7 @@ module.exports={
             "name": "normalMaterial",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  normalMaterial();\n  sphere(40);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  normalMaterial();\n  sphere(40);\n}\n</code>\n</div>"
             ],
             "alt": "Red, green and blue gradient.",
             "class": "p5",
@@ -18075,7 +18075,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nlet img;\nfunction preload() {\n  img = loadImage('assets/laDefense.jpg');\n}\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  rotateZ(frameCount * 0.01);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  //pass image as texture\n  texture(img);\n  box(200, 200, 200);\n}\n</code>\n</div>\n\n<div>\n<code>\nlet pg;\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  pg = createGraphics(200, 200);\n  pg.textSize(75);\n}\n\nfunction draw() {\n  background(0);\n  pg.background(255);\n  pg.text('hello!', 0, 100);\n  //pass image as texture\n  texture(pg);\n  rotateX(0.5);\n  noStroke();\n  plane(50);\n}\n</code>\n</div>\n\n<div>\n<code>\nlet vid;\nfunction preload() {\n  vid = createVideo('assets/fingers.mov');\n  vid.hide();\n}\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  //pass video frame as texture\n  texture(vid);\n  rect(-40, -40, 80, 80);\n}\n\nfunction mousePressed() {\n  vid.loop();\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet img;\nfunction preload() {\n  img = loadImage('assets/laDefense.jpg');\n}\n\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  rotateZ(frameCount * 0.01);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  //pass image as texture\n  texture(img);\n  box(200, 200, 200);\n}\n</code>\n</div>\n\n<div>\n<code>\nlet pg;\n\nfunction setup() {\n  (100, 100, WEBGL);\n  pg = createGraphics(200, 200);\n  pg.textSize(75);\n}\n\nfunction draw() {\n  background(0);\n  pg.background(255);\n  pg.text('hello!', 0, 100);\n  //pass image as texture\n  texture(pg);\n  rotateX(0.5);\n  noStroke();\n  plane(50);\n}\n</code>\n</div>\n\n<div>\n<code>\nlet vid;\nfunction preload() {\n  vid = createVideo('assets/fingers.mov');\n  vid.hide();\n}\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  //pass video frame as texture\n  texture(vid);\n  rect(-40, -40, 80, 80);\n}\n\nfunction mousePressed() {\n  vid.loop();\n}\n</code>\n</div>"
             ],
             "alt": "Rotating view of many images umbrella and grid roof on a 3d plane\nblack canvas\nblack canvas",
             "class": "p5",
@@ -18096,7 +18096,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div>\n<code>\nlet img;\n\nfunction preload() {\n  img = loadImage('assets/laDefense.jpg');\n}\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  texture(img);\n  textureMode(NORMAL);\n  beginShape();\n  vertex(-50, -50, 0, 0);\n  vertex(50, -50, 1, 0);\n  vertex(50, 50, 1, 1);\n  vertex(-50, 50, 0, 1);\n  endShape();\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet img;\n\nfunction preload() {\n  img = loadImage('assets/laDefense.jpg');\n}\n\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  texture(img);\n  textureMode(NORMAL);\n  beginShape();\n  vertex(-50, -50, 0, 0);\n  vertex(50, -50, 1, 0);\n  vertex(50, 50, 1, 1);\n  vertex(-50, 50, 0, 1);\n  endShape();\n}\n</code>\n</div>"
             ],
             "alt": "the underside of a white umbrella and gridded ceiling above",
             "class": "p5",
@@ -18123,7 +18123,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div>\n<code>\nlet img;\nfunction preload() {\n  img = loadImage('assets/rockies128.jpg');\n}\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  textureWrap(MIRROR);\n}\n\nfunction draw() {\n  background(0);\n\n  let dX = mouseX;\n  let dY = mouseY;\n\n  let u = lerp(1.0, 2.0, dX);\n  let v = lerp(1.0, 2.0, dY);\n\n  scale(width / 2);\n\n  texture(img);\n\n  beginShape(TRIANGLES);\n  vertex(-1, -1, 0, 0, 0);\n  vertex(1, -1, 0, u, 0);\n  vertex(1, 1, 0, u, v);\n\n  vertex(1, 1, 0, u, v);\n  vertex(-1, 1, 0, 0, v);\n  vertex(-1, -1, 0, 0, 0);\n  endShape();\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet img;\nfunction preload() {\n  img = loadImage('assets/rockies128.jpg');\n}\n\nfunction setup() {\n  (100, 100, WEBGL);\n  textureWrap(MIRROR);\n}\n\nfunction draw() {\n  background(0);\n\n  let dX = mouseX;\n  let dY = mouseY;\n\n  let u = lerp(1.0, 2.0, dX);\n  let v = lerp(1.0, 2.0, dY);\n\n  scale(width / 2);\n\n  texture(img);\n\n  beginShape(TRIANGLES);\n  vertex(-1, -1, 0, 0, 0);\n  vertex(1, -1, 0, u, 0);\n  vertex(1, 1, 0, u, v);\n\n  vertex(1, 1, 0, u, v);\n  vertex(-1, 1, 0, 0, v);\n  vertex(-1, -1, 0, 0, 0);\n  endShape();\n}\n</code>\n</div>"
             ],
             "alt": "an image of the rocky mountains repeated in mirrored tiles",
             "class": "p5",
@@ -18138,7 +18138,7 @@ module.exports={
             "name": "ambientMaterial",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  noStroke();\n  ambientLight(200);\n  ambientMaterial(70, 130, 230);\n  sphere(40);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  noStroke();\n  ambientLight(200);\n  ambientMaterial(70, 130, 230);\n  sphere(40);\n}\n</code>\n</div>"
             ],
             "alt": "radiating light source from top right of canvas",
             "class": "p5",
@@ -18195,7 +18195,7 @@ module.exports={
             "name": "specularMaterial",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  noStroke();\n  ambientLight(50);\n  pointLight(250, 250, 250, 100, 100, 30);\n  specularMaterial(250);\n  sphere(40);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  noStroke();\n  ambientLight(50);\n  pointLight(250, 250, 250, 100, 100, 30);\n  specularMaterial(250);\n  sphere(40);\n}\n</code>\n</div>"
             ],
             "alt": "diffused radiating light source from top right of canvas",
             "class": "p5",
@@ -18259,7 +18259,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  noStroke();\n  let locX = mouseX - width / 2;\n  let locY = mouseY - height / 2;\n  ambientLight(60, 60, 60);\n  pointLight(255, 255, 255, locX, locY, 50);\n  specularMaterial(250);\n  translate(-25, 0, 0);\n  shininess(1);\n  sphere(20);\n  translate(50, 0, 0);\n  shininess(20);\n  sphere(20);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\nfunction draw() {\n  background(0);\n  noStroke();\n  let locX = mouseX - width / 2;\n  let locY = mouseY - height / 2;\n  ambientLight(60, 60, 60);\n  pointLight(255, 255, 255, locX, locY, 50);\n  specularMaterial(250);\n  translate(-25, 0, 0);\n  shininess(1);\n  sphere(20);\n  translate(50, 0, 0);\n  shininess(20);\n  sphere(20);\n}\n</code>\n</div>"
             ],
             "alt": "Shininess on Camera changes position with mouse",
             "class": "p5",
@@ -18330,7 +18330,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  background(204);\n  //move the camera away from the plane by a sin wave\n  camera(0, 0, 20 + sin(frameCount * 0.01) * 10, 0, 0, 0, 0, 1, 0);\n  plane(10, 10);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\nfunction draw() {\n  background(204);\n  //move the camera away from the plane by a sin wave\n  camera(0, 0, 20 + sin(frameCount * 0.01) * 10, 0, 0, 0, 0, 1, 0);\n  plane(10, 10);\n}\n</code>\n</div>"
             ],
             "alt": "White square repeatedly grows to fill canvas and then shrinks.",
             "class": "p5",
@@ -18371,7 +18371,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n//drag the mouse to look around!\n//you will see there's a vanishing point\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  perspective(PI / 3.0, width / height, 0.1, 500);\n}\nfunction draw() {\n  background(200);\n  orbitControl();\n  normalMaterial();\n\n  rotateX(-0.3);\n  rotateY(-0.2);\n  translate(0, 0, -50);\n\n  push();\n  translate(-15, 0, sin(frameCount / 30) * 95);\n  box(30);\n  pop();\n  push();\n  translate(15, 0, sin(frameCount / 30 + PI) * 95);\n  box(30);\n  pop();\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n//drag the mouse to look around!\n//you will see there's a vanishing point\nfunction setup() {\n  (100, 100, WEBGL);\n  perspective(PI / 3.0, width / height, 0.1, 500);\n}\nfunction draw() {\n  background(200);\n  orbitControl();\n  normalMaterial();\n\n  rotateX(-0.3);\n  rotateY(-0.2);\n  translate(0, 0, -50);\n\n  push();\n  translate(-15, 0, sin(frameCount / 30) * 95);\n  box(30);\n  pop();\n  push();\n  translate(15, 0, sin(frameCount / 30 + PI) * 95);\n  box(30);\n  pop();\n}\n</code>\n</div>"
             ],
             "alt": "two colored 3D boxes move back and forth, rotating as mouse is dragged.",
             "class": "p5",
@@ -18424,7 +18424,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n//drag the mouse to look around!\n//there's no vanishing point\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  ortho(-width / 2, width / 2, height / 2, -height / 2, 0, 500);\n}\nfunction draw() {\n  background(200);\n  orbitControl();\n  normalMaterial();\n\n  rotateX(0.2);\n  rotateY(-0.2);\n  push();\n  translate(-15, 0, sin(frameCount / 30) * 65);\n  box(30);\n  pop();\n  push();\n  translate(15, 0, sin(frameCount / 30 + PI) * 65);\n  box(30);\n  pop();\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n//drag the mouse to look around!\n//there's no vanishing point\nfunction setup() {\n  (100, 100, WEBGL);\n  ortho(-width / 2, width / 2, height / 2, -height / 2, 0, 500);\n}\nfunction draw() {\n  background(200);\n  orbitControl();\n  normalMaterial();\n\n  rotateX(0.2);\n  rotateY(-0.2);\n  push();\n  translate(-15, 0, sin(frameCount / 30) * 65);\n  box(30);\n  pop();\n  push();\n  translate(15, 0, sin(frameCount / 30 + PI) * 65);\n  box(30);\n  pop();\n}\n</code>\n</div>"
             ],
             "alt": "two 3D boxes move back and forth along same plane, rotating as mouse is dragged.",
             "class": "p5",
@@ -18479,7 +18479,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div>\n<code>\nlet cam;\nlet delta = 0.01;\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n  // set initial pan angle\n  cam.pan(-0.8);\n}\n\nfunction draw() {\n  background(200);\n\n  // pan camera according to angle 'delta'\n  cam.pan(delta);\n\n  // every 160 frames, switch direction\n  if (frameCount % 160 === 0) {\n    delta *= -1;\n  }\n\n  rotateX(frameCount * 0.01);\n  translate(-100, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet cam;\nlet delta = 0.01;\n\nfunction setup() {\n  (100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n  // set initial pan angle\n  cam.pan(-0.8);\n}\n\nfunction draw() {\n  background(200);\n\n  // pan camera according to angle 'delta'\n  cam.pan(delta);\n\n  // every 160 frames, switch direction\n  if (frameCount % 160 === 0) {\n    delta *= -1;\n  }\n\n  rotateX(frameCount * 0.01);\n  translate(-100, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n}\n</code>\n</div>"
             ],
             "alt": "camera view pans left and right across a series of rotating 3D boxes.",
             "class": "p5.Camera",
@@ -18500,7 +18500,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div>\n<code>\nlet cam;\nlet delta = 0.01;\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n  // set initial tilt\n  cam.tilt(-0.8);\n}\n\nfunction draw() {\n  background(200);\n\n  // pan camera according to angle 'delta'\n  cam.tilt(delta);\n\n  // every 160 frames, switch direction\n  if (frameCount % 160 === 0) {\n    delta *= -1;\n  }\n\n  rotateY(frameCount * 0.01);\n  translate(0, -100, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet cam;\nlet delta = 0.01;\n\nfunction setup() {\n  (100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n  // set initial tilt\n  cam.tilt(-0.8);\n}\n\nfunction draw() {\n  background(200);\n\n  // pan camera according to angle 'delta'\n  cam.tilt(delta);\n\n  // every 160 frames, switch direction\n  if (frameCount % 160 === 0) {\n    delta *= -1;\n  }\n\n  rotateY(frameCount * 0.01);\n  translate(0, -100, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n  translate(0, 35, 0);\n  box(20);\n}\n</code>\n</div>"
             ],
             "alt": "camera view tilts up and down across a series of rotating 3D boxes.",
             "class": "p5.Camera",
@@ -18531,7 +18531,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div>\n<code>\nlet cam;\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n}\n\nfunction draw() {\n  background(200);\n\n  // look at a new random point every 60 frames\n  if (frameCount % 60 === 0) {\n    cam.lookAt(random(-100, 100), random(-50, 50), 0);\n  }\n\n  rotateX(frameCount * 0.01);\n  translate(-100, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet cam;\n\nfunction setup() {\n  (100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n}\n\nfunction draw() {\n  background(200);\n\n  // look at a new random point every 60 frames\n  if (frameCount % 60 === 0) {\n    cam.lookAt(random(-100, 100), random(-50, 50), 0);\n  }\n\n  rotateX(frameCount * 0.01);\n  translate(-100, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n}\n</code>\n</div>"
             ],
             "alt": "camera view of rotating 3D cubes changes to look at a new random\npoint every second .",
             "class": "p5.Camera",
@@ -18572,7 +18572,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div>\n<code>\n// see the camera move along its own axes while maintaining its orientation\nlet cam;\nlet delta = 0.5;\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n}\n\nfunction draw() {\n  background(200);\n\n  // move the camera along its local axes\n  cam.move(delta, delta, 0);\n\n  // every 100 frames, switch direction\n  if (frameCount % 150 === 0) {\n    delta *= -1;\n  }\n\n  translate(-10, -10, 0);\n  box(50, 8, 50);\n  translate(15, 15, 0);\n  box(50, 8, 50);\n  translate(15, 15, 0);\n  box(50, 8, 50);\n  translate(15, 15, 0);\n  box(50, 8, 50);\n  translate(15, 15, 0);\n  box(50, 8, 50);\n  translate(15, 15, 0);\n  box(50, 8, 50);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n// see the camera move along its own axes while maintaining its orientation\nlet cam;\nlet delta = 0.5;\n\nfunction setup() {\n  (100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n}\n\nfunction draw() {\n  background(200);\n\n  // move the camera along its local axes\n  cam.move(delta, delta, 0);\n\n  // every 100 frames, switch direction\n  if (frameCount % 150 === 0) {\n    delta *= -1;\n  }\n\n  translate(-10, -10, 0);\n  box(50, 8, 50);\n  translate(15, 15, 0);\n  box(50, 8, 50);\n  translate(15, 15, 0);\n  box(50, 8, 50);\n  translate(15, 15, 0);\n  box(50, 8, 50);\n  translate(15, 15, 0);\n  box(50, 8, 50);\n  translate(15, 15, 0);\n  box(50, 8, 50);\n}\n</code>\n</div>"
             ],
             "alt": "camera view moves along a series of 3D boxes, maintaining the same\norientation throughout the move",
             "class": "p5.Camera",
@@ -18603,7 +18603,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div>\n<code>\n// press '1' '2' or '3' keys to set camera position\n\nlet cam;\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n}\n\nfunction draw() {\n  background(200);\n\n  // '1' key\n  if (keyIsDown(49)) {\n    cam.setPosition(30, 0, 80);\n  }\n  // '2' key\n  if (keyIsDown(50)) {\n    cam.setPosition(0, 0, 80);\n  }\n  // '3' key\n  if (keyIsDown(51)) {\n    cam.setPosition(-30, 0, 80);\n  }\n\n  box(20);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\n// press '1' '2' or '3' keys to set camera position\n\nlet cam;\n\nfunction setup() {\n  (100, 100, WEBGL);\n  normalMaterial();\n  cam = createCamera();\n}\n\nfunction draw() {\n  background(200);\n\n  // '1' key\n  if (keyIsDown(49)) {\n    cam.setPosition(30, 0, 80);\n  }\n  // '2' key\n  if (keyIsDown(50)) {\n    cam.setPosition(0, 0, 80);\n  }\n  // '3' key\n  if (keyIsDown(51)) {\n    cam.setPosition(-30, 0, 80);\n  }\n\n  box(20);\n}\n</code>\n</div>"
             ],
             "alt": "camera position changes as the user presses keys, altering view of a 3D box",
             "class": "p5.Camera",
@@ -18624,7 +18624,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div>\n<code>\nlet cam1, cam2;\nlet currentCamera;\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  normalMaterial();\n\n  cam1 = createCamera();\n  cam2 = createCamera();\n  cam2.setPosition(30, 0, 50);\n  cam2.lookAt(0, 0, 0);\n  cam2.ortho();\n\n  // set variable for previously active camera:\n  currentCamera = 1;\n}\n\nfunction draw() {\n  background(200);\n\n  // camera 1:\n  cam1.lookAt(0, 0, 0);\n  cam1.setPosition(sin(frameCount / 60) * 200, 0, 100);\n\n  // every 100 frames, switch between the two cameras\n  if (frameCount % 100 === 0) {\n    if (currentCamera === 1) {\n      setCamera(cam1);\n      currentCamera = 0;\n    } else {\n      setCamera(cam2);\n      currentCamera = 1;\n    }\n  }\n\n  drawBoxes();\n}\n\nfunction drawBoxes() {\n  rotateX(frameCount * 0.01);\n  translate(-100, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nlet cam1, cam2;\nlet currentCamera;\n\nfunction setup() {\n  (100, 100, WEBGL);\n  normalMaterial();\n\n  cam1 = createCamera();\n  cam2 = createCamera();\n  cam2.setPosition(30, 0, 50);\n  cam2.lookAt(0, 0, 0);\n  cam2.ortho();\n\n  // set variable for previously active camera:\n  currentCamera = 1;\n}\n\nfunction draw() {\n  background(200);\n\n  // camera 1:\n  cam1.lookAt(0, 0, 0);\n  cam1.setPosition(sin(frameCount / 60) * 200, 0, 100);\n\n  // every 100 frames, switch between the two cameras\n  if (frameCount % 100 === 0) {\n    if (currentCamera === 1) {\n      setCamera(cam1);\n      currentCamera = 0;\n    } else {\n      setCamera(cam2);\n      currentCamera = 1;\n    }\n  }\n\n  drawBoxes();\n}\n\nfunction drawBoxes() {\n  rotateX(frameCount * 0.01);\n  translate(-100, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n  translate(35, 0, 0);\n  box(20);\n}\n</code>\n</div>"
             ],
             "alt": "Canvas switches between two camera views, each showing a series of spinning\n3D boxes.",
             "class": "p5",
@@ -18687,7 +18687,7 @@ module.exports={
             "itemtype": "method",
             "name": "setAttributes",
             "example": [
-                "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(255);\n  push();\n  rotateZ(frameCount * 0.02);\n  rotateX(frameCount * 0.02);\n  rotateY(frameCount * 0.02);\n  fill(0, 0, 0);\n  box(50);\n  pop();\n}\n</code>\n</div>\n<br>\nNow with the antialias attribute set to true.\n<br>\n<div>\n<code>\nfunction setup() {\n  setAttributes('antialias', true);\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(255);\n  push();\n  rotateZ(frameCount * 0.02);\n  rotateX(frameCount * 0.02);\n  rotateY(frameCount * 0.02);\n  fill(0, 0, 0);\n  box(50);\n  pop();\n}\n</code>\n</div>\n\n<div>\n<code>\n// press the mouse button to enable perPixelLighting\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  noStroke();\n  fill(255);\n}\n\nvar lights = [\n  { c: '#f00', t: 1.12, p: 1.91, r: 0.2 },\n  { c: '#0f0', t: 1.21, p: 1.31, r: 0.2 },\n  { c: '#00f', t: 1.37, p: 1.57, r: 0.2 },\n  { c: '#ff0', t: 1.12, p: 1.91, r: 0.7 },\n  { c: '#0ff', t: 1.21, p: 1.31, r: 0.7 },\n  { c: '#f0f', t: 1.37, p: 1.57, r: 0.7 }\n];\n\nfunction draw() {\n  var t = millis() / 1000 + 1000;\n  background(0);\n  directionalLight(color('#222'), 1, 1, 1);\n\n  for (var i = 0; i < lights.length; i++) {\n    var light = lights[i];\n    pointLight(\n      color(light.c),\n      p5.Vector.fromAngles(t * light.t, t * light.p, width * light.r)\n    );\n  }\n\n  specularMaterial(255);\n  sphere(width * 0.1);\n\n  rotateX(t * 0.77);\n  rotateY(t * 0.83);\n  rotateZ(t * 0.91);\n  torus(width * 0.3, width * 0.07, 24, 10);\n}\n\nfunction mousePressed() {\n  setAttributes('perPixelLighting', true);\n  noStroke();\n  fill(255);\n}\nfunction mouseReleased() {\n  setAttributes('perPixelLighting', false);\n  noStroke();\n  fill(255);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nfunction setup() {\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(255);\n  push();\n  rotateZ(frameCount * 0.02);\n  rotateX(frameCount * 0.02);\n  rotateY(frameCount * 0.02);\n  fill(0, 0, 0);\n  box(50);\n  pop();\n}\n</code>\n</div>\n<br>\nNow with the antialias attribute set to true.\n<br>\n<div>\n<code>\nfunction setup() {\n  setAttributes('antialias', true);\n  (100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(255);\n  push();\n  rotateZ(frameCount * 0.02);\n  rotateX(frameCount * 0.02);\n  rotateY(frameCount * 0.02);\n  fill(0, 0, 0);\n  box(50);\n  pop();\n}\n</code>\n</div>\n\n<div>\n<code>\n// press the mouse button to enable perPixelLighting\nfunction setup() {\n  (100, 100, WEBGL);\n  noStroke();\n  fill(255);\n}\n\nvar lights = [\n  { c: '#f00', t: 1.12, p: 1.91, r: 0.2 },\n  { c: '#0f0', t: 1.21, p: 1.31, r: 0.2 },\n  { c: '#00f', t: 1.37, p: 1.57, r: 0.2 },\n  { c: '#ff0', t: 1.12, p: 1.91, r: 0.7 },\n  { c: '#0ff', t: 1.21, p: 1.31, r: 0.7 },\n  { c: '#f0f', t: 1.37, p: 1.57, r: 0.7 }\n];\n\nfunction draw() {\n  var t = millis() / 1000 + 1000;\n  background(0);\n  directionalLight(color('#222'), 1, 1, 1);\n\n  for (var i = 0; i < lights.length; i++) {\n    var light = lights[i];\n    pointLight(\n      color(light.c),\n      p5.Vector.fromAngles(t * light.t, t * light.p, width * light.r)\n    );\n  }\n\n  specularMaterial(255);\n  sphere(width * 0.1);\n\n  rotateX(t * 0.77);\n  rotateY(t * 0.83);\n  rotateZ(t * 0.91);\n  torus(width * 0.3, width * 0.07, 24, 10);\n}\n\nfunction mousePressed() {\n  setAttributes('perPixelLighting', true);\n  noStroke();\n  fill(255);\n}\nfunction mouseReleased() {\n  setAttributes('perPixelLighting', false);\n  noStroke();\n  fill(255);\n}\n</code>\n</div>"
             ],
             "alt": "a rotating cube with smoother edges",
             "class": "p5",
@@ -18768,7 +18768,7 @@ module.exports={
                 "type": "p5.Element|null"
             },
             "example": [
-                "\n<div ><code class='norender'>\nfunction setup() {\n  createCanvas(100, 100);\n  //translates canvas 50px down\n  select('canvas').position(100, 100);\n}\n</code></div>\n<div><code class='norender'>\n// these are all valid calls to select()\nvar a = select('#moo');\nvar b = select('#blah', '#myContainer');\nvar c, e;\nif (b) {\n  c = select('#foo', b);\n}\nvar d = document.getElementById('beep');\nif (d) {\n  e = select('p', d);\n}\n[a, b, c, d, e]; // unused\n</code></div>\n"
+                "\n<div ><code class='norender'>\nfunction setup() {\n  (100, 100);\n  //translates canvas 50px down\n  select('canvas').position(100, 100);\n}\n</code></div>\n<div><code class='norender'>\n// these are all valid calls to select()\nvar a = select('#moo');\nvar b = select('#blah', '#myContainer');\nvar c, e;\nif (b) {\n  c = select('#foo', b);\n}\nvar d = document.getElementById('beep');\nif (d) {\n  e = select('p', d);\n}\n[a, b, c, d, e]; // unused\n</code></div>\n"
             ],
             "class": "p5",
             "module": "p5.dom",
@@ -18823,11 +18823,11 @@ module.exports={
         {
             "file": "lib/addons/p5.dom.js",
             "line": 218,
-            "description": "<p>Removes all elements created by p5, except any canvas / graphics\nelements created by <a href=\"#/p5/createCanvas\">createCanvas</a> or <a href=\"#/p5/createGraphics\">createGraphics</a>.\nEvent handlers are removed, and element is removed from the DOM.</p>\n",
+            "description": "<p>Removes all elements created by p5, except any canvas / graphics\nelements created by <a href=\"#/p5/\"></a> or <a href=\"#/p5/createGraphics\">createGraphics</a>.\nEvent handlers are removed, and element is removed from the DOM.</p>\n",
             "itemtype": "method",
             "name": "removeElements",
             "example": [
-                "\n<div class='norender'><code>\nfunction setup() {\n  createCanvas(100, 100);\n  createDiv('this is some text');\n  createP('this is a paragraph');\n}\nfunction mousePressed() {\n  removeElements(); // this will remove the div and p, not canvas\n}\n</code></div>\n"
+                "\n<div class='norender'><code>\nfunction setup() {\n  (100, 100);\n  createDiv('this is some text');\n  createP('this is a paragraph');\n}\nfunction mousePressed() {\n  removeElements(); // this will remove the div and p, not canvas\n}\n</code></div>\n"
             ],
             "class": "p5",
             "module": "p5.dom",
@@ -18848,7 +18848,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div><code>\nvar sel;\n\nfunction setup() {\n  textAlign(CENTER);\n  background(200);\n  sel = createSelect();\n  sel.position(10, 10);\n  sel.option('pear');\n  sel.option('kiwi');\n  sel.option('grape');\n  sel.changed(mySelectEvent);\n}\n\nfunction mySelectEvent() {\n  var item = sel.value();\n  background(200);\n  text(\"it's a \" + item + '!', 50, 50);\n}\n</code></div>\n\n<div><code>\nvar checkbox;\nvar cnv;\n\nfunction setup() {\n  checkbox = createCheckbox(' fill');\n  checkbox.changed(changeFill);\n  cnv = createCanvas(100, 100);\n  cnv.position(0, 30);\n  noFill();\n}\n\nfunction draw() {\n  background(200);\n  ellipse(50, 50, 50, 50);\n}\n\nfunction changeFill() {\n  if (checkbox.checked()) {\n    fill(0);\n  } else {\n    noFill();\n  }\n}\n</code></div>"
+                "\n<div><code>\nvar sel;\n\nfunction setup() {\n  textAlign(CENTER);\n  background(200);\n  sel = createSelect();\n  sel.position(10, 10);\n  sel.option('pear');\n  sel.option('kiwi');\n  sel.option('grape');\n  sel.changed(mySelectEvent);\n}\n\nfunction mySelectEvent() {\n  var item = sel.value();\n  background(200);\n  text(\"it's a \" + item + '!', 50, 50);\n}\n</code></div>\n\n<div><code>\nvar checkbox;\nvar cnv;\n\nfunction setup() {\n  checkbox = createCheckbox(' fill');\n  checkbox.changed(changeFill);\n  cnv = (100, 100);\n  cnv.position(0, 30);\n  noFill();\n}\n\nfunction draw() {\n  background(200);\n  ellipse(50, 50, 50, 50);\n}\n\nfunction changeFill() {\n  if (checkbox.checked()) {\n    fill(0);\n  } else {\n    noFill();\n  }\n}\n</code></div>"
             ],
             "alt": "dropdown: pear, kiwi, grape. When selected text \"its a\" + selection shown.",
             "class": "p5",
@@ -19131,7 +19131,7 @@ module.exports={
                 "type": "p5.Element"
             },
             "example": [
-                "\n<div class='norender'><code>\nvar button;\nfunction setup() {\n  createCanvas(100, 100);\n  background(0);\n  button = createButton('click me');\n  button.position(19, 19);\n  button.mousePressed(changeBG);\n}\n\nfunction changeBG() {\n  var val = random(255);\n  background(val);\n}\n</code></div>"
+                "\n<div class='norender'><code>\nvar button;\nfunction setup() {\n  (100, 100);\n  background(0);\n  button = createButton('click me');\n  button.position(19, 19);\n  button.mousePressed(changeBG);\n}\n\nfunction changeBG() {\n  var val = random(255);\n  background(val);\n}\n</code></div>"
             ],
             "class": "p5",
             "module": "p5.dom",
@@ -19260,7 +19260,7 @@ module.exports={
                 "type": "p5.Element"
             },
             "example": [
-                "\n<div>\n<code>\nvar inp1, inp2;\nfunction setup() {\n  createCanvas(100, 100);\n  background('grey');\n  inp1 = createColorPicker('#ff0000');\n  inp2 = createColorPicker(color('yellow'));\n  inp1.input(setShade1);\n  inp2.input(setShade2);\n  setMidShade();\n}\n\nfunction setMidShade() {\n  // Finding a shade between the two\n  var commonShade = lerpColor(inp1.color(), inp2.color(), 0.5);\n  fill(commonShade);\n  rect(20, 20, 60, 60);\n}\n\nfunction setShade1() {\n  setMidShade();\n  console.log('You are choosing shade 1 to be : ', this.value());\n}\nfunction setShade2() {\n  setMidShade();\n  console.log('You are choosing shade 2 to be : ', this.value());\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nvar inp1, inp2;\nfunction setup() {\n  (100, 100);\n  background('grey');\n  inp1 = createColorPicker('#ff0000');\n  inp2 = createColorPicker(color('yellow'));\n  inp1.input(setShade1);\n  inp2.input(setShade2);\n  setMidShade();\n}\n\nfunction setMidShade() {\n  // Finding a shade between the two\n  var commonShade = lerpColor(inp1.color(), inp2.color(), 0.5);\n  fill(commonShade);\n  rect(20, 20, 60, 60);\n}\n\nfunction setShade1() {\n  setMidShade();\n  console.log('You are choosing shade 1 to be : ', this.value());\n}\nfunction setShade2() {\n  setMidShade();\n  console.log('You are choosing shade 2 to be : ', this.value());\n}\n</code>\n</div>"
             ],
             "class": "p5",
             "module": "p5.dom",
@@ -19462,7 +19462,7 @@ module.exports={
                 "type": "p5.Element"
             },
             "example": [
-                "\n<div class='norender notest'><code>\nvar capture;\n\nfunction setup() {\n  createCanvas(480, 480);\n  capture = createCapture(VIDEO);\n  capture.hide();\n}\n\nfunction draw() {\n  image(capture, 0, 0, width, width * capture.height / capture.width);\n  filter(INVERT);\n}\n</code></div>\n<div class='norender notest'><code>\nfunction setup() {\n  createCanvas(480, 120);\n  var constraints = {\n    video: {\n      mandatory: {\n        minWidth: 1280,\n        minHeight: 720\n      },\n      optional: [{ maxFrameRate: 10 }]\n    },\n    audio: true\n  };\n  createCapture(constraints, function(stream) {\n    console.log(stream);\n  });\n}\n</code></div>\n<code><div class='norender notest'>\nvar capture;\n\nfunction setup() {\n  createCanvas(640, 480);\n  capture = createCapture(VIDEO);\n}\nfunction draw() {\n  background(0);\n  if (capture.loadedmetadata) {\n    var c = capture.get(0, 0, 100, 100);\n    image(c, 0, 0);\n  }\n}\n</code></div>"
+                "\n<div class='norender notest'><code>\nvar capture;\n\nfunction setup() {\n  (480, 480);\n  capture = createCapture(VIDEO);\n  capture.hide();\n}\n\nfunction draw() {\n  image(capture, 0, 0, width, width * capture.height / capture.width);\n  filter(INVERT);\n}\n</code></div>\n<div class='norender notest'><code>\nfunction setup() {\n  (480, 120);\n  var constraints = {\n    video: {\n      mandatory: {\n        minWidth: 1280,\n        minHeight: 720\n      },\n      optional: [{ maxFrameRate: 10 }]\n    },\n    audio: true\n  };\n  createCapture(constraints, function(stream) {\n    console.log(stream);\n  });\n}\n</code></div>\n<code><div class='norender notest'>\nvar capture;\n\nfunction setup() {\n  (640, 480);\n  capture = createCapture(VIDEO);\n}\nfunction draw() {\n  background(0);\n  if (capture.loadedmetadata) {\n    var c = capture.get(0, 0, 100, 100);\n    image(c, 0, 0);\n  }\n}\n</code></div>"
             ],
             "class": "p5",
             "module": "p5.dom",
@@ -19702,7 +19702,7 @@ module.exports={
                 "type": "Object"
             },
             "example": [
-                "\n <div><code class='norender'>\n function setup() {\n   var cnv = createCanvas(100, 100);\n   // positions canvas 50px to the right and 100px\n   // below upper left corner of the window\n   cnv.position(50, 100);\n }\n </code></div>"
+                "\n <div><code class='norender'>\n function setup() {\n   var cnv = (100, 100);\n   // positions canvas 50px to the right and 100px\n   // below upper left corner of the window\n   cnv.position(50, 100);\n }\n </code></div>"
             ],
             "class": "p5.Element",
             "module": "p5.dom",
@@ -19997,7 +19997,7 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div><code>\nfunction setup() {\n  var c = createCanvas(100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('drop file', width / 2, height / 2);\n  c.drop(gotFile);\n}\n\nfunction gotFile(file) {\n  background(200);\n  text('received file:', width / 2, height / 2);\n  text(file.name, width / 2, height / 2 + 50);\n}\n</code></div>\n\n<div><code>\nvar img;\n\nfunction setup() {\n  var c = createCanvas(100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('drop image', width / 2, height / 2);\n  c.drop(gotFile);\n}\n\nfunction draw() {\n  if (img) {\n    image(img, 0, 0, width, height);\n  }\n}\n\nfunction gotFile(file) {\n  img = createImg(file.data).hide();\n}\n</code></div>"
+                "\n<div><code>\nfunction setup() {\n  var c = (100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('drop file', width / 2, height / 2);\n  c.drop(gotFile);\n}\n\nfunction gotFile(file) {\n  background(200);\n  text('received file:', width / 2, height / 2);\n  text(file.name, width / 2, height / 2 + 50);\n}\n</code></div>\n\n<div><code>\nvar img;\n\nfunction setup() {\n  var c = (100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('drop image', width / 2, height / 2);\n  c.drop(gotFile);\n}\n\nfunction draw() {\n  if (img) {\n    image(img, 0, 0, width, height);\n  }\n}\n\nfunction gotFile(file) {\n  img = createImg(file.data).hide();\n}\n</code></div>"
             ],
             "alt": "Canvas turns into whatever image is dragged/dropped onto it.",
             "class": "p5.Element",
@@ -20158,7 +20158,7 @@ module.exports={
                 "type": "Number"
             },
             "example": [
-                "\n<div class='norender notest'><code>\n//Clicking the canvas will loop\n//the audio sample until the user\n//clicks again to stop it\n\n//We will store the p5.MediaElement\n//object in here\nvar ele;\nvar button;\n\nfunction setup() {\n  createCanvas(710, 400);\n  //Here we create a p5.MediaElement object\n  //using the createAudio() function.\n  ele = createAudio('assets/beat.mp3');\n  ele.loop();\n  background(200);\n\n  button = createButton('2x speed');\n  button.position(100, 68);\n  button.mousePressed(twice_speed);\n\n  button = createButton('half speed');\n  button.position(200, 68);\n  button.mousePressed(half_speed);\n\n  button = createButton('reverse play');\n  button.position(300, 68);\n  button.mousePressed(reverse_speed);\n\n  button = createButton('STOP');\n  button.position(400, 68);\n  button.mousePressed(stop_song);\n\n  button = createButton('PLAY!');\n  button.position(500, 68);\n  button.mousePressed(play_speed);\n}\n\nfunction twice_speed() {\n  ele.speed(2);\n}\n\nfunction half_speed() {\n  ele.speed(0.5);\n}\n\nfunction reverse_speed() {\n  ele.speed(-1);\n}\n\nfunction stop_song() {\n  ele.stop();\n}\n\nfunction play_speed() {\n  ele.play();\n}\n</code></div>"
+                "\n<div class='norender notest'><code>\n//Clicking the canvas will loop\n//the audio sample until the user\n//clicks again to stop it\n\n//We will store the p5.MediaElement\n//object in here\nvar ele;\nvar button;\n\nfunction setup() {\n  (710, 400);\n  //Here we create a p5.MediaElement object\n  //using the createAudio() function.\n  ele = createAudio('assets/beat.mp3');\n  ele.loop();\n  background(200);\n\n  button = createButton('2x speed');\n  button.position(100, 68);\n  button.mousePressed(twice_speed);\n\n  button = createButton('half speed');\n  button.position(200, 68);\n  button.mousePressed(half_speed);\n\n  button = createButton('reverse play');\n  button.position(300, 68);\n  button.mousePressed(reverse_speed);\n\n  button = createButton('STOP');\n  button.position(400, 68);\n  button.mousePressed(stop_song);\n\n  button = createButton('PLAY!');\n  button.position(500, 68);\n  button.mousePressed(play_speed);\n}\n\nfunction twice_speed() {\n  ele.speed(2);\n}\n\nfunction half_speed() {\n  ele.speed(0.5);\n}\n\nfunction reverse_speed() {\n  ele.speed(-1);\n}\n\nfunction stop_song() {\n  ele.stop();\n}\n\nfunction play_speed() {\n  ele.play();\n}\n</code></div>"
             ],
             "class": "p5.MediaElement",
             "module": "p5.dom",
@@ -21584,7 +21584,7 @@ module.exports={
                 "type": "Array"
             },
             "example": [
-                "\n<div><code>\nvar osc;\nvar fft;\n\nfunction setup(){\n  createCanvas(100,100);\n  osc = new p5.Oscillator();\n  osc.amp(0);\n  osc.start();\n  fft = new p5.FFT();\n}\n\nfunction draw(){\n  background(0);\n\n  var freq = map(mouseX, 0, 800, 20, 15000);\n  freq = constrain(freq, 1, 20000);\n  osc.freq(freq);\n\n  var spectrum = fft.analyze();\n  noStroke();\n  fill(0,255,0); // spectrum is green\n  for (var i = 0; i< spectrum.length; i++){\n    var x = map(i, 0, spectrum.length, 0, width);\n    var h = -height + map(spectrum[i], 0, 255, height, 0);\n    rect(x, height, width / spectrum.length, h );\n  }\n\n  stroke(255);\n  text('Freq: ' + round(freq)+'Hz', 10, 10);\n\n  isMouseOverCanvas();\n}\n\n// only play sound when mouse is over canvas\nfunction isMouseOverCanvas() {\n  var mX = mouseX, mY = mouseY;\n  if (mX > 0 && mX < width && mY < height && mY > 0) {\n    osc.amp(0.5, 0.2);\n  } else {\n    osc.amp(0, 0.2);\n  }\n}\n</code></div>\n\n"
+                "\n<div><code>\nvar osc;\nvar fft;\n\nfunction setup(){\n  (100,100);\n  osc = new p5.Oscillator();\n  osc.amp(0);\n  osc.start();\n  fft = new p5.FFT();\n}\n\nfunction draw(){\n  background(0);\n\n  var freq = map(mouseX, 0, 800, 20, 15000);\n  freq = constrain(freq, 1, 20000);\n  osc.freq(freq);\n\n  var spectrum = fft.analyze();\n  noStroke();\n  fill(0,255,0); // spectrum is green\n  for (var i = 0; i< spectrum.length; i++){\n    var x = map(i, 0, spectrum.length, 0, width);\n    var h = -height + map(spectrum[i], 0, 255, height, 0);\n    rect(x, height, width / spectrum.length, h );\n  }\n\n  stroke(255);\n  text('Freq: ' + round(freq)+'Hz', 10, 10);\n\n  isMouseOverCanvas();\n}\n\n// only play sound when mouse is over canvas\nfunction isMouseOverCanvas() {\n  var mX = mouseX, mY = mouseY;\n  if (mX > 0 && mX < width && mY < height && mY > 0) {\n    osc.amp(0.5, 0.2);\n  } else {\n    osc.amp(0, 0.2);\n  }\n}\n</code></div>\n\n"
             ],
             "class": "p5.FFT",
             "module": "p5.sound",
@@ -21628,7 +21628,7 @@ module.exports={
                 "type": "Number"
             },
             "example": [
-                "\n<div><code>\n\n\nfunction setup(){\ncnv = createCanvas(100,100);\nsound = new p5.AudioIn();\nsound.start();\nfft = new p5.FFT();\nsound.connect(fft);\n}\n\n\nfunction draw(){\n\nvar centroidplot = 0.0;\nvar spectralCentroid = 0;\n\n\nbackground(0);\nstroke(0,255,0);\nvar spectrum = fft.analyze();\nfill(0,255,0); // spectrum is green\n\n//draw the spectrum\nfor (var i = 0; i< spectrum.length; i++){\n  var x = map(log(i), 0, log(spectrum.length), 0, width);\n  var h = map(spectrum[i], 0, 255, 0, height);\n  var rectangle_width = (log(i+1)-log(i))*(width/log(spectrum.length));\n  rect(x, height, rectangle_width, -h )\n}\n\nvar nyquist = 22050;\n\n// get the centroid\nspectralCentroid = fft.getCentroid();\n\n// the mean_freq_index calculation is for the display.\nvar mean_freq_index = spectralCentroid/(nyquist/spectrum.length);\n\ncentroidplot = map(log(mean_freq_index), 0, log(spectrum.length), 0, width);\n\n\nstroke(255,0,0); // the line showing where the centroid is will be red\n\nrect(centroidplot, 0, width / spectrum.length, height)\nnoStroke();\nfill(255,255,255);  // text is white\ntext(\"centroid: \", 10, 20);\ntext(round(spectralCentroid)+\" Hz\", 10, 40);\n}\n </code></div>"
+                "\n<div><code>\n\n\nfunction setup(){\ncnv = (100,100);\nsound = new p5.AudioIn();\nsound.start();\nfft = new p5.FFT();\nsound.connect(fft);\n}\n\n\nfunction draw(){\n\nvar centroidplot = 0.0;\nvar spectralCentroid = 0;\n\n\nbackground(0);\nstroke(0,255,0);\nvar spectrum = fft.analyze();\nfill(0,255,0); // spectrum is green\n\n//draw the spectrum\nfor (var i = 0; i< spectrum.length; i++){\n  var x = map(log(i), 0, log(spectrum.length), 0, width);\n  var h = map(spectrum[i], 0, 255, 0, height);\n  var rectangle_width = (log(i+1)-log(i))*(width/log(spectrum.length));\n  rect(x, height, rectangle_width, -h )\n}\n\nvar nyquist = 22050;\n\n// get the centroid\nspectralCentroid = fft.getCentroid();\n\n// the mean_freq_index calculation is for the display.\nvar mean_freq_index = spectralCentroid/(nyquist/spectrum.length);\n\ncentroidplot = map(log(mean_freq_index), 0, log(spectrum.length), 0, width);\n\n\nstroke(255,0,0); // the line showing where the centroid is will be red\n\nrect(centroidplot, 0, width / spectrum.length, height)\nnoStroke();\nfill(255,255,255);  // text is white\ntext(\"centroid: \", 10, 20);\ntext(round(spectralCentroid)+\" Hz\", 10, 40);\n}\n </code></div>"
             ],
             "class": "p5.FFT",
             "module": "p5.sound",
@@ -22355,7 +22355,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.2;\nvar susPercent = 0.2;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = createCanvas(100, 100);\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(playEnv);\n}\n\nfunction playEnv()  {\n  env.play();\n}\n</code></div>"
+                "\n<div><code>\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.2;\nvar susPercent = 0.2;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = (100, 100);\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(playEnv);\n}\n\nfunction playEnv()  {\n  env.play();\n}\n</code></div>"
             ],
             "class": "p5.Envelope",
             "module": "p5.sound",
@@ -22380,7 +22380,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.2;\nvar susPercent = 0.2;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = createCanvas(100, 100);\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(playEnv);\n}\n\nfunction playEnv()  {\n  env.play();\n}\n</code></div>"
+                "\n<div><code>\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.2;\nvar susPercent = 0.2;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = (100, 100);\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(playEnv);\n}\n\nfunction playEnv()  {\n  env.play();\n}\n</code></div>"
             ],
             "class": "p5.Envelope",
             "module": "p5.sound",
@@ -22448,7 +22448,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.2;\nvar susPercent = 0.2;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = createCanvas(100, 100);\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(playEnv);\n}\n\nfunction playEnv()  {\n  // trigger env on triOsc, 0 seconds from now\n  // After decay, sustain for 0.2 seconds before release\n  env.play(triOsc, 0, 0.2);\n}\n</code></div>"
+                "\n<div><code>\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.2;\nvar susPercent = 0.2;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = (100, 100);\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(playEnv);\n}\n\nfunction playEnv()  {\n  // trigger env on triOsc, 0 seconds from now\n  // After decay, sustain for 0.2 seconds before release\n  env.play(triOsc, 0, 0.2);\n}\n</code></div>"
             ],
             "class": "p5.Envelope",
             "module": "p5.sound",
@@ -22473,7 +22473,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\n\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.3;\nvar susPercent = 0.4;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = createCanvas(100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(envAttack);\n}\n\nfunction envAttack()  {\n  console.log('trigger attack');\n  env.triggerAttack();\n\n  background(0,255,0);\n  text('attack!', width/2, height/2);\n}\n\nfunction mouseReleased() {\n  env.triggerRelease();\n\n  background(200);\n  text('click to play', width/2, height/2);\n}\n</code></div>"
+                "\n<div><code>\n\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.3;\nvar susPercent = 0.4;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = (100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(envAttack);\n}\n\nfunction envAttack()  {\n  console.log('trigger attack');\n  env.triggerAttack();\n\n  background(0,255,0);\n  text('attack!', width/2, height/2);\n}\n\nfunction mouseReleased() {\n  env.triggerRelease();\n\n  background(200);\n  text('click to play', width/2, height/2);\n}\n</code></div>"
             ],
             "class": "p5.Envelope",
             "module": "p5.sound",
@@ -22498,7 +22498,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\n\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.3;\nvar susPercent = 0.4;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = createCanvas(100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(envAttack);\n}\n\nfunction envAttack()  {\n  console.log('trigger attack');\n  env.triggerAttack();\n\n  background(0,255,0);\n  text('attack!', width/2, height/2);\n}\n\nfunction mouseReleased() {\n  env.triggerRelease();\n\n  background(200);\n  text('click to play', width/2, height/2);\n}\n</code></div>"
+                "\n<div><code>\n\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001;\nvar decayTime = 0.3;\nvar susPercent = 0.4;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = (100, 100);\n  background(200);\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(envAttack);\n}\n\nfunction envAttack()  {\n  console.log('trigger attack');\n  env.triggerAttack();\n\n  background(0,255,0);\n  text('attack!', width/2, height/2);\n}\n\nfunction mouseReleased() {\n  env.triggerRelease();\n\n  background(200);\n  text('click to play', width/2, height/2);\n}\n</code></div>"
             ],
             "class": "p5.Envelope",
             "module": "p5.sound",
@@ -22534,7 +22534,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nvar env, osc, amp, cnv;\n\nvar attackTime = 0.001;\nvar decayTime = 0.2;\nvar attackLevel = 1;\nvar decayLevel = 0;\n\nfunction setup() {\n  cnv = createCanvas(100, 100);\n  fill(0,255,0);\n  noStroke();\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime);\n\n  osc = new p5.Oscillator();\n  osc.amp(env);\n  osc.start();\n\n  amp = new p5.Amplitude();\n\n  cnv.mousePressed(triggerRamp);\n}\n\nfunction triggerRamp() {\n  env.ramp(osc, 0, attackLevel, decayLevel);\n}\n\nfunction draw() {\n  background(20,20,20);\n  text('click me', 10, 20);\n  var h = map(amp.getLevel(), 0, 0.4, 0, height);;\n\n  rect(0, height, width, -h);\n}\n</code></div>"
+                "\n<div><code>\nvar env, osc, amp, cnv;\n\nvar attackTime = 0.001;\nvar decayTime = 0.2;\nvar attackLevel = 1;\nvar decayLevel = 0;\n\nfunction setup() {\n  cnv = (100, 100);\n  fill(0,255,0);\n  noStroke();\n\n  env = new p5.Envelope();\n  env.setADSR(attackTime, decayTime);\n\n  osc = new p5.Oscillator();\n  osc.amp(env);\n  osc.start();\n\n  amp = new p5.Amplitude();\n\n  cnv.mousePressed(triggerRamp);\n}\n\nfunction triggerRamp() {\n  env.ramp(osc, 0, attackLevel, decayLevel);\n}\n\nfunction draw() {\n  background(20,20,20);\n  text('click me', 10, 20);\n  var h = map(amp.getLevel(), 0, 0.4, 0, height);;\n\n  rect(0, height, width, -h);\n}\n</code></div>"
             ],
             "class": "p5.Envelope",
             "module": "p5.sound",
@@ -24815,7 +24815,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nvar cnv, soundFile, fft, peakDetect;\nvar ellipseWidth = 0;\n\nfunction preload() {\n  soundFile = loadSound('assets/beat.mp3');\n}\n\nfunction setup() {\n  cnv = createCanvas(100,100);\n  textAlign(CENTER);\n\n  fft = new p5.FFT();\n  peakDetect = new p5.PeakDetect();\n\n  setupSound();\n\n  // when a beat is detected, call triggerBeat()\n  peakDetect.onPeak(triggerBeat);\n}\n\nfunction draw() {\n  background(0);\n  fill(255);\n  text('click to play', width/2, height/2);\n\n  fft.analyze();\n  peakDetect.update(fft);\n\n  ellipseWidth *= 0.95;\n  ellipse(width/2, height/2, ellipseWidth, ellipseWidth);\n}\n\n// this function is called by peakDetect.onPeak\nfunction triggerBeat() {\n  ellipseWidth = 50;\n}\n\n// mouseclick starts/stops sound\nfunction setupSound() {\n  cnv.mouseClicked( function() {\n    if (soundFile.isPlaying() ) {\n      soundFile.stop();\n    } else {\n      soundFile.play();\n    }\n  });\n}\n</code></div>"
+                "\n<div><code>\nvar cnv, soundFile, fft, peakDetect;\nvar ellipseWidth = 0;\n\nfunction preload() {\n  soundFile = loadSound('assets/beat.mp3');\n}\n\nfunction setup() {\n  cnv = (100,100);\n  textAlign(CENTER);\n\n  fft = new p5.FFT();\n  peakDetect = new p5.PeakDetect();\n\n  setupSound();\n\n  // when a beat is detected, call triggerBeat()\n  peakDetect.onPeak(triggerBeat);\n}\n\nfunction draw() {\n  background(0);\n  fill(255);\n  text('click to play', width/2, height/2);\n\n  fft.analyze();\n  peakDetect.update(fft);\n\n  ellipseWidth *= 0.95;\n  ellipse(width/2, height/2, ellipseWidth, ellipseWidth);\n}\n\n// this function is called by peakDetect.onPeak\nfunction triggerBeat() {\n  ellipseWidth = 50;\n}\n\n// mouseclick starts/stops sound\nfunction setupSound() {\n  cnv.mouseClicked( function() {\n    if (soundFile.isPlaying() ) {\n      soundFile.stop();\n    } else {\n      soundFile.play();\n    }\n  });\n}\n</code></div>"
             ],
             "class": "p5.PeakDetect",
             "module": "p5.sound",
@@ -24953,7 +24953,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nvar monoSynth;\n\nfunction setup() {\n  var cnv = createCanvas(100, 100);\n  cnv.mousePressed(playSynth);\n\n  monoSynth = new p5.MonoSynth();\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n}\n\nfunction playSynth() {\n  // time from now (in seconds)\n  var time = 0;\n  // note duration (in seconds)\n  var dur = 1/6;\n  // note velocity (volume, from 0 to 1)\n  var v = random();\n\n  monoSynth.play(\"Fb3\", v, 0, dur);\n  monoSynth.play(\"Gb3\", v, time += dur, dur);\n\n  background(random(255), random(255), 255);\n  text('click to play', width/2, height/2);\n}\n</code></div>\n"
+                "\n<div><code>\nvar monoSynth;\n\nfunction setup() {\n  var cnv = (100, 100);\n  cnv.mousePressed(playSynth);\n\n  monoSynth = new p5.MonoSynth();\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n}\n\nfunction playSynth() {\n  // time from now (in seconds)\n  var time = 0;\n  // note duration (in seconds)\n  var dur = 1/6;\n  // note velocity (volume, from 0 to 1)\n  var v = random();\n\n  monoSynth.play(\"Fb3\", v, 0, dur);\n  monoSynth.play(\"Gb3\", v, time += dur, dur);\n\n  background(random(255), random(255), 255);\n  text('click to play', width/2, height/2);\n}\n</code></div>\n"
             ],
             "class": "p5.MonoSynth",
             "module": "p5.sound",
@@ -25214,7 +25214,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nvar polySynth;\n\nfunction setup() {\n  var cnv = createCanvas(100, 100);\n  cnv.mousePressed(playSynth);\n\n  polySynth = new p5.PolySynth();\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n}\n\nfunction playSynth() {\n  // note duration (in seconds)\n  var dur = 0.1;\n\n  // time from now (in seconds)\n  var time = 0;\n\n  // velocity (volume, from 0 to 1)\n  var vel = 0.1;\n\n  polySynth.play(\"G2\", vel, 0, dur);\n  polySynth.play(\"C3\", vel, 0, dur);\n  polySynth.play(\"G3\", vel, 0, dur);\n\n  background(random(255), random(255), 255);\n  text('click to play', width/2, height/2);\n}\n</code></div>"
+                "\n<div><code>\nvar polySynth;\n\nfunction setup() {\n  var cnv = (100, 100);\n  cnv.mousePressed(playSynth);\n\n  polySynth = new p5.PolySynth();\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n}\n\nfunction playSynth() {\n  // note duration (in seconds)\n  var dur = 0.1;\n\n  // time from now (in seconds)\n  var time = 0;\n\n  // velocity (volume, from 0 to 1)\n  var vel = 0.1;\n\n  polySynth.play(\"G2\", vel, 0, dur);\n  polySynth.play(\"C3\", vel, 0, dur);\n  polySynth.play(\"G3\", vel, 0, dur);\n\n  background(random(255), random(255), 255);\n  text('click to play', width/2, height/2);\n}\n</code></div>"
             ],
             "class": "p5.PolySynth",
             "module": "p5.sound",
@@ -27644,11 +27644,11 @@ module.exports={
             "p5.cursor"
         ],
         "P2D": [
-            "p5.createCanvas",
+            "p5.",
             "p5.createGraphics"
         ],
         "WEBGL": [
-            "p5.createCanvas",
+            "p5.",
             "p5.createGraphics"
         ],
         "BLEND": [
@@ -45568,7 +45568,7 @@ p5.Color = function(pInst, vals) {
  * <code>
  * let myColor;
  * function setup() {
- *   createCanvas(200, 200);
+ *   (200, 200);
  *   stroke(255);
  *   myColor = color(100, 100, 250);
  *   fill(myColor);
@@ -46720,7 +46720,7 @@ p5.prototype.background = function() {
  * <code>
  * // Clear the screen on mouse press.
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  * }
  *
  * function draw() {
@@ -47039,7 +47039,7 @@ p5.prototype.fill = function() {
  * <div modernizr='webgl'>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -47079,7 +47079,7 @@ p5.prototype.noFill = function() {
  * <div modernizr='webgl'>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -48178,7 +48178,7 @@ p5.prototype.noCursor = function() {
  * @readOnly
  * @example
  * <div class="norender"><code>
- * createCanvas(displayWidth, displayHeight);
+ * (displayWidth, displayHeight);
  * </code></div>
  *
  * @alt
@@ -48197,7 +48197,7 @@ p5.prototype.displayWidth = screen.width;
  * @readOnly
  * @example
  * <div class="norender"><code>
- * createCanvas(displayWidth, displayHeight);
+ * (displayWidth, displayHeight);
  * </code></div>
  *
  * @alt
@@ -48214,7 +48214,7 @@ p5.prototype.displayHeight = screen.height;
  * @readOnly
  * @example
  * <div class="norender"><code>
- * createCanvas(windowWidth, windowHeight);
+ * (windowWidth, windowHeight);
  * </code></div>
  *
  * @alt
@@ -48230,7 +48230,7 @@ p5.prototype.windowWidth = getWindowWidth();
  * @readOnly
  * @example
  * <div class="norender"><code>
- * createCanvas(windowWidth, windowHeight);
+ * (windowWidth, windowHeight);
  * </code></div>
  *@alt
  * no display.
@@ -48247,7 +48247,7 @@ p5.prototype.windowHeight = getWindowHeight();
  * @example
  * <div class="norender"><code>
  * function setup() {
- *   createCanvas(windowWidth, windowHeight);
+ *   (windowWidth, windowHeight);
  * }
  *
  * function draw() {
@@ -48294,10 +48294,10 @@ function getWindowHeight() {
 
 /**
  * System variable that stores the width of the drawing canvas. This value
- * is set by the first parameter of the <a href="#/p5/createCanvas">createCanvas()</a> function.
- * For example, the function call createCanvas(320, 240) sets the width
+ * is set by the first parameter of the <a href="#/p5/">()</a> function.
+ * For example, the function call (320, 240) sets the width
  * variable to the value 320. The value of width defaults to 100 if
- * <a href="#/p5/createCanvas">createCanvas()</a> is not used in a program.
+ * <a href="#/p5/">()</a> is not used in a program.
  *
  * @property {Number} width
  * @readOnly
@@ -48306,10 +48306,10 @@ p5.prototype.width = 0;
 
 /**
  * System variable that stores the height of the drawing canvas. This value
- * is set by the second parameter of the <a href="#/p5/createCanvas">createCanvas()</a> function. For
- * example, the function call createCanvas(320, 240) sets the height
+ * is set by the second parameter of the <a href="#/p5/">()</a> function. For
+ * example, the function call (320, 240) sets the height
  * variable to the value 240. The value of height defaults to 100 if
- * <a href="#/p5/createCanvas">createCanvas()</a> is not used in a program.
+ * <a href="#/p5/">()</a> is not used in a program.
  *
  * @property {Number} height
  * @readOnly
@@ -48381,7 +48381,7 @@ p5.prototype.fullscreen = function(val) {
  * <code>
  * function setup() {
  *   pixelDensity(1);
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   background(200);
  *   ellipse(width / 2, height / 2, 50, 50);
  * }
@@ -48391,7 +48391,7 @@ p5.prototype.fullscreen = function(val) {
  * <code>
  * function setup() {
  *   pixelDensity(3.0);
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   background(200);
  *   ellipse(width / 2, height / 2, 50, 50);
  * }
@@ -48433,7 +48433,7 @@ p5.prototype.pixelDensity = function(val) {
  * function setup() {
  *   let density = displayDensity();
  *   pixelDensity(density);
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   background(200);
  *   ellipse(width / 2, height / 2, 50, 50);
  * }
@@ -49789,9 +49789,9 @@ var p5 = function(sketch, node, sync) {
 
   this._setup = function() {
     // Always create a default canvas.
-    // Later on if the user calls createCanvas, this default one
+    // Later on if the user calls , this default one
     // will be replaced
-    this.createCanvas(
+    this.(
       this._defaultCanvasSize.width,
       this._defaultCanvasSize.height,
       'p2d'
@@ -50070,7 +50070,7 @@ p5.instance = null;
  * p5.disableFriendlyErrors = true;
  *
  * function setup() {
- *   createCanvas(100, 50);
+ *   (100, 50);
  * }
  * </code></div>
  */
@@ -50217,7 +50217,7 @@ var p5 = _dereq_('./main');
  * with the <a href="http://p5js.org/reference/#/libraries/p5.dom">p5.dom
  * library</a>.
  * It is not called directly, but <a href="#/p5.Element">p5.Element</a>
- * objects are created by calling <a href="#/p5/createCanvas">createCanvas</a>, <a href="#/p5/createGraphics">createGraphics</a>,
+ * objects are created by calling <a href="#/p5/"></a>, <a href="#/p5/createGraphics">createGraphics</a>,
  * or in the p5.dom library, <a href="#/p5/createDiv">createDiv</a>, <a href="#/p5/createImg">createImg</a>, <a href="#/p5/createInput">createInput</a>, etc.
  *
  * @class p5.Element
@@ -50231,7 +50231,7 @@ p5.Element = function(elt, pInst) {
    * <div>
    * <code>
    * function setup() {
-   *   let c = createCanvas(50, 50);
+   *   let c = (50, 50);
    *   c.elt.style.border = '5px solid red';
    * }
    *
@@ -50276,7 +50276,7 @@ p5.Element = function(elt, pInst) {
  * // &lt;div id="myContainer">&lt;/div>
  *
  * // in the js file:
- * let cnv = createCanvas(100, 100);
+ * let cnv = (100, 100);
  * cnv.parent('myContainer');
  * </code></div>
  * <div class='norender'><code>
@@ -50336,7 +50336,7 @@ p5.Element.prototype.parent = function(p) {
  * @example
  * <div class='norender'><code>
  * function setup() {
- *   let cnv = createCanvas(100, 100);
+ *   let cnv = (100, 100);
  *   // Assigns a CSS selector ID to
  *   // the canvas element.
  *   cnv.id('mycanvas');
@@ -50373,7 +50373,7 @@ p5.Element.prototype.id = function(id) {
  * @example
  * <div class='norender'><code>
  * function setup() {
- *   let cnv = createCanvas(100, 100);
+ *   let cnv = (100, 100);
  *   // Assigns a CSS selector class 'small'
  *   // to the canvas element.
  *   cnv.class('small');
@@ -50415,7 +50415,7 @@ p5.Element.prototype.class = function(c) {
  * let d;
  * let g;
  * function setup() {
- *   cnv = createCanvas(100, 100);
+ *   cnv = (100, 100);
  *   cnv.mousePressed(changeGray); // attach listener for
  *   // canvas click only
  *   d = 10;
@@ -50474,7 +50474,7 @@ p5.Element.prototype.mousePressed = function(fxn) {
  * let d;
  * let g;
  * function setup() {
- *   cnv = createCanvas(100, 100);
+ *   cnv = (100, 100);
  *   cnv.doubleClicked(changeGray); // attach listener for
  *   // canvas double click only
  *   d = 10;
@@ -50533,7 +50533,7 @@ p5.Element.prototype.doubleClicked = function(fxn) {
  * let d;
  * let g;
  * function setup() {
- *   cnv = createCanvas(100, 100);
+ *   cnv = (100, 100);
  *   cnv.mouseWheel(changeSize); // attach listener for
  *   // activity on canvas only
  *   d = 10;
@@ -50591,7 +50591,7 @@ p5.Element.prototype.mouseWheel = function(fxn) {
  * let d;
  * let g;
  * function setup() {
- *   cnv = createCanvas(100, 100);
+ *   cnv = (100, 100);
  *   cnv.mouseReleased(changeGray); // attach listener for
  *   // activity on canvas only
  *   d = 10;
@@ -50647,7 +50647,7 @@ p5.Element.prototype.mouseReleased = function(fxn) {
  * let g;
  *
  * function setup() {
- *   cnv = createCanvas(100, 100);
+ *   cnv = (100, 100);
  *   cnv.mouseClicked(changeGray); // attach listener for
  *   // activity on canvas only
  *   d = 10;
@@ -50699,7 +50699,7 @@ p5.Element.prototype.mouseClicked = function(fxn) {
  * let d = 30;
  * let g;
  * function setup() {
- *   cnv = createCanvas(100, 100);
+ *   cnv = (100, 100);
  *   cnv.mouseMoved(changeSize); // attach listener for
  *   // activity on canvas only
  *   d = 10;
@@ -50756,7 +50756,7 @@ p5.Element.prototype.mouseMoved = function(fxn) {
  * let cnv;
  * let d;
  * function setup() {
- *   cnv = createCanvas(100, 100);
+ *   cnv = (100, 100);
  *   cnv.mouseOver(changeGray);
  *   d = 10;
  * }
@@ -50799,7 +50799,7 @@ p5.Element.prototype.mouseOver = function(fxn) {
  * let cnv;
  * let d;
  * function setup() {
- *   cnv = createCanvas(100, 100);
+ *   cnv = (100, 100);
  *   cnv.mouseOut(changeGray);
  *   d = 10;
  * }
@@ -50841,7 +50841,7 @@ p5.Element.prototype.mouseOut = function(fxn) {
  * let d;
  * let g;
  * function setup() {
- *   cnv = createCanvas(100, 100);
+ *   cnv = (100, 100);
  *   cnv.touchStarted(changeGray); // attach listener for
  *   // canvas click only
  *   d = 10;
@@ -50888,7 +50888,7 @@ p5.Element.prototype.touchStarted = function(fxn) {
  * let cnv;
  * let g;
  * function setup() {
- *   cnv = createCanvas(100, 100);
+ *   cnv = (100, 100);
  *   cnv.touchMoved(changeGray); // attach listener for
  *   // canvas click only
  *   g = 100;
@@ -50929,7 +50929,7 @@ p5.Element.prototype.touchMoved = function(fxn) {
  * let d;
  * let g;
  * function setup() {
- *   cnv = createCanvas(100, 100);
+ *   cnv = (100, 100);
  *   cnv.touchEnded(changeGray); // attach listener for
  *   // canvas click only
  *   d = 10;
@@ -50978,7 +50978,7 @@ p5.Element.prototype.touchEnded = function(fxn) {
  * // To test this sketch, simply drag a
  * // file over the canvas
  * function setup() {
- *   let c = createCanvas(100, 100);
+ *   let c = (100, 100);
  *   background(200);
  *   textAlign(CENTER);
  *   text('Drag file', width / 2, height / 2);
@@ -51016,7 +51016,7 @@ p5.Element.prototype.dragOver = function(fxn) {
  * // To test this sketch, simply drag a file
  * // over and then out of the canvas area
  * function setup() {
- *   let c = createCanvas(100, 100);
+ *   let c = (100, 100);
  *   background(200);
  *   textAlign(CENTER);
  *   text('Drag file', width / 2, height / 2);
@@ -51151,7 +51151,7 @@ p5.Graphics.prototype = Object.create(p5.Element.prototype);
  * <div><code>
  * let pg;
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   background(0);
  *   pg = createGraphics(50, 100);
  *   pg.fill(0);
@@ -51201,7 +51201,7 @@ p5.Graphics.prototype.reset = function() {
  * <div class='norender'><code>
  * let bg;
  * function setup() {
- *   bg = createCanvas(100, 100);
+ *   bg = (100, 100);
  *   bg.background(0);
  *   image(bg, 0, 0);
  *   bg.remove();
@@ -51212,7 +51212,7 @@ p5.Graphics.prototype.reset = function() {
  * let bg;
  * function setup() {
  *   pixelDensity(1);
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   stroke(255);
  *   fill(0);
  *
@@ -52955,25 +52955,25 @@ var constants = _dereq_('./constants');
 _dereq_('./p5.Graphics');
 _dereq_('./p5.Renderer2D');
 _dereq_('../webgl/p5.RendererGL');
-var defaultId = 'defaultCanvas0'; // this gets set again in createCanvas
+var defaultId = 'defaultCanvas0'; // this gets set again in 
 var defaultClass = 'p5Canvas';
 
 /**
  * Creates a canvas element in the document, and sets the dimensions of it
  * in pixels. This method should be called only once at the start of setup.
- * Calling <a href="#/p5/createCanvas">createCanvas</a> more than once in a sketch will result in very
+ * Calling <a href="#/p5/"></a> more than once in a sketch will result in very
  * unpredictable behavior. If you want more than one drawing canvas
  * you could use <a href="#/p5/createGraphics">createGraphics</a> (hidden by default but it can be shown).
  * <br><br>
  * The system variables width and height are set by the parameters passed
- * to this function. If <a href="#/p5/createCanvas">createCanvas()</a> is not used, the window will be
+ * to this function. If <a href="#/p5/">()</a> is not used, the window will be
  * given a default size of 100x100 pixels.
  * <br><br>
  * For more ways to position the canvas, see the
  * <a href='https://github.com/processing/p5.js/wiki/Positioning-your-canvas'>
  * positioning the canvas</a> wiki page.
  *
- * @method createCanvas
+ * @method 
  * @param  {Number} w width of the canvas
  * @param  {Number} h height of the canvas
  * @param  {Constant} [renderer] either P2D or WEBGL
@@ -52982,7 +52982,7 @@ var defaultClass = 'p5Canvas';
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 50);
+ *   (100, 50);
  *   background(153);
  *   line(0, 0, width, height);
  * }
@@ -52994,8 +52994,8 @@ var defaultClass = 'p5Canvas';
  *
  */
 
-p5.prototype.createCanvas = function(w, h, renderer) {
-  p5._validateParameters('createCanvas', arguments);
+p5.prototype. = function(w, h, renderer) {
+  p5._validateParameters('', arguments);
   //optional: renderer, otherwise defaults to p2d
   var r = renderer || constants.P2D;
   var c;
@@ -53071,7 +53071,7 @@ p5.prototype.createCanvas = function(w, h, renderer) {
  * @example
  * <div class="norender"><code>
  * function setup() {
- *   createCanvas(windowWidth, windowHeight);
+ *   (windowWidth, windowHeight);
  * }
  *
  * function draw() {
@@ -53154,7 +53154,7 @@ p5.prototype.noCanvas = function() {
  * <code>
  * let pg;
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   pg = createGraphics(100, 100);
  * }
  * function draw() {
@@ -54357,7 +54357,7 @@ p5.prototype.bezier = function() {
  * <div modernizr='webgl'>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   noFill();
  *
  *   bezierDetail(5);
@@ -54626,7 +54626,7 @@ p5.prototype.curve = function() {
  * <div modernizr='webgl'>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *
  *   curveDetail(5);
  * }
@@ -54670,7 +54670,7 @@ p5.prototype.curveDetail = function(d) {
  * // Move the mouse left and right to see the curve change
  *
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   noFill();
  * }
  *
@@ -55121,7 +55121,7 @@ p5.prototype.beginShape = function(kind) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   setAttributes('antialias', true);
  * }
  * function draw() {
@@ -55249,7 +55249,7 @@ p5.prototype.bezierVertex = function() {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   setAttributes('antialias', true);
  * }
  * function draw() {
@@ -55530,7 +55530,7 @@ p5.prototype.endShape = function(mode) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   setAttributes('antialias', true);
  * }
  * function draw() {
@@ -55637,7 +55637,7 @@ p5.prototype.quadraticVertex = function() {
  *
  * <div>
  * <code>
- * createCanvas(100, 100, WEBGL);
+ * (100, 100, WEBGL);
  * background(240, 240, 240);
  * fill(237, 34, 93);
  * noStroke();
@@ -55655,7 +55655,7 @@ p5.prototype.quadraticVertex = function() {
  *
  * <div>
  * <code>
- * createCanvas(100, 100, WEBGL);
+ * (100, 100, WEBGL);
  * background(240, 240, 240);
  * fill(237, 34, 93);
  * noStroke();
@@ -55870,7 +55870,7 @@ var p5 = _dereq_('./main');
  * @example
  * <div><code>
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   background(200);
  *   noLoop();
  * }
@@ -55883,7 +55883,7 @@ var p5 = _dereq_('./main');
  * <div><code>
  * let x = 0;
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  * }
  *
  * function draw() {
@@ -55924,7 +55924,7 @@ p5.prototype.noLoop = function() {
  * <div><code>
  * let x = 0;
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   noLoop();
  * }
  *
@@ -56123,7 +56123,7 @@ p5.prototype.pop = function() {
  * let x = 0;
  *
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   noLoop();
  * }
  *
@@ -56142,7 +56142,7 @@ p5.prototype.pop = function() {
  * let x = 0;
  *
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   noLoop();
  * }
  *
@@ -56315,7 +56315,7 @@ var p5 = _dereq_('./main');
  * <div modernizr='webgl'>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   noFill();
  * }
  *
@@ -56428,7 +56428,7 @@ p5.prototype.rotate = function(angle, axis) {
  * <div modernizr='webgl'>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  * function draw() {
  *   background(255);
@@ -56458,7 +56458,7 @@ p5.prototype.rotateX = function(angle) {
  * <div modernizr='webgl'>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  * function draw() {
  *   background(255);
@@ -56488,7 +56488,7 @@ p5.prototype.rotateY = function(angle) {
  * <div modernizr='webgl'>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  * function draw() {
  *   background(255);
@@ -57067,7 +57067,7 @@ p5.TypedDict.prototype.print = function() {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   background(200);
  *   text('click here to save', 10, 10, 70, 80);
  * }
@@ -57105,7 +57105,7 @@ p5.TypedDict.prototype.saveTable = function(filename) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   background(200);
  *   text('click here to save', 10, 10, 70, 80);
  * }
@@ -57571,7 +57571,7 @@ p5.prototype._updatePAccelerations = function() {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -57602,7 +57602,7 @@ p5.prototype.rotationX = 0;
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -57634,7 +57634,7 @@ p5.prototype.rotationY = 0;
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -58502,7 +58502,7 @@ p5.prototype._onblur = function(e) {
  * let y = 100;
  *
  * function setup() {
- *   createCanvas(512, 512);
+ *   (512, 512);
  *   fill(255, 0, 0);
  * }
  *
@@ -58532,7 +58532,7 @@ p5.prototype._onblur = function(e) {
  * let diameter = 50;
  *
  * function setup() {
- *   createCanvas(512, 512);
+ *   (512, 512);
  * }
  *
  * function draw() {
@@ -58733,7 +58733,7 @@ p5.prototype.pmouseY = 0;
  *
  * function setup() {
  *   //use a variable to store a pointer to the canvas
- *   myCanvas = createCanvas(100, 100);
+ *   myCanvas = (100, 100);
  *   const body = document.getElementsByTagName('body')[0];
  *   myCanvas.parent(body);
  * }
@@ -58772,7 +58772,7 @@ p5.prototype.winMouseX = 0;
  *
  * function setup() {
  *   //use a variable to store a pointer to the canvas
- *   myCanvas = createCanvas(100, 100);
+ *   myCanvas = (100, 100);
  *   const body = document.getElementsByTagName('body')[0];
  *   myCanvas.parent(body);
  * }
@@ -58813,7 +58813,7 @@ p5.prototype.winMouseY = 0;
  *
  * function setup() {
  *   //use a variable to store a pointer to the canvas
- *   myCanvas = createCanvas(100, 100);
+ *   myCanvas = (100, 100);
  *   noStroke();
  *   fill(237, 34, 93);
  * }
@@ -58855,7 +58855,7 @@ p5.prototype.pwinMouseX = 0;
  *
  * function setup() {
  *   //use a variable to store a pointer to the canvas
- *   myCanvas = createCanvas(100, 100);
+ *   myCanvas = (100, 100);
  *   noStroke();
  *   fill(237, 34, 93);
  * }
@@ -60552,7 +60552,7 @@ p5.prototype.createImage = function(width, height) {
  *  @example
  * <div class='norender notest'><code>
  * function setup() {
- *   let c = createCanvas(100, 100);
+ *   let c = (100, 100);
  *   background(255, 0, 0);
  *   saveCanvas(c, 'myCanvas', 'jpg');
  * }
@@ -60561,7 +60561,7 @@ p5.prototype.createImage = function(width, height) {
  * // note that this example has the same result as above
  * // if no canvas is specified, defaults to main canvas
  * function setup() {
- *   let c = createCanvas(100, 100);
+ *   let c = (100, 100);
  *   background(255, 0, 0);
  *   saveCanvas('myCanvas', 'jpg');
  *
@@ -61330,7 +61330,7 @@ var Filters = _dereq_('./filters');
  * function setup() {
  *   let img = createImage(100, 100); // same as new p5.Image(100, 100);
  *   img.loadPixels();
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   background(0);
  *
  *   // helper for writing color to array
@@ -61389,7 +61389,7 @@ p5.Image = function(width, height) {
    * }
    *
    * function setup() {
-   *   createCanvas(100, 100);
+   *   (100, 100);
    *   image(img, 0, 0);
    *   for (let i = 0; i < img.width; i++) {
    *     let c = img.get(i, img.height / 2);
@@ -61416,7 +61416,7 @@ p5.Image = function(width, height) {
    * }
    *
    * function setup() {
-   *   createCanvas(100, 100);
+   *   (100, 100);
    *   image(img, 0, 0);
    *   for (let i = 0; i < img.height; i++) {
    *     let c = img.get(img.width / 2, i);
@@ -61878,7 +61878,7 @@ p5.Image.prototype.copy = function() {
  * }
  *
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   photo.mask(maskImage);
  *   image(photo, 0, 0);
  * }
@@ -63667,7 +63667,7 @@ p5.prototype.httpGet = function() {
  * let postData = { userId: 1, title: 'p5 Clicked!', body: 'p5.js is way cool.' };
  *
  * function setup() {
- *   createCanvas(800, 800);
+ *   (800, 800);
  * }
  *
  * function mousePressed() {
@@ -63693,7 +63693,7 @@ p5.prototype.httpGet = function() {
  * let postData = { title: 'p5 Clicked!', body: 'p5.js is way cool.' };
  *
  * function setup() {
- *   createCanvas(800, 800);
+ *   (800, 800);
  * }
  *
  * function mousePressed() {
@@ -63982,7 +63982,7 @@ p5.prototype._pWriters = [];
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   background(200);
  *   text('click here to save', 10, 10, 70, 80);
  * }
@@ -64091,7 +64091,7 @@ p5.PrintWriter = function(filename, extension) {
    * let writer;
    *
    * function setup() {
-   *   createCanvas(400, 400);
+   *   (400, 400);
    *   // create a PrintWriter
    *   writer = createWriter('newFile.txt');
    * }
@@ -64208,7 +64208,7 @@ p5.PrintWriter = function(filename, extension) {
  * save(img, 'my.png');
  *
  * // Saves canvas as an image
- * let cnv = createCanvas(100, 100);
+ * let cnv = (100, 100);
  * save(cnv, 'myCanvas.jpg');
  *
  * // Saves p5.Renderer object as an image
@@ -64327,7 +64327,7 @@ p5.prototype.save = function(object, _filename, _options) {
  * json.name = 'Lion';
  *
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   background(200);
  *   text('click here to save', 10, 10, 70, 80);
  * }
@@ -64381,7 +64381,7 @@ p5.prototype.saveJSONArray = p5.prototype.saveJSON;
  * let list = split(words, ' ');
  *
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   background(200);
  *   text('click here to save', 10, 10, 70, 80);
  * }
@@ -65374,7 +65374,7 @@ p5.Table.prototype.addColumn = function(title) {
  * }
  *
  * function setup() {
- *   createCanvas(200, 100);
+ *   (200, 100);
  *   textAlign(CENTER);
  *   background(255);
  * }
@@ -65411,7 +65411,7 @@ p5.Table.prototype.getColumnCount = function() {
  * }
  *
  * function setup() {
- *   createCanvas(200, 100);
+ *   (200, 100);
  *   textAlign(CENTER);
  *   background(255);
  * }
@@ -68120,7 +68120,7 @@ var p5 = _dereq_('../core/main');
  * @example
  * <div modernizr='webgl'><code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   noStroke();
  *   fill(255, 102, 204);
  * }
@@ -68362,7 +68362,7 @@ p5.prototype.noise = function(x, y, z) {
  * let noiseScale = 0.02;
  *
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  * }
  *
  * function draw() {
@@ -68629,7 +68629,7 @@ p5.Vector.prototype.toString = function p5VectorToString() {
  * <code>
  * let v0, v1;
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *
  *   v0 = createVector(0, 0);
  *   v1 = createVector(50, 50);
@@ -69909,7 +69909,7 @@ p5.Vector.fromAngle = function fromAngle(angle, length) {
  * <div modernizr='webgl'>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   fill(255);
  *   noStroke();
  * }
@@ -70421,7 +70421,7 @@ p5.prototype.random = function(min, max) {
  * let distribution = new Array(360);
  *
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   for (let i = 0; i < distribution.length; i++) {
  *     distribution[i] = floor(randomGaussian(0, 15));
  *   }
@@ -71343,7 +71343,7 @@ p5.prototype.loadFont = function(path, onSuccess, onError) {
  *   inconsolata = loadFont('assets/inconsolata.otf');
  * }
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   textFont(inconsolata);
  *   textSize(width / 3);
  *   textAlign(CENTER, CENTER);
@@ -71635,7 +71635,7 @@ p5.Font.prototype.textBounds = function(str, x, y, fontSize, opts) {
  * let points;
  * let bounds;
  * function setup() {
- *   createCanvas(100, 100);
+ *   (100, 100);
  *   stroke(0);
  *   fill(255, 104, 204);
  *
@@ -74162,7 +74162,7 @@ var constants = _dereq_('../core/constants');
  * // draw a plane
  * // with width 50 and height 50
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -74247,7 +74247,7 @@ p5.prototype.plane = function(width, height, detailX, detailY) {
  * // draw a spinning box
  * // with width, height and depth of 50
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -74364,7 +74364,7 @@ p5.prototype.box = function(width, height, depth, detailX, detailY) {
  * <code>
  * // draw a sphere with radius 40
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -74530,7 +74530,7 @@ var _truncatedCone = function(
  * // draw a spinning cylinder
  * // with radius 20 and height 50
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -74621,7 +74621,7 @@ p5.prototype.cylinder = function(
  * // draw a spinning cone
  * // with radius 40 and height 70
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -74693,7 +74693,7 @@ p5.prototype.cone = function(radius, height, detailX, detailY, cap) {
  * // draw an ellipsoid
  * // with radius 30, 40 and 40.
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -74781,7 +74781,7 @@ p5.prototype.ellipsoid = function(radiusX, radiusY, radiusZ, detailX, detailY) {
  * // draw a spinning torus
  * // with ring radius 30 and tube radius 15
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -74878,7 +74878,7 @@ p5.prototype.torus = function(radius, tubeRadius, detailX, detailY) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -75302,7 +75302,7 @@ p5.RendererGL.prototype.curve = function(
  * <code>
  * //draw a line
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -75754,7 +75754,7 @@ var constants = _dereq_('../core/constants');
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   normalMaterial();
  * }
  * function draw() {
@@ -75889,7 +75889,7 @@ p5.prototype.orbitControl = function(sensitivityX, sensitivityY) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
  *   normalMaterial();
  *   debugMode();
@@ -75916,7 +75916,7 @@ p5.prototype.orbitControl = function(sensitivityX, sensitivityY) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
  *   normalMaterial();
  *   debugMode(GRID);
@@ -75936,7 +75936,7 @@ p5.prototype.orbitControl = function(sensitivityX, sensitivityY) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
  *   normalMaterial();
  *   debugMode(AXES);
@@ -75958,7 +75958,7 @@ p5.prototype.orbitControl = function(sensitivityX, sensitivityY) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
  *   normalMaterial();
  *   debugMode(GRID, 100, 10, 0, 0, 0);
@@ -75978,7 +75978,7 @@ p5.prototype.orbitControl = function(sensitivityX, sensitivityY) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
  *   normalMaterial();
  *   debugMode(100, 10, 0, 0, 0, 20, 0, -40, 0);
@@ -76109,7 +76109,7 @@ p5.prototype.debugMode = function() {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
  *   normalMaterial();
  *   debugMode();
@@ -76322,7 +76322,7 @@ var p5 = _dereq_('../core/main');
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  * function draw() {
  *   background(0);
@@ -76393,7 +76393,7 @@ p5.prototype.ambientLight = function(v1, v2, v3, a) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  * function draw() {
  *   background(0);
@@ -76493,7 +76493,7 @@ p5.prototype.directionalLight = function(v1, v2, v3, x, y, z) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  * function draw() {
  *   background(0);
@@ -76588,7 +76588,7 @@ p5.prototype.pointLight = function(v1, v2, v3, x, y, z) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  * function draw() {
  *   background(0);
@@ -76659,7 +76659,7 @@ _dereq_('./p5.Geometry');
  * }
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -76686,7 +76686,7 @@ _dereq_('./p5.Geometry');
  * }
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -76873,7 +76873,7 @@ function parseObj(model, lines) {
  * }
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -76949,7 +76949,7 @@ _dereq_('./p5.Texture');
  *   mandel = loadShader('assets/shader.vert', 'assets/shader.frag');
  * }
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   // use the shader
  *   shader(mandel);
  *   noStroke();
@@ -77057,7 +77057,7 @@ p5.prototype.loadShader = function(
  *
  * let mandel;
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *
  *   // create and initialize the shader
  *   mandel = createShader(vs, fs);
@@ -77139,7 +77139,7 @@ p5.prototype.resetShader = function() {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -77182,7 +77182,7 @@ p5.prototype.normalMaterial = function() {
  * }
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -77202,7 +77202,7 @@ p5.prototype.normalMaterial = function() {
  * let pg;
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   pg = createGraphics(200, 200);
  *   pg.textSize(75);
  * }
@@ -77228,7 +77228,7 @@ p5.prototype.normalMaterial = function() {
  *   vid.hide();
  * }
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -77284,7 +77284,7 @@ p5.prototype.texture = function(tex) {
  * }
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -77312,7 +77312,7 @@ p5.prototype.texture = function(tex) {
  * }
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -77371,7 +77371,7 @@ p5.prototype.textureMode = function(mode) {
  * }
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   textureWrap(MIRROR);
  * }
  *
@@ -77432,7 +77432,7 @@ p5.prototype.textureWrap = function(wrapX, wrapY) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  * function draw() {
  *   background(0);
@@ -77482,7 +77482,7 @@ p5.prototype.ambientMaterial = function(v1, v2, v3, a) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  * function draw() {
  *   background(0);
@@ -77530,7 +77530,7 @@ p5.prototype.specularMaterial = function(v1, v2, v3, a) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  * function draw() {
  *   background(0);
@@ -77692,7 +77692,7 @@ var p5 = _dereq_('../core/main');
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  * function draw() {
  *   background(204);
@@ -77741,7 +77741,7 @@ p5.prototype.camera = function() {
  * //drag the mouse to look around!
  * //you will see there's a vanishing point
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   perspective(PI / 3.0, width / height, 0.1, 500);
  * }
  * function draw() {
@@ -77803,7 +77803,7 @@ p5.prototype.perspective = function() {
  * //drag the mouse to look around!
  * //there's no vanishing point
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   ortho(-width / 2, width / 2, height / 2, -height / 2, 0, 500);
  * }
  * function draw() {
@@ -77897,7 +77897,7 @@ p5.prototype.createCamera = function() {
  * let delta = 0.01;
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   normalMaterial();
  *   cam = createCamera();
  *   // set initial pan angle
@@ -78152,7 +78152,7 @@ p5.Camera.prototype._rotateView = function(a, x, y, z) {
  * let delta = 0.01;
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   normalMaterial();
  *   cam = createCamera();
  *   // set initial pan angle
@@ -78211,7 +78211,7 @@ p5.Camera.prototype.pan = function(amount) {
  * let delta = 0.01;
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   normalMaterial();
  *   cam = createCamera();
  *   // set initial tilt
@@ -78269,7 +78269,7 @@ p5.Camera.prototype.tilt = function(amount) {
  * let cam;
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   normalMaterial();
  *   cam = createCamera();
  * }
@@ -78418,7 +78418,7 @@ p5.Camera.prototype.camera = function(
  * let delta = 0.5;
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   normalMaterial();
  *   cam = createCamera();
  * }
@@ -78491,7 +78491,7 @@ p5.Camera.prototype.move = function(x, y, z) {
  * let cam;
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   normalMaterial();
  *   cam = createCamera();
  * }
@@ -78754,7 +78754,7 @@ p5.Camera.prototype._isActive = function() {
  * let currentCamera;
  *
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   normalMaterial();
  *
  *   cam1 = createCamera();
@@ -80941,7 +80941,7 @@ p5.RendererGL.prototype._resetContext = function(options, callback) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -80963,7 +80963,7 @@ p5.RendererGL.prototype._resetContext = function(options, callback) {
  * <code>
  * function setup() {
  *   setAttributes('antialias', true);
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  * }
  *
  * function draw() {
@@ -80983,7 +80983,7 @@ p5.RendererGL.prototype._resetContext = function(options, callback) {
  * <code>
  * // press the mouse button to enable perPixelLighting
  * function setup() {
- *   createCanvas(100, 100, WEBGL);
+ *   (100, 100, WEBGL);
  *   noStroke();
  *   fill(255);
  * }
@@ -81156,7 +81156,7 @@ p5.RendererGL.prototype.background = function() {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(200, 200, WEBGL);
+ *   (200, 200, WEBGL);
  * }
  *
  * function draw() {
@@ -81196,7 +81196,7 @@ p5.RendererGL.prototype.fill = function(v1, v2, v3, a) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(200, 200, WEBGL);
+ *   (200, 200, WEBGL);
  * }
  *
  * function draw() {
@@ -81261,7 +81261,7 @@ p5.RendererGL.prototype.blendMode = function(mode) {
  * <div>
  * <code>
  * function setup() {
- *   createCanvas(200, 400, WEBGL);
+ *   (200, 400, WEBGL);
  *   setAttributes('antialias', true);
  * }
  *
