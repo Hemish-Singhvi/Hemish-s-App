@@ -5,7 +5,7 @@ var Hello, Hello1, Hello2;
 var taskTitleVal;
 var taskDurationVal;
 var taskDeadlineVal;
-var taskForm, tasks, studentPage, parentForm;
+var taskForm, taskS, studentPage, parentForm;
 var appState = 1;
 
 function preload(){
@@ -36,3 +36,7 @@ function draw(){
   FORM.display();
   //TIMER.dislay();
 }
+
+//static function mousePressed(){
+
+//}

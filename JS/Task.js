@@ -1,3 +1,4 @@
+
 class Task {
     constructor(title, duration, deadline){
         this.TITLE  = title;
@@ -12,7 +13,7 @@ class Task {
     }
 
     sendToAllTasks(){
-        tasks.push(task);
+        taskS.push(task);
         task.splice(0, task.keys());
     }
 }

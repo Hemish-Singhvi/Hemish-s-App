@@ -1,3 +1,4 @@
+//
 class TaskForm {
     constructor(){
         this.taskTitle = createInput('', 'String');

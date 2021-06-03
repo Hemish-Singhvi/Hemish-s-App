@@ -1,3 +1,4 @@
+//
 class BackButton {
     constructor(){
         this.backButton = createButton('<=');
@@ -7,35 +8,35 @@ class BackButton {
     }
     forStudentScreen(){
         this.backButton.mousePressed(()=>{
-            this.SS = new homeScreen();
-            this.SS.display();
+            this.StSc = new homeScreen();
+            this.StSc.display();
             image(bgImg, windowWidth, windowHeight, windowWidth/2, windowHeight/2)
             appState = 1;
-            //studentPage.hide();
+            studentPage.tint(255, 126);
         })
     }
     forParentForm(){
         this.backButton.mousePressed(()=>{
-            this.PF = new homeScreen();
-            this.PF.display();
-            image(bgImg, windowWidth, windowHeight, windowWidth/2, windowHeight/2)
+            this.PaFo = new homeScreen();
+            this.PaFo.display();
+            background(bgImg);
             appState = 1;
             //parentForm.hide();
         })
     }
     forTaskForm(){
         this.backButton.mousePressed(()=>{
-            this.TF = new StudentScreen();
-            this.TF.display();
-            image(bgImg, windowWidth, windowHeight, windowWidth/2, windowHeight/2)
+            this.TaFo = new StudentScreen();
+            this.TaFo.display();
+            background(bgImg);
             appState = 1.1;
             //taskForm.hide();
         })
     }
     forAllTasks(){
         this.backButton.mousePressed(()=>{
-            this.AT = new StudentScreen();
-            this.AT.display();
+            this.AlTa = new StudentScreen();
+            this.AlTa.display();
             image(bgImg, windowWidth, windowHeight, windowWidth/2, windowHeight/2)
             appState = 1.1;
             //tasks.hide();
